@@ -25,6 +25,8 @@ body {
     padding-bottom: 0.75rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .card-title::after {
@@ -35,6 +37,10 @@ body {
     width: 2rem;
     height: 2px;
     background-color: var(--bs-primary);
+}
+
+.card-title i {
+    color: var(--bs-primary);
 }
 
 .card-links {
