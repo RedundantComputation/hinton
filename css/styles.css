@@ -1,0 +1,59 @@
+:root {
+    --bs-primary: #0d6efd;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.grid-card {
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.card-title {
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2rem;
+    height: 2px;
+    background-color: var(--bs-primary);
+}
+
+.card-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card-links li {
+    margin-bottom: 0.5rem;
+}
+
+.card-links a {
+    color: #6c757d;
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+}
+
+.card-links a:hover {
+    color: var(--bs-primary);
+}
