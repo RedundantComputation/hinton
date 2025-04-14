@@ -1,5 +1,13 @@
 :root {
-    --bs-primary: #0d6efd;
+    --bs-primary: #013fff;
+    --bs-secondary: #fe0002;
+    --bs-tertiary: #ffbb00;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -18,6 +26,21 @@ body {
 .grid-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.left-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem var(--bs-secondary);
+}
+
+.middle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem var(--bs-tertiary);
+}
+
+.right-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem var(--bs-primary);
 }
 
 .card-title {
@@ -62,4 +85,89 @@ body {
 
 .card-links a:hover {
     color: var(--bs-primary);
+}
+
+/* Flames for Odds & Ends card */
+.odds-ends-card {
+    position: relative;
+    z-index: 1;
+}
+
+.flame-container {
+    position: absolute;
+    top: -100%;
+    left: -75%;  
+    right: -75%; 
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    transform-origin: bottom center;
+    overflow: hidden;
+}
+
+.odds-ends-card:hover .flame-container {
+    opacity: 1;
+}
+
+.flames {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.flame {
+    stroke-width: 1.5;
+}
+
+.flame-outer {
+    fill: rgba(255, 87, 34, 0.3);
+    stroke: #FF5722;
+    animation: flameWaver-outer 2s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+}
+
+.flame-middle {
+    fill: rgba(255, 152, 0, 0.4);
+    stroke: #FF9800;
+    animation: flameWaver-middle 2.3s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+}
+
+.flame-inner {
+    fill: rgba(255, 235, 59, 0.5);
+    stroke: #FFEB3B;
+    animation: flameWaver-inner 1.7s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+}
+
+@keyframes flameWaver-outer {
+    0% {
+        transform: translateX(-5px) translateY(3px) scale(1);
+    }
+    100% {
+        transform: translateX(5px) translateY(-3px) scale(1.05);
+    }
+}
+
+@keyframes flameWaver-middle {
+    0% {
+        transform: translateX(4px) translateY(12px) scale(0.98);
+    }
+    100% {
+        transform: translateX(-4px) translateY(-12px) scale(1.03);
+    }
+}
+
+@keyframes flameWaver-inner {
+    0% {
+        transform: translateX(-3px) translateY(4px) scale(1.02);
+    }
+    100% {
+        transform: translateX(3px) translateY(-4px) scale(0.98);
+    }
 }
