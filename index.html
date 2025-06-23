@@ -4,12 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geoffrey Hinton </title>
+    <script>
+        // Mobile-web detection script
+        (function() {
+            console.log(navigator.userAgent);
+            // Regex to detect mobile devices
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent);
+            
+            if (!isMobile) {
+                window.location.href = '/web.html';
+            }
+        })();
+    </script>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" >
+
+    <!-- Mobile-specific inline styles -->
+    <style>
+        .card-title::after {
+            display: none;
+        }
+        
+        .icon-large {
+            font-size: 2rem;
+            color: var(--bs-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-title {
+            padding: 0;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+        
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25rem 0.5rem;
+            min-height: 100px;
+        }
+        
+        /* Make cards more touch-friendly on mobile */
+        @media (max-width: 767px) {
+            .col-4 {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            
+            .row.g-4 {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+            
+            .card-body {
+                padding: 1rem 0.25rem;
+                min-height: 90px;
+            }
+            
+            .icon-large {
+                font-size: 1.75rem;
+            }
+            
+            .card-title {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 375px) {
+            .icon-large {
+                font-size: 1.5rem;
+            }
+            
+            .card-title {
+                font-size: 0.7rem;
+            }
+            
+            .card-body {
+                min-height: 80px;
+                padding: 0.75rem 0.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -20,143 +102,252 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Main Content -->
     <main class="py-3">
         <div class="container">
             <div class="row g-4">
                 <!-- 1. Scientific Publications -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-file-earmark-text me-2"></i>Scientific Publications</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Full Chronological List</a></li>
-                                <li><a href="#">Foundational Papers on Neural Nets</a></li>
-                                <li><a href="#">Simple Papers on Neural Nets</a></li>
-                                <li><a href="#">AI Safety</a></li>
-                                <li><a href="#">Displaying High-Dimensional Data</a></li>
-                                <li><a href="#">Tropical Archeo-Astronomy</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('publications')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-file-earmark-text icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Publications</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 2. Teaching -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-mortarboard me-2"></i>Teaching</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Coursera Machine Learning Course</a></li>
-                                <li><a href="#">Tutorials</a></li>
-                                <li><a href="#">Old University Courses</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('teaching')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-mortarboard icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Teaching</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 3. Media Appearances -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-camera-video me-2"></i>Media Appearances</h2>
-                            <ul class="card-links">
-                                <li><a href="#">TV Interviews</a></li>
-                                <li><a href="#">Newspaper Articles</a></li>
-                                <li><a href="#">Radio Interviews</a></li>
-                                <li><a href="#">Magazine Stories</a></li>
-                                <li><a href="#">Podcasts</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('media')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-camera-video icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Media</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 4. Team -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-people me-2"></i>Team</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Former Postdocs</a></li>
-                                <li><a href="#">Former Students</a></li>
-                                <li><a href="#">Former Interns</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('team')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-people icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Team</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 5. About Me -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-person me-2"></i>About Me</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Biographical Sketches</a></li>
-                                <li><a href="#">Curriculum Vitae</a></li>
-                                <li><a href="#">Awards & Fellowships</a></li>
-                                <li><a href="#">New Yorker Profile</a></li>
-                                <li><a href="#">Photos</a></li>
-                                <li><a href="#">Fellowships</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('about')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-person icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">About Me</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 6. Odds & Ends -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-robot me-2"></i>Amusing Odds & Ends</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Intro to Python</a></li>
-                                <li><a href='#'>Cade Metz Book</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('odds')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-robot icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Odds & Ends</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 7. Speaking Requests -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-megaphone me-2"></i>Speaking Requests</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Paid Talks for Companies</a></li>
-                                <li><a href='#'>Talks for Universities</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('speaking')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-megaphone icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Speaking</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 8. Contact -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-envelope me-2"></i>Contact</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
-                                <li><a href="#">Voice: send email</a></li>
-                                <li><a href="#">Fax: scan and send email</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('contact')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-envelope icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Contact</h2>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 9. Media Requests -->
-                <div class="col-4">
-                    <div class="card grid-card">
-                        <div class="card-body">
-                            <h2 class="card-title h5"><i class="bi bi-camera me-2"></i>Media Requests</h2>
-                            <ul class="card-links">
-                                <li><a href="#">Press Kit</a></li>
-                            </ul>
+                <div class="col-4 col-md-4">
+                    <div class="card grid-card text-center" onclick="openPopup('media-requests')">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-camera icon-large mb-2"></i>
+                            <h2 class="card-title h5 text-center w-100">Media Requests</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Popup Modals -->
+    <!-- 1. Publications Popup -->
+    <div id="publications-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-file-earmark-text popup-icon"></i>
+                <h3 class="popup-title">Scientific Publications</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('publications')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Full Chronological List</a></li>
+                <li><a href="#">Foundational Papers on Neural Nets</a></li>
+                <li><a href="#">Simple Papers on Neural Nets</a></li>
+                <li><a href="#">AI Safety</a></li>
+                <li><a href="#">Displaying High-Dimensional Data</a></li>
+                <li><a href="#">Tropical Archeo-Astronomy</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 2. Teaching Popup -->
+    <div id="teaching-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-mortarboard popup-icon"></i>
+                <h3 class="popup-title">Teaching</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('teaching')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Coursera Machine Learning Course</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Old University Courses</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 3. Media Appearances Popup -->
+    <div id="media-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-camera-video popup-icon"></i>
+                <h3 class="popup-title">Media Appearances</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('media')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">TV Interviews</a></li>
+                <li><a href="#">Newspaper Articles</a></li>
+                <li><a href="#">Radio Interviews</a></li>
+                <li><a href="#">Magazine Stories</a></li>
+                <li><a href="#">Podcasts</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 4. Team Popup -->
+    <div id="team-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-people popup-icon"></i>
+                <h3 class="popup-title">Team</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('team')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Former Postdocs</a></li>
+                <li><a href="#">Former Students</a></li>
+                <li><a href="#">Former Interns</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 5. About Me Popup -->
+    <div id="about-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-person popup-icon"></i>
+                <h3 class="popup-title">About Me</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('about')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Biographical Sketches</a></li>
+                <li><a href="#">Curriculum Vitae</a></li>
+                <li><a href="#">Awards & Fellowships</a></li>
+                <li><a href="#">New Yorker Profile</a></li>
+                <li><a href="#">Photos</a></li>
+                <li><a href="#">Fellowships</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 6. Odds & Ends Popup -->
+    <div id="odds-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-robot popup-icon"></i>
+                <h3 class="popup-title">Amusing Odds & Ends</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('odds')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Intro to Python</a></li>
+                <li><a href='#'>Cade Metz Book</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 7. Speaking Requests Popup -->
+    <div id="speaking-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-megaphone popup-icon"></i>
+                <h3 class="popup-title">Speaking Requests</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('speaking')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Paid Talks for Companies</a></li>
+                <li><a href='#'>Talks for Universities</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 8. Contact Popup -->
+    <div id="contact-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-envelope popup-icon"></i>
+                <h3 class="popup-title">Contact</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('contact')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
+                <li><a href="#">Voice: send email</a></li>
+                <li><a href="#">Fax: scan and send email</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 9. Media Requests Popup -->
+    <div id="media-requests-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="bi bi-camera popup-icon"></i>
+                <h3 class="popup-title">Media Requests</h3>
+            </div>
+            <button class="popup-close" onclick="closePopup('media-requests')"><i class="bi bi-x"></i></button>
+            <ul class="popup-links">
+                <li><a href="#">Press Kit</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="py-4 bg-light border-top">
@@ -168,6 +359,46 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript for popup functionality -->
+    <script>
+        function openPopup(id) {
+            const popup = document.getElementById(`${id}-popup`);
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+            
+            // Stop event propagation to prevent immediate closing
+            event.stopPropagation();
+        }
+        
+        function closePopup(id) {
+            document.getElementById(`${id}-popup`).classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Stop propagation if called from a click event
+            if (event) {
+                event.stopPropagation();
+            }
+        }
+        
+        // Close popup when clicking outside the content
+        document.addEventListener('click', function(event) {
+            const popups = document.querySelectorAll('.popup-modal.active');
+            popups.forEach(popup => {
+                if (event.target === popup) {
+                    const id = popup.id.replace('-popup', '');
+                    closePopup(id);
+                }
+            });
+        });
+        
+        // Prevent clicks inside popup content from closing the popup
+        document.querySelectorAll('.popup-content').forEach(content => {
+            content.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        });
+    </script>
     
     <!-- Bootstrap JS Bundle with Popper (optional, only if you need Bootstrap's JavaScript features) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,6 @@
+Bootstrap Icons
+
+Copyright 2019-2025 The Bootstrap Authors
+
+Licensed under the MIT License
+https://github.com/twbs/icons/blob/main/LICENSE
