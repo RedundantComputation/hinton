@@ -3,54 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geoffrey Hinton </title>
-    <script>
-        // Mobile-web detection script
-        (function() {
-            console.log(navigator.userAgent);
-            // Regex to detect mobile devices
-            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent);
-            
-            if (!isMobile) {
-                window.location.href = '/web.html';
-            }
-        })();
-    </script>
+    <title>Geoffrey Hinton</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet" >
-
-    <!-- Mobile-specific inline styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Mobile-specific CSS -->
     <style>
-        .card-title::after {
-            display: none;
+        /* Ensure proper desktop/mobile view switching */
+        @media (max-width: 767px) {
+            .desktop-view {
+                display: none !important;
+            }
+            
+            .mobile-view {
+                display: flex !important;
+            }
         }
-        
+
+        /* Mobile-specific styles */
         .icon-large {
             font-size: 2rem;
             color: var(--bs-primary);
             margin-bottom: 0.5rem;
         }
-        
-        .card-title {
-            padding: 0;
-            margin-bottom: 0;
-            justify-content: center;
-        }
-        
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        /* Mobile popup styles */
+        .popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1050;
             align-items: center;
-            padding: 1.25rem 0.5rem;
-            min-height: 100px;
+            justify-content: center;
+            padding: 1rem;
         }
-        
-        /* Make cards more touch-friendly on mobile */
+
+        .popup-modal.active {
+            display: flex;
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .popup-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .popup-icon {
+            font-size: 1.5rem;
+            color: var(--bs-primary);
+            margin-right: 0.5rem;
+        }
+
+        .popup-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6c757d;
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-close:hover {
+            color: #495057;
+        }
+
+        .popup-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .popup-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .popup-links a {
+            color: #6c757d;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .popup-links a:hover {
+            color: var(--bs-primary);
+            background-color: #f8f9fa;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 767px) {
             .col-4 {
                 padding-left: 8px;
@@ -62,8 +136,8 @@
                 margin-right: -8px;
             }
             
-            .card-body {
-                padding: 1rem 0.25rem;
+            .mobile-view .card-body {
+                padding: 1rem 0.25rem !important;
                 min-height: 90px;
             }
             
@@ -71,24 +145,24 @@
                 font-size: 1.75rem;
             }
             
-            .card-title {
-                font-size: 0.8rem;
+            .mobile-view .card-title {
+                font-size: 0.8rem !important;
             }
         }
-        
+
         /* Extra small devices */
         @media (max-width: 375px) {
             .icon-large {
                 font-size: 1.5rem;
             }
             
-            .card-title {
-                font-size: 0.7rem;
+            .mobile-view .card-title {
+                font-size: 0.7rem !important;
             }
             
-            .card-body {
+            .mobile-view .card-body {
                 min-height: 80px;
-                padding: 0.75rem 0.25rem;
+                padding: 0.75rem 0.25rem !important;
             }
         }
     </style>
@@ -102,97 +176,209 @@
             </div>
         </div>
     </header>
-
+    
     <!-- Main Content -->
     <main class="py-3">
         <div class="container">
             <div class="row g-4">
                 <!-- 1. Scientific Publications -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('publications')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-file-earmark-text icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Publications</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="publications">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-file-earmark-text me-2"></i>Scientific Publications</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Full Chronological List</a></li>
+                                    <li><a href="#">Foundational Papers on Neural Nets</a></li>
+                                    <li><a href="#">Simple Papers on Neural Nets</a></li>
+                                    <li><a href="#">AI Safety</a></li>
+                                    <li><a href="#">Displaying High-Dimensional Data</a></li>
+                                    <li><a href="#">Tropical Archeo-Astronomy</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-file-earmark-text icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Publications</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 2. Teaching -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('teaching')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-mortarboard icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Teaching</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="teaching">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-mortarboard me-2"></i>Teaching</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Coursera Machine Learning Course</a></li>
+                                    <li><a href="#">Tutorials</a></li>
+                                    <li><a href="#">Old University Courses</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-mortarboard icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Teaching</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 3. Media Appearances -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('media')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-camera-video icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Media</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="media">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-camera-video me-2"></i>Media Appearances</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">TV Interviews</a></li>
+                                    <li><a href="#">Newspaper Articles</a></li>
+                                    <li><a href="#">Radio Interviews</a></li>
+                                    <li><a href="#">Magazine Stories</a></li>
+                                    <li><a href="#">Podcasts</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-camera-video icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Media</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 4. Team -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('team')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-people icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Team</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="team">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-people me-2"></i>Team</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Former Postdocs</a></li>
+                                    <li><a href="#">Former Students</a></li>
+                                    <li><a href="#">Former Interns</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-people icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Team</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 5. About Me -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('about')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-person icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">About Me</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="about">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-person me-2"></i>About Me</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Biographical Sketches</a></li>
+                                    <li><a href="#">Curriculum Vitae</a></li>
+                                    <li><a href="#">Awards & Fellowships</a></li>
+                                    <li><a href="#">New Yorker Profile</a></li>
+                                    <li><a href="#">Photos</a></li>
+                                    <li><a href="#">Fellowships</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-person icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">About Me</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 6. Odds & Ends -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('odds')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-robot icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Odds & Ends</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="odds">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-robot me-2"></i>Amusing Odds & Ends</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Intro to Python</a></li>
+                                    <li><a href="#">Cade Metz Book</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-robot icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Odds & Ends</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 7. Speaking Requests -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('speaking')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-megaphone icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Speaking</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="speaking">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-megaphone me-2"></i>Speaking Requests</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Paid Talks for Companies</a></li>
+                                    <li><a href="#">Talks for Universities</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-megaphone icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Speaking</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 8. Contact -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('contact')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-envelope icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Contact</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="contact">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-envelope me-2"></i>Contact</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
+                                    <li><a href="#">Voice: send email</a></li>
+                                    <li><a href="#">Fax: scan and send email</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-envelope icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Contact</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 9. Media Requests -->
-                <div class="col-4 col-md-4">
-                    <div class="card grid-card text-center" onclick="openPopup('media-requests')">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <i class="bi bi-camera icon-large mb-2"></i>
-                            <h2 class="card-title h5 text-center w-100">Media Requests</h2>
+                <div class="col-4">
+                    <div class="card grid-card" data-section="media-requests">
+                        <div class="card-body">
+                            <!-- Desktop View -->
+                            <div class="desktop-view">
+                                <h2 class="card-title h5"><i class="bi bi-camera me-2"></i>Media Requests</h2>
+                                <ul class="card-links">
+                                    <li><a href="#">Press Kit</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile View -->
+                            <div class="mobile-view">
+                                <i class="bi bi-camera icon-large mb-2"></i>
+                                <h2 class="card-title h5 text-center w-100">Media Requests</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -200,152 +386,154 @@
         </div>
     </main>
 
-    <!-- Popup Modals -->
-    <!-- 1. Publications Popup -->
-    <div id="publications-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-file-earmark-text popup-icon"></i>
-                <h3 class="popup-title">Scientific Publications</h3>
+    <!-- Mobile Popups Container -->
+    <div class="mobile-popups">
+        <!-- 1. Publications Popup -->
+        <div id="publications-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-file-earmark-text popup-icon"></i>
+                    <h3 class="popup-title">Scientific Publications</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('publications')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Full Chronological List</a></li>
+                    <li><a href="#">Foundational Papers on Neural Nets</a></li>
+                    <li><a href="#">Simple Papers on Neural Nets</a></li>
+                    <li><a href="#">AI Safety</a></li>
+                    <li><a href="#">Displaying High-Dimensional Data</a></li>
+                    <li><a href="#">Tropical Archeo-Astronomy</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('publications')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Full Chronological List</a></li>
-                <li><a href="#">Foundational Papers on Neural Nets</a></li>
-                <li><a href="#">Simple Papers on Neural Nets</a></li>
-                <li><a href="#">AI Safety</a></li>
-                <li><a href="#">Displaying High-Dimensional Data</a></li>
-                <li><a href="#">Tropical Archeo-Astronomy</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 2. Teaching Popup -->
-    <div id="teaching-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-mortarboard popup-icon"></i>
-                <h3 class="popup-title">Teaching</h3>
+        
+        <!-- 2. Teaching Popup -->
+        <div id="teaching-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-mortarboard popup-icon"></i>
+                    <h3 class="popup-title">Teaching</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('teaching')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Coursera Machine Learning Course</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Old University Courses</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('teaching')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Coursera Machine Learning Course</a></li>
-                <li><a href="#">Tutorials</a></li>
-                <li><a href="#">Old University Courses</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 3. Media Appearances Popup -->
-    <div id="media-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-camera-video popup-icon"></i>
-                <h3 class="popup-title">Media Appearances</h3>
+        
+        <!-- 3. Media Appearances Popup -->
+        <div id="media-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-camera-video popup-icon"></i>
+                    <h3 class="popup-title">Media Appearances</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('media')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">TV Interviews</a></li>
+                    <li><a href="#">Newspaper Articles</a></li>
+                    <li><a href="#">Radio Interviews</a></li>
+                    <li><a href="#">Magazine Stories</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('media')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">TV Interviews</a></li>
-                <li><a href="#">Newspaper Articles</a></li>
-                <li><a href="#">Radio Interviews</a></li>
-                <li><a href="#">Magazine Stories</a></li>
-                <li><a href="#">Podcasts</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 4. Team Popup -->
-    <div id="team-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-people popup-icon"></i>
-                <h3 class="popup-title">Team</h3>
+        
+        <!-- 4. Team Popup -->
+        <div id="team-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-people popup-icon"></i>
+                    <h3 class="popup-title">Team</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('team')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Former Postdocs</a></li>
+                    <li><a href="#">Former Students</a></li>
+                    <li><a href="#">Former Interns</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('team')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Former Postdocs</a></li>
-                <li><a href="#">Former Students</a></li>
-                <li><a href="#">Former Interns</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 5. About Me Popup -->
-    <div id="about-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-person popup-icon"></i>
-                <h3 class="popup-title">About Me</h3>
+        
+        <!-- 5. About Me Popup -->
+        <div id="about-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-person popup-icon"></i>
+                    <h3 class="popup-title">About Me</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('about')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Biographical Sketches</a></li>
+                    <li><a href="#">Curriculum Vitae</a></li>
+                    <li><a href="#">Awards & Fellowships</a></li>
+                    <li><a href="#">New Yorker Profile</a></li>
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Fellowships</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('about')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Biographical Sketches</a></li>
-                <li><a href="#">Curriculum Vitae</a></li>
-                <li><a href="#">Awards & Fellowships</a></li>
-                <li><a href="#">New Yorker Profile</a></li>
-                <li><a href="#">Photos</a></li>
-                <li><a href="#">Fellowships</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 6. Odds & Ends Popup -->
-    <div id="odds-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-robot popup-icon"></i>
-                <h3 class="popup-title">Amusing Odds & Ends</h3>
+        
+        <!-- 6. Odds & Ends Popup -->
+        <div id="odds-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-robot popup-icon"></i>
+                    <h3 class="popup-title">Amusing Odds & Ends</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('odds')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Intro to Python</a></li>
+                    <li><a href="#">Cade Metz Book</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('odds')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Intro to Python</a></li>
-                <li><a href='#'>Cade Metz Book</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 7. Speaking Requests Popup -->
-    <div id="speaking-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-megaphone popup-icon"></i>
-                <h3 class="popup-title">Speaking Requests</h3>
+        
+        <!-- 7. Speaking Requests Popup -->
+        <div id="speaking-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-megaphone popup-icon"></i>
+                    <h3 class="popup-title">Speaking Requests</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('speaking')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Paid Talks for Companies</a></li>
+                    <li><a href="#">Talks for Universities</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('speaking')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Paid Talks for Companies</a></li>
-                <li><a href='#'>Talks for Universities</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 8. Contact Popup -->
-    <div id="contact-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-envelope popup-icon"></i>
-                <h3 class="popup-title">Contact</h3>
+        
+        <!-- 8. Contact Popup -->
+        <div id="contact-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-envelope popup-icon"></i>
+                    <h3 class="popup-title">Contact</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('contact')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
+                    <li><a href="#">Voice: send email</a></li>
+                    <li><a href="#">Fax: scan and send email</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('contact')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
-                <li><a href="#">Voice: send email</a></li>
-                <li><a href="#">Fax: scan and send email</a></li>
-            </ul>
         </div>
-    </div>
-    
-    <!-- 9. Media Requests Popup -->
-    <div id="media-requests-popup" class="popup-modal">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="bi bi-camera popup-icon"></i>
-                <h3 class="popup-title">Media Requests</h3>
+        
+        <!-- 9. Media Requests Popup -->
+        <div id="media-requests-popup" class="popup-modal">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <i class="bi bi-camera popup-icon"></i>
+                    <h3 class="popup-title">Media Requests</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('media-requests')"><i class="bi bi-x"></i></button>
+                <ul class="popup-links">
+                    <li><a href="#">Press Kit</a></li>
+                </ul>
             </div>
-            <button class="popup-close" onclick="closePopup('media-requests')"><i class="bi bi-x"></i></button>
-            <ul class="popup-links">
-                <li><a href="#">Press Kit</a></li>
-            </ul>
         </div>
     </div>
 
@@ -359,48 +547,100 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript for popup functionality -->
+    
+    
+    <!-- Mobile JavaScript -->
     <script>
-        function openPopup(id) {
-            const popup = document.getElementById(`${id}-popup`);
-            popup.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+        // Mobile popup functionality
+        (function() {
+            'use strict';
             
-            // Stop event propagation to prevent immediate closing
-            event.stopPropagation();
-        }
-        
-        function closePopup(id) {
-            document.getElementById(`${id}-popup`).classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-            
-            // Stop propagation if called from a click event
-            if (event) {
-                event.stopPropagation();
+            // Function to check if we're on mobile
+            function isMobile() {
+                return window.innerWidth <= 767;
             }
-        }
-        
-        // Close popup when clicking outside the content
-        document.addEventListener('click', function(event) {
-            const popups = document.querySelectorAll('.popup-modal.active');
-            popups.forEach(popup => {
-                if (event.target === popup) {
-                    const id = popup.id.replace('-popup', '');
-                    closePopup(id);
+            
+            // Add click handlers for mobile cards
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.grid-card[data-section]');
+                
+                cards.forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        // Only handle popup on mobile
+                        if (isMobile()) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const section = this.getAttribute('data-section');
+                            openPopup(section);
+                        }
+                    });
+                });
+                
+                // Close popup when clicking outside the content
+                document.addEventListener('click', function(event) {
+                    const popups = document.querySelectorAll('.popup-modal.active');
+                    popups.forEach(popup => {
+                        if (event.target === popup) {
+                            const id = popup.id.replace('-popup', '');
+                            closePopup(id);
+                        }
+                    });
+                });
+                
+                // Prevent clicks inside popup content from closing the popup
+                document.querySelectorAll('.popup-content').forEach(content => {
+                    content.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                    });
+                });
+                
+                // Handle escape key to close popups
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        const activePopup = document.querySelector('.popup-modal.active');
+                        if (activePopup) {
+                            const id = activePopup.id.replace('-popup', '');
+                            closePopup(id);
+                        }
+                    }
+                });
+            });
+            
+            // Popup functions (available globally)
+            window.openPopup = function(id) {
+                const popup = document.getElementById(`${id}-popup`);
+                if (popup) {
+                    popup.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+                }
+            };
+            
+            window.closePopup = function(id) {
+                const popup = document.getElementById(`${id}-popup`);
+                if (popup) {
+                    popup.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            };
+            
+            // Handle window resize to switch between desktop/mobile modes
+            window.addEventListener('resize', function() {
+                const currentlyMobile = isMobile();
+                
+                // If switching from mobile to desktop, close any open popups
+                if (!currentlyMobile) {
+                    const activePopups = document.querySelectorAll('.popup-modal.active');
+                    activePopups.forEach(popup => {
+                        popup.classList.remove('active');
+                    });
+                    document.body.style.overflow = '';
                 }
             });
-        });
-        
-        // Prevent clicks inside popup content from closing the popup
-        document.querySelectorAll('.popup-content').forEach(content => {
-            content.addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        });
+            
+        })();
     </script>
     
-    <!-- Bootstrap JS Bundle with Popper (optional, only if you need Bootstrap's JavaScript features) -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
