@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Geoffrey Hinton</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --bs-primary: #0d6efd;
+            --bg-color: #ffefca;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+        }
+
+        .header {
+            border-bottom: 1px solid #dee2e6;
+            background: white !important;
+        }
+
+        .publications-container {
+            position: relative;
+            padding-right: 60px; /* Space for scrubber */
+        }
+
+        .year-section {
+            margin-bottom: 2rem;
+            scroll-margin-top: 80px; /* Account for sticky header */
+        }
+
+        .year-header {
+            position: sticky;
+            top: 70px;
+            background: rgba(255, 239, 202, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            padding: 0.75rem 0;
+            border-bottom: 2px solid var(--bs-primary);
+            margin-bottom: 1rem;
+        }
+
+        .publication-item {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            transition: all 0.2s ease;
+        }
+
+        .publication-item:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .publication-authors {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .publication-venue {
+            color: var(--bs-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .publication-venue:hover {
+            color: #0a58ca;
+            text-decoration: underline;
+        }
+
+        /* Year Scrubber */
+        .year-scrubber {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 70vh;
+            z-index: 1000;
+            user-select: none;
+            touch-action: none;
+        }
+
+        .scrubber-track {
+            position: relative;
+            width: 3px;
+            height: 100%;
+            background: #dee2e6;
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+
+        .scrubber-handle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--bs-primary);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: grab;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.1s ease;
+        }
+
+        .scrubber-handle:active {
+            cursor: grabbing;
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .scrubber-label {
+            position: absolute;
+            right: 45px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+
+        .scrubber-label.active {
+            opacity: 1;
+        }
+
+        .year-markers {
+            position: absolute;
+            left: -15px;
+            top: 0;
+            height: 100%;
+            width: 15px;
+        }
+
+        .year-marker {
+            position: absolute;
+            right: 0;
+            width: 8px;
+            height: 2px;
+            background: #6c757d;
+            border-radius: 1px;
+        }
+
+        .year-marker.major {
+            width: 12px;
+            background: var(--bs-primary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .publications-container {
+                padding-right: 50px;
+            }
+            
+            .year-scrubber {
+                right: 5px;
+                width: 35px;
+                height: 60vh;
+            }
+            
+            .scrubber-handle {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .publication-item {
+                padding: 1rem;
+            }
+            
+            .publication-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .publication-venue {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header py-3 bg-white sticky-top">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h4 mb-0">
+                    <a href="/" class="text-decoration-none text-dark">
+                        <i class="bi bi-arrow-left me-2"></i>Geoffrey E. Hinton
+                    </a>
+                </h1>
+                <span class="text-muted">Publications</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-4">
+        <div class="container publications-container">
+            
+            <!-- 2022 -->
+            <div class="year-section" id="year-2022">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2022</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G. E.</div>
+                    <div class="publication-title">The Forward-Forward Algorithm: Some Preliminary Investigations</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/FFXfinal.pdf" class="publication-venue">pdf</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Chen, T., Zhang, R., & Hinton, G.</div>
+                    <div class="publication-title">Analog bits: Generating discrete data using diffusion models with self-conditioning</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/analog.pdf" class="publication-venue">arXiv preprint arXiv:2208.04202</a>
+                </div>
+            </div>
+
+            <!-- 2021 -->
+            <div class="year-section" id="year-2021">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2021</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G. E</div>
+                    <div class="publication-title">How to represent part-whole hierarchies in a neural network</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/glomfinal.pdf" class="publication-venue">pdf</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Agarwal, R., Melnick, L., Frosst, N., Zhang, X., Lengerich, B., Caruana, R., & Hinton, G. E.</div>
+                    <div class="publication-title">Neural additive models:Interpretable machine learning with neural nets</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/NAM.pdf" class="publication-venue">Advances in Neural Information Processing Systems, 34, 4699-4711</a>
+                </div>
+            </div>
+
+            <!-- 2020 -->
+            <div class="year-section" id="year-2020">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2020</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Deng, B., Lewis, J. P., Jeruzalski, T., Pons-Moll, G., Hinton, G. E., Norouzi, M., Tagliasacchi, A.</div>
+                    <div class="publication-title">Big Self-Supervised Models are Strong Semi-Supervised Learners</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/bigsimclr.pdf" class="publication-venue">34th Conference on Neural Information Processing Systems (NeurIPS 2020)</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Chen, T., Kornblith, S., Norouzi, M., and Hinton, G. E.</div>
+                    <div class="publication-title">A Simple Framework for Contrastive Learning of Visual Representations</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/simclr.pdf" class="publication-venue">Proceedings of the 37th International Conference on Machine Learning.
+                        Eds. Hal Daume III and Aarti Singh, pp 1597--1607</a>
+                </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="year-section" id="year-2019">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2019</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Kosiorek, A. R., Sabour, S., Teh, Y. W. and Hinton, G. E.</div>
+                    <div class="publication-title">Stacked Capsule Autoencoders</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/capsules2019.pdf" class="publication-venue">Advances in Neural Information Processing Systems 32</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Zhang, M., Lucas, J., Ba, J., and Hinton, G. E.</div>
+                    <div class="publication-title">Lookahead Optimizer: k steps forward, 1 step back</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/lookahead.pdf" class="publication-venue">Advances in Neural Information Processing Systems 32</a>
+                </div>
+            </div>
+
+            <!-- 2018 -->
+            <div class="year-section" id="year-2018">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2018</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G. E., Sabour, S. and Frosst, N.</div>
+                    <div class="publication-title">Matrix Capsules with EM Routing</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/EMcapsules.pdf" class="publication-venue">ICLR-2018</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Kiros, J. R., Chan, W. and Hinton, G. E.</div>
+                    <div class="publication-title">Illustrative Language Understanding: Large-Scale Visual Grounding with Image Search
+                    </div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/picturebook.pdf" class="publication-venue">ACL-2018</a>
+                </div>
+            </div>
+
+            <!-- 2017 -->
+            <div class="year-section" id="year-2017">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2017</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Sabour, S., Frosst, N. and Hinton, G. E.</div>
+                    <div class="publication-title">Dynamic Routing Between Capsules</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf" class="publication-venue">NIPS-2017</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Shazeer, N., Mirhoseini, A., Maziarz, K., Davis, A., Le, Q., Hinton, G., & Dean, J.</div>
+                    <div class="publication-title">Outrageously large neural networks: The sparsely-gated mixture-of-experts layer</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/Outrageously.pdf" class="publication-venue">arXiv preprint arXiv:1701.06538 </a>
+                </div>
+            </div>
+
+            <!-- 2016 -->
+            <div class="year-section" id="year-2016">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2016</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Ba, J. L., Hinton, G. E., Mnih, V., Leibo, J. Z. and Ionescu, C.</div>
+                    <div class="publication-title">Using Fast Weights to Attend to the Recent Past.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/FastWeights.pdf" class="publication-venue">NIPS-2016 arXiv preprint arXiv:1610.06258v2</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Ba, J. L., Kiros, J. R. and Hinton, G. E.</div>
+                    <div class="publication-title">Layer normalization.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/LayerNormalization.pdf" class="publication-venue">NIPS-2016 workshop. arXiv preprint arXiv:1607.06450</a>
+                </div>
+            </div>
+
+            <!-- 2015 -->
+            <div class="year-section" id="year-2015">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2015</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">LeCun, Y., Bengio, Y. and Hinton, G. E.</div>
+                    <div class="publication-title">Deep Learning.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf" class="publication-venue">Nature, Vol. 521, pp 436-444.</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G. E., Vinyals, O., and Dean, J.</div>
+                    <div class="publication-title">Distilling the knowledge in a neural network.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/distillation.pdf" class="publication-venue">arXiv preprint arXiv:1503.02531 </a>
+                </div>
+            </div>
+
+            <!-- 2014 -->
+            <div class="year-section" id="year-2014">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2014</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R.</div>
+                    <div class="publication-title">Dropout: A simple way to prevent neural networks from overfitting</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf">The Journal of Machine Learning Research, 15(1), pp 1929-1958.</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Vinyals, O., Kaiser, L., Koo, T., Petrov, S., Sutskever, I., & Hinton, G. E.</div>
+                    <div class="publication-title">Grammar as a foreign language.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/grammar.pdf" class="publication-venue">arXiv preprint arXiv:1412.7449</a>
+                </div>
+            </div>
+
+            <!-- 2013 -->
+            <div class="year-section" id="year-2013">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2013</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Srivastava, N., Salakhutdinov, R. R. and Hinton, G. E.</div>
+                    <div class="publication-title">Modeling Documents with a Deep Boltzmann Machine</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/.pdf">In Uncertainty in Artificial Intelligence (UAI 2013)</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Jaitly, N., and Hinton, G. E.</div>
+                    <div class="publication-title">Vocal Tract Length Perturbation (VTLP) improves speech recognition.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/perturb.pdf" class="publication-venue">Proc. ICML 2013 Workshop on Deep Learning for Audio,Speech and Language Processing, Atlanta, USA.</a>
+                </div>
+            </div>
+
+            <!-- 2012 -->
+            <div class="year-section" id="year-2012">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2012</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Krizhevsky, A., Sutskever, I. and Hinton, G. E.</div>
+                    <div class="publication-title">ImageNet Classification with Deep Convolutional Neural Networks</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf" class="publication-venue">Advances in Neural Information Processing 25, MIT Press, Cambridge, MA</a>
+                </div>
+            </div>
+
+            <!-- 2011 -->
+            <div class="year-section" id="year-2011">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2011</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Suskever, I., Martens, J. and Hinton, G. E.</div>
+                    <div class="publication-title">Generating Text with Recurrent Neural Networks.</div>
+                    <a href="http://www.cs.toronto.edu/~ilya/pubs/2011/LANG-RNN.pdf" class="publication-venue">Proc. 28th International Conference on Machine Learning, Seattle.</a>
+                </div>
+            </div>
+
+            <!-- 2010 -->
+            <div class="year-section" id="year-2010">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2010</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Memisevic, R., Zach, C., Pollefeys, M. and Hinton, G. E.</div>
+                    <div class="publication-title">Gated Softmax Classification.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/gatedsoftmax.pdf" class="publication-venue">Advances in Neural Information Processing 23, MIT Press, Cambridge, MA</a>
+                </div>
+            </div>
+
+            <!-- 2000 -->
+            <div class="year-section" id="year-2000">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2000</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G.E.</div>
+                    <div class="publication-title">Training Products of Experts by Minimizing Contrastive Divergence</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/tr00-004.pdf" class="publication-venue">Technical Report:  GCNU TR 2000-004</a>
+                </div>
+            </div>
+
+            <!-- 1995 -->
+            <div class="year-section" id="year-1995">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1995</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G. E., Revow, M. and Dayan P.</div>
+                    <div class="publication-title">Recognizing handwritten digits using mixtures of linear models.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/pancake.pdf" class="publication-venue">Advances in Neural Information Processing Systems 7. G. Tesauro, D. S. Touretzky and T. K. Leen (Eds), pp 1015-1022 MIT Press, Cambridge MA.</a>
+                </div>
+            </div>
+
+            <!-- 1990 -->
+            <div class="year-section" id="year-1990">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1990</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Williams, C. K. I. and Hinton, G. E</div>
+                    <div class="publication-title">Mean field networks that learn to discriminate temporally distorted strings.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/wh90.pdf" class="publication-venue">Touretzky, D. S., Elman, J. L., Sejnowski, T. J. and Hinton, G. E. (Eds.) Connectionist Models: Proceedings of the 1990 Connectionist Summer School. Morgan Kauffman: San Mateo, CA.</a>
+                </div>
+            </div>
+
+            <!-- 1985 -->
+            <div class="year-section" id="year-1985">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1985</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Ackley, D. H., Hinton, G. E., and Sejnowski, T. J.</div>
+                    <div class="publication-title">A learning algorithm for Boltzmann machines.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/cogscibm.pdf" class="publication-venue">Cognitive Science, 9, 147-169.</a>
+                </div>
+            </div>
+
+            <!-- 1981 -->
+            <div class="year-section" id="year-1981">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1981</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G.E.</div>
+                    <div class="publication-title">The role of spatial working memory in shape perception.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/workingmemory81.pdf" class="publication-venue">Proceedings of the Third Annual Conference of the Cognitive Science Society, Berkeley CA.</a>
+                </div>
+            </div>
+
+            <!-- 1979 -->
+            <div class="year-section" id="year-1979">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1979</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G.E.</div>
+                    <div class="publication-title">Some demonstrations of the effects of structural descriptions in mental imagery.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/cube.pdf" class="publication-venue">Cognitive Science, 3, 231-250.</a>
+                </div>
+            </div>
+
+            <!-- 1978 -->
+            <div class="year-section" id="year-1978">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1978</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Sloman, A., Owen, D. Hinton., G., Birch, F. and O'Gorman, F.</div>
+                    <div class="publication-title">Representation and control in vision.</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/cube.pdf" class="publication-venue">Proceedings of the A.I.S.B. Summer Conference, Hamburg</a>
+                </div>
+            </div>
+
+            <!-- 1976 -->
+            <div class="year-section" id="year-1976">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1976</h2>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Hinton, G.E.</div>
+                    <div class="publication-title">Using relaxation to find a puppet</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/puppet.pdf" class="publication-venue">Proceeding of the A.I.S.B. Summer Conference, University of Edinburgh</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Year Scrubber -->
+    <div class="year-scrubber">
+        <div class="year-markers"></div>
+        <div class="scrubber-track">
+            <div class="scrubber-handle" id="scrubber-handle"></div>
+        </div>
+        <div class="scrubber-label" id="scrubber-label">2022</div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+            
+            // TODO: Replace years constant with generator and extend()
+            const years = [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2000, 1995, 1990, 1986, 1981, 1979, 1978, 1976];
+            const minYear = 1976;
+            const maxYear = 2022;
+            const yearRange = maxYear - minYear;
+            
+            const scrubberTrack = document.querySelector('.scrubber-track');
+            const scrubberHandle = document.getElementById('scrubber-handle');
+            const scrubberLabel = document.getElementById('scrubber-label');
+            const yearMarkers = document.querySelector('.year-markers');
+            
+            let isDragging = false;
+            let trackHeight = 0;
+            
+            // Initialize
+            function init() {
+                trackHeight = scrubberTrack.offsetHeight;
+                createYearMarkers();
+                updateHandlePosition(2022);
+            }
+            
+            // Create year markers
+            function createYearMarkers() {
+                years.forEach(year => {
+                    const marker = document.createElement('div');
+                    marker.className = 'year-marker';
+                    
+                    // Major markers for decade starts and important years
+                    if (year % 10 === 0 || [2022, 2012, 2006, 1986, 1976].includes(year)) {
+                        marker.classList.add('major');
+                    }
+                    
+                    const position = ((maxYear - year) / yearRange) * 100;
+                    marker.style.top = `${position}%`;
+                    yearMarkers.appendChild(marker);
+                });
+            }
+            
+            // Get year from position
+            function getYearFromPosition(position) {
+                const percentage = position / trackHeight;
+                const year = Math.round(maxYear - (percentage * yearRange));
+                return Math.max(minYear, Math.min(maxYear, year));
+            }
+            
+            // Get position from year
+            function getPositionFromYear(year) {
+                const percentage = (maxYear - year) / yearRange;
+                return percentage * trackHeight;
+            }
+            
+            // Update handle position
+            function updateHandlePosition(year) {
+                const position = getPositionFromYear(year);
+                scrubberHandle.style.top = `${position}px`;
+                scrubberLabel.textContent = year;
+                
+                // Scroll to year section
+                const yearSection = document.getElementById(`year-${year}`);
+                if (yearSection) {
+                    yearSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+            
+            // Handle mouse/touch events
+            function handleStart(e) {
+                isDragging = true;
+                scrubberLabel.classList.add('active');
+                document.body.style.userSelect = 'none';
+                
+                const rect = scrubberTrack.getBoundingClientRect();
+                const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+                const position = clientY - rect.top;
+                const year = getYearFromPosition(position);
+                
+                updateHandlePosition(year);
+            }
+            
+            function handleMove(e) {
+                if (!isDragging) return;
+                
+                e.preventDefault();
+                const rect = scrubberTrack.getBoundingClientRect();
+                const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+                const position = Math.max(0, Math.min(trackHeight, clientY - rect.top));
+                const year = getYearFromPosition(position);
+                
+                updateHandlePosition(year);
+            }
+            
+            function handleEnd() {
+                isDragging = false;
+                scrubberLabel.classList.remove('active');
+                document.body.style.userSelect = '';
+            }
+            
+            // Event listeners
+            scrubberHandle.addEventListener('mousedown', handleStart);
+            scrubberHandle.addEventListener('touchstart', handleStart, { passive: false });
+            
+            document.addEventListener('mousemove', handleMove);
+            document.addEventListener('touchmove', handleMove, { passive: false });
+            
+            document.addEventListener('mouseup', handleEnd);
+            document.addEventListener('touchend', handleEnd);
+            
+            // Click on track to jump
+            scrubberTrack.addEventListener('click', function(e) {
+                if (e.target === scrubberHandle) return;
+                
+                const rect = scrubberTrack.getBoundingClientRect();
+                const position = e.clientY - rect.top;
+                const year = getYearFromPosition(position);
+                
+                updateHandlePosition(year);
+            });
+            
+            // Initialize on load and resize
+            window.addEventListener('load', init);
+            window.addEventListener('resize', function() {
+                setTimeout(init, 100); // Delay to ensure layout is complete
+            });
+            
+            // Intersection Observer to update scrubber based on scroll
+            const observer = new IntersectionObserver(function(entries) {
+                if (isDragging) return; // Don't update if user is dragging
+                
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                        const year = parseInt(entry.target.id.replace('year-', ''));
+                        const position = getPositionFromYear(year);
+                        scrubberHandle.style.top = `${position}px`;
+                        scrubberLabel.textContent = year;
+                    }
+                });
+            }, {
+                threshold: [0.5],
+                rootMargin: '-100px 0px -100px 0px'
+            });
+            
+            // Observe all year sections
+            document.addEventListener('DOMContentLoaded', function() {
+                years.forEach(year => {
+                    const section = document.getElementById(`year-${year}`);
+                    if (section) {
+                        observer.observe(section);
+                    }
+                });
+            });
+            
+        })();
+    </script>
+</body>
+</html>
