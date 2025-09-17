@@ -24,6 +24,31 @@
             background: white !important;
         }
 
+        .tag-filter {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the buttons horizontally */
+            align-items: center; /* Center the buttons vertically if needed */
+        }
+        
+        .tag-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--bs-primary);
+            background: white;
+            color: var(--bs-primary);
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .tag-btn.active,
+        .tag-btn:hover {
+            background: var(--bs-primary);
+            color: white;
+        }
+
         .publications-container {
             position: relative;
             padding-right: 60px; /* Space for scrubber */
@@ -221,6 +246,14 @@
 
     <!-- Main Content -->
     <main class="py-4">
+        <div class="tag-filter">
+            <button class="tag-btn" data-tag="all">All</button>
+            <button class="tag-btn" data-tag="neural networks">Neural Networks</button>
+            <button class="tag-btn" data-tag="products of experts">Products of Experts</button>
+            <button class="tag-btn" data-tag="boltzmann machines">Boltzmann Machines</button>
+        </div>
+
+
         <div class="container publications-container">
             
             <!-- 2022 -->
@@ -229,13 +262,13 @@
                     <h2 class="h3 mb-0">2022</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="neural networks">
                     <div class="publication-authors">Hinton, G. E.</div>
                     <div class="publication-title">The Forward-Forward Algorithm: Some Preliminary Investigations</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/FFXfinal.pdf" class="publication-venue">pdf</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="neural networks">
                     <div class="publication-authors">Chen, T., Zhang, R., & Hinton, G.</div>
                     <div class="publication-title">Analog bits: Generating discrete data using diffusion models with self-conditioning</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/analog.pdf" class="publication-venue">arXiv preprint arXiv:2208.04202</a>
@@ -248,13 +281,13 @@
                     <h2 class="h3 mb-0">2021</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G. E</div>
                     <div class="publication-title">How to represent part-whole hierarchies in a neural network</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/glomfinal.pdf" class="publication-venue">pdf</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Agarwal, R., Melnick, L., Frosst, N., Zhang, X., Lengerich, B., Caruana, R., & Hinton, G. E.</div>
                     <div class="publication-title">Neural additive models:Interpretable machine learning with neural nets</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/NAM.pdf" class="publication-venue">Advances in Neural Information Processing Systems, 34, 4699-4711</a>
@@ -267,13 +300,13 @@
                     <h2 class="h3 mb-0">2020</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Deng, B., Lewis, J. P., Jeruzalski, T., Pons-Moll, G., Hinton, G. E., Norouzi, M., Tagliasacchi, A.</div>
                     <div class="publication-title">Big Self-Supervised Models are Strong Semi-Supervised Learners</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/bigsimclr.pdf" class="publication-venue">34th Conference on Neural Information Processing Systems (NeurIPS 2020)</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Chen, T., Kornblith, S., Norouzi, M., and Hinton, G. E.</div>
                     <div class="publication-title">A Simple Framework for Contrastive Learning of Visual Representations</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/simclr.pdf" class="publication-venue">Proceedings of the 37th International Conference on Machine Learning.
@@ -287,13 +320,13 @@
                     <h2 class="h3 mb-0">2019</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Kosiorek, A. R., Sabour, S., Teh, Y. W. and Hinton, G. E.</div>
                     <div class="publication-title">Stacked Capsule Autoencoders</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/capsules2019.pdf" class="publication-venue">Advances in Neural Information Processing Systems 32</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Zhang, M., Lucas, J., Ba, J., and Hinton, G. E.</div>
                     <div class="publication-title">Lookahead Optimizer: k steps forward, 1 step back</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/lookahead.pdf" class="publication-venue">Advances in Neural Information Processing Systems 32</a>
@@ -306,13 +339,13 @@
                     <h2 class="h3 mb-0">2018</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G. E., Sabour, S. and Frosst, N.</div>
                     <div class="publication-title">Matrix Capsules with EM Routing</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/EMcapsules.pdf" class="publication-venue">ICLR-2018</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Kiros, J. R., Chan, W. and Hinton, G. E.</div>
                     <div class="publication-title">Illustrative Language Understanding: Large-Scale Visual Grounding with Image Search
                     </div>
@@ -326,13 +359,13 @@
                     <h2 class="h3 mb-0">2017</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Sabour, S., Frosst, N. and Hinton, G. E.</div>
                     <div class="publication-title">Dynamic Routing Between Capsules</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf" class="publication-venue">NIPS-2017</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Shazeer, N., Mirhoseini, A., Maziarz, K., Davis, A., Le, Q., Hinton, G., & Dean, J.</div>
                     <div class="publication-title">Outrageously large neural networks: The sparsely-gated mixture-of-experts layer</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/Outrageously.pdf" class="publication-venue">arXiv preprint arXiv:1701.06538 </a>
@@ -345,13 +378,13 @@
                     <h2 class="h3 mb-0">2016</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Ba, J. L., Hinton, G. E., Mnih, V., Leibo, J. Z. and Ionescu, C.</div>
                     <div class="publication-title">Using Fast Weights to Attend to the Recent Past.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/FastWeights.pdf" class="publication-venue">NIPS-2016 arXiv preprint arXiv:1610.06258v2</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Ba, J. L., Kiros, J. R. and Hinton, G. E.</div>
                     <div class="publication-title">Layer normalization.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/LayerNormalization.pdf" class="publication-venue">NIPS-2016 workshop. arXiv preprint arXiv:1607.06450</a>
@@ -364,13 +397,13 @@
                     <h2 class="h3 mb-0">2015</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">LeCun, Y., Bengio, Y. and Hinton, G. E.</div>
                     <div class="publication-title">Deep Learning.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf" class="publication-venue">Nature, Vol. 521, pp 436-444.</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G. E., Vinyals, O., and Dean, J.</div>
                     <div class="publication-title">Distilling the knowledge in a neural network.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/distillation.pdf" class="publication-venue">arXiv preprint arXiv:1503.02531 </a>
@@ -383,13 +416,13 @@
                     <h2 class="h3 mb-0">2014</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R.</div>
                     <div class="publication-title">Dropout: A simple way to prevent neural networks from overfitting</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf">The Journal of Machine Learning Research, 15(1), pp 1929-1958.</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Vinyals, O., Kaiser, L., Koo, T., Petrov, S., Sutskever, I., & Hinton, G. E.</div>
                     <div class="publication-title">Grammar as a foreign language.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/grammar.pdf" class="publication-venue">arXiv preprint arXiv:1412.7449</a>
@@ -402,13 +435,13 @@
                     <h2 class="h3 mb-0">2013</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Srivastava, N., Salakhutdinov, R. R. and Hinton, G. E.</div>
                     <div class="publication-title">Modeling Documents with a Deep Boltzmann Machine</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/.pdf">In Uncertainty in Artificial Intelligence (UAI 2013)</a>
                 </div>
 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Jaitly, N., and Hinton, G. E.</div>
                     <div class="publication-title">Vocal Tract Length Perturbation (VTLP) improves speech recognition.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/perturb.pdf" class="publication-venue">Proc. ICML 2013 Workshop on Deep Learning for Audio,Speech and Language Processing, Atlanta, USA.</a>
@@ -421,7 +454,7 @@
                     <h2 class="h3 mb-0">2012</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Krizhevsky, A., Sutskever, I. and Hinton, G. E.</div>
                     <div class="publication-title">ImageNet Classification with Deep Convolutional Neural Networks</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf" class="publication-venue">Advances in Neural Information Processing 25, MIT Press, Cambridge, MA</a>
@@ -434,7 +467,7 @@
                     <h2 class="h3 mb-0">2011</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Suskever, I., Martens, J. and Hinton, G. E.</div>
                     <div class="publication-title">Generating Text with Recurrent Neural Networks.</div>
                     <a href="http://www.cs.toronto.edu/~ilya/pubs/2011/LANG-RNN.pdf" class="publication-venue">Proc. 28th International Conference on Machine Learning, Seattle.</a>
@@ -447,7 +480,7 @@
                     <h2 class="h3 mb-0">2010</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Memisevic, R., Zach, C., Pollefeys, M. and Hinton, G. E.</div>
                     <div class="publication-title">Gated Softmax Classification.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/gatedsoftmax.pdf" class="publication-venue">Advances in Neural Information Processing 23, MIT Press, Cambridge, MA</a>
@@ -460,7 +493,7 @@
                     <h2 class="h3 mb-0">2000</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G.E.</div>
                     <div class="publication-title">Training Products of Experts by Minimizing Contrastive Divergence</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/tr00-004.pdf" class="publication-venue">Technical Report:  GCNU TR 2000-004</a>
@@ -473,7 +506,7 @@
                     <h2 class="h3 mb-0">1995</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G. E., Revow, M. and Dayan P.</div>
                     <div class="publication-title">Recognizing handwritten digits using mixtures of linear models.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/pancake.pdf" class="publication-venue">Advances in Neural Information Processing Systems 7. G. Tesauro, D. S. Touretzky and T. K. Leen (Eds), pp 1015-1022 MIT Press, Cambridge MA.</a>
@@ -486,7 +519,7 @@
                     <h2 class="h3 mb-0">1990</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Williams, C. K. I. and Hinton, G. E</div>
                     <div class="publication-title">Mean field networks that learn to discriminate temporally distorted strings.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/wh90.pdf" class="publication-venue">Touretzky, D. S., Elman, J. L., Sejnowski, T. J. and Hinton, G. E. (Eds.) Connectionist Models: Proceedings of the 1990 Connectionist Summer School. Morgan Kauffman: San Mateo, CA.</a>
@@ -499,7 +532,7 @@
                     <h2 class="h3 mb-0">1985</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Ackley, D. H., Hinton, G. E., and Sejnowski, T. J.</div>
                     <div class="publication-title">A learning algorithm for Boltzmann machines.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/cogscibm.pdf" class="publication-venue">Cognitive Science, 9, 147-169.</a>
@@ -512,7 +545,7 @@
                     <h2 class="h3 mb-0">1981</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G.E.</div>
                     <div class="publication-title">The role of spatial working memory in shape perception.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/workingmemory81.pdf" class="publication-venue">Proceedings of the Third Annual Conference of the Cognitive Science Society, Berkeley CA.</a>
@@ -525,7 +558,7 @@
                     <h2 class="h3 mb-0">1979</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G.E.</div>
                     <div class="publication-title">Some demonstrations of the effects of structural descriptions in mental imagery.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/cube.pdf" class="publication-venue">Cognitive Science, 3, 231-250.</a>
@@ -538,7 +571,7 @@
                     <h2 class="h3 mb-0">1978</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Sloman, A., Owen, D. Hinton., G., Birch, F. and O'Gorman, F.</div>
                     <div class="publication-title">Representation and control in vision.</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/cube.pdf" class="publication-venue">Proceedings of the A.I.S.B. Summer Conference, Hamburg</a>
@@ -551,7 +584,7 @@
                     <h2 class="h3 mb-0">1976</h2>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-tags="">
                     <div class="publication-authors">Hinton, G.E.</div>
                     <div class="publication-title">Using relaxation to find a puppet</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/puppet.pdf" class="publication-venue">Proceeding of the A.I.S.B. Summer Conference, University of Edinburgh</a>
@@ -573,6 +606,58 @@
     <script>
         (function() {
             'use strict';
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const tagButtons = document.querySelectorAll('.tag-btn');
+                const publications = document.querySelectorAll('.publication-item');
+                let activeTags = new Set(); // Use a Set to store selected tags
+            
+                tagButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const selectedTag = this.getAttribute('data-tag');
+            
+                        // Toggle the tag in the activeTags set
+                        if (selectedTag === 'all') {
+                            // If "All" is clicked, clear all other tags
+                            activeTags.clear();
+                            activeTags.add('all');
+                            tagButtons.forEach(btn => btn.classList.remove('active'));
+                            this.classList.add('active');
+                        } else {
+                            // Remove "All" if other tags are selected
+                            activeTags.delete('all');
+            
+                            if (activeTags.has(selectedTag)) {
+                                activeTags.delete(selectedTag); // Deselect the tag
+                                this.classList.remove('active');
+                            } else {
+                                activeTags.add(selectedTag); // Select the tag
+                                this.classList.add('active');
+                            }
+                        }
+            
+                        // Update publications visibility
+                        updatePublications();
+                    });
+                });
+            
+                function updatePublications() {
+                    // If "All" is selected or no tags are active, show all publications
+                    if (activeTags.has('all') || activeTags.size === 0) {
+                        publications.forEach(publication => {
+                            publication.style.display = 'block';
+                        });
+                        return;
+                    }
+            
+                    // Otherwise, filter publications based on active tags
+                    publications.forEach(publication => {
+                        const tags = publication.getAttribute('data-tags').split(',').map(tag => tag.trim());
+                        const matches = Array.from(activeTags).some(tag => tags.includes(tag));
+                        publication.style.display = matches ? 'block' : 'none';
+                    });
+                }
+            });
             
             // TODO: Replace years constant with generator and extend()
             const years = [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2000, 1995, 1990, 1986, 1981, 1979, 1978, 1976];
