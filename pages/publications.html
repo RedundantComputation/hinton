@@ -247,10 +247,24 @@
     <!-- Main Content -->
     <main class="py-4">
         <div class="tag-filter">
-            <button class="tag-btn" data-tag="all">All</button>
             <button class="tag-btn" data-tag="neural networks">Neural Networks</button>
             <button class="tag-btn" data-tag="products of experts">Products of Experts</button>
             <button class="tag-btn" data-tag="boltzmann machines">Boltzmann Machines</button>
+            <button class="tag-btn" data-tag="shape recognition">Shape Recognition</button>
+            <button class="tag-btn" data-tag="review papers">Review Papers</button>
+            <button class="tag-btn" data-tag="backpropagation">Backpropagation</button>
+            <button class="tag-btn" data-tag="speech">Speech</button>
+            <button class="tag-btn" data-tag="evolution">Evolution</button>
+            <button class="tag-btn" data-tag="mixture of experts">Mixture of Experts</button>
+            <button class="tag-btn" data-tag="distributed representations">Distributed Representations</button>
+            <button class="tag-btn" data-tag="motor control">Motor Control</button>
+            <button class="tag-btn" data-tag="helmholtz machines">Helmholtz Machines</button>
+            <button class="tag-btn" data-tag="brain damage">Brain Damage</button>
+            <button class="tag-btn" data-tag="mental imagery">Mental Imagery</button>
+            <button class="tag-btn" data-tag="neural belief nets">Neural Belief Nets</button>
+            <button class="tag-btn" data-tag="other nn learning algorithms">Other NN Learning Algorithms</button>
+            <button class="tag-btn" data-tag="tropical archaeoastronomy">Tropical Archaeoastronomy</button>
+            <button class="tag-btn" data-tag="oddities">Other Oddities</button>
         </div>
 
 
@@ -487,16 +501,49 @@
                 </div>
             </div>
 
+            <!-- 2002 -->
+            <div class="year-section" id="year-2002">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">2002</h2>
+                </div>
+                
+                <div class="publication-item" data-tags="products of experts">
+                    <div class="publication-authors">Mayraz, G. and Hinton, G. E.</div>
+                    <div class="publication-title">Recognizing Handwritten Digits using Hierarchical Products of Experts</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/guypami.pdf" class="publication-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence, 24, pp 189-197</a>
+                </div>
+            </div>
+
             <!-- 2000 -->
             <div class="year-section" id="year-2000">
                 <div class="year-header">
                     <h2 class="h3 mb-0">2000</h2>
                 </div>
+
+                <div class="publication-item" data-tags="products of experts">
+                    <div class="publication-authors">Brown, A. and Hinton, G. E.</div>
+                    <div class="publication-title">Products of Hidden Markov Models</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/tr00-008.pdf" class="publication-venue">Technical Report: GCNU TR 2000-008
+                    </a>
+                </div>
                 
-                <div class="publication-item" data-tags="">
+                <div class="publication-item" data-tags="products of experts">
                     <div class="publication-authors">Hinton, G.E.</div>
                     <div class="publication-title">Training Products of Experts by Minimizing Contrastive Divergence</div>
                     <a href="https://www.cs.toronto.edu/~hinton/absps/tr00-004.pdf" class="publication-venue">Technical Report:  GCNU TR 2000-004</a>
+                </div>
+            </div>
+
+            <!-- 1999 -->
+            <div class="year-section" id="year-1999">
+                <div class="year-header">
+                    <h2 class="h3 mb-0">1999</h2>
+                </div>
+                
+                <div class="publication-item" data-tags="">
+                    <div class="publication-authors">Hinton, G. E..</div>
+                    <div class="publication-title">Training products of experts by maximizing contrastive likelihood</div>
+                    <a href="https://www.cs.toronto.edu/~hinton/absps/tr00-004.pdf" class="publication-venue">Technical Report:  GCNU TR 1999-001</a>
                 </div>
             </div>
 
@@ -617,23 +664,12 @@
                         const selectedTag = this.getAttribute('data-tag');
             
                         // Toggle the tag in the activeTags set
-                        if (selectedTag === 'all') {
-                            // If "All" is clicked, clear all other tags
-                            activeTags.clear();
-                            activeTags.add('all');
-                            tagButtons.forEach(btn => btn.classList.remove('active'));
-                            this.classList.add('active');
+                        if (activeTags.has(selectedTag)) {
+                            activeTags.delete(selectedTag); // Deselect the tag
+                            this.classList.remove('active');
                         } else {
-                            // Remove "All" if other tags are selected
-                            activeTags.delete('all');
-            
-                            if (activeTags.has(selectedTag)) {
-                                activeTags.delete(selectedTag); // Deselect the tag
-                                this.classList.remove('active');
-                            } else {
-                                activeTags.add(selectedTag); // Select the tag
-                                this.classList.add('active');
-                            }
+                            activeTags.add(selectedTag); // Select the tag
+                            this.classList.add('active');
                         }
             
                         // Update publications visibility
@@ -642,8 +678,8 @@
                 });
             
                 function updatePublications() {
-                    // If "All" is selected or no tags are active, show all publications
-                    if (activeTags.has('all') || activeTags.size === 0) {
+                    // If no tags are active, show all publications
+                    if (activeTags.size === 0) {
                         publications.forEach(publication => {
                             publication.style.display = 'block';
                         });
