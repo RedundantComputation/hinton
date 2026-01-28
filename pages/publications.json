@@ -1,0 +1,2427 @@
+{
+  "2022": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "The Forward-Forward Algorithm: Some Preliminary Investigations",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/FFXfinal.pdf",
+      "venue": "pdf",
+      "tags": [
+        "Other NN learning algorithms"
+      ]
+    },
+    {
+      "authors": "Chen, T., Zhang, R., & Hinton, G.",
+      "title": "Analog bits: Generating discrete data using diffusion models with self-conditioning",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/analog.pdf",
+      "venue": "arXiv preprint arXiv:2208.04202",
+      "tags": []
+    },
+    {
+      "authors": "Ren, M., Kornblith, S., Liao, R., & Hinton, G.",
+      "title": "Scaling Forward Gradient With Local Losses",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/forwardgradient.pdf",
+      "venue": "arXiv preprint arXiv:2210.03310",
+      "tags": []
+    },
+    {
+      "authors": "Chen, T., Saxena, S., Li, L., Lin, T. Y., Fleet, D. J., & Hinton, G.",
+      "title": "A unified sequence interface for vision tasks",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/unifiedinterface.pdf",
+      "venue": "arXiv preprint arXiv:2206.07669",
+      "tags": []
+    },
+    {
+      "authors": "Chen, T., Li, L., Saxena, S., Hinton, G., & Fleet, D. J.",
+      "title": "A generalist framework for panoptic segmentation of images and videos",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/panoptic.pdf",
+      "venue": "arXiv preprint arXiv:2210.06366",
+      "tags": []
+    },
+    {
+      "authors": "Liao, R., Kornblith, S., Ren, M., Fleet, D. J., & Hinton, G.",
+      "title": "Gaussian-Bernoulli RBMs Without Tears",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/GBRBM.pdf",
+      "venue": "arXiv preprint arXiv:2210.10318",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Culp, L., Sabour, S., & Hinton, G. E.",
+      "title": "Testing GLOM's ability to infer wholes from ambiguous parts",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/glomculp.pdf",
+      "venue": "arXiv preprint arXiv:2211.16564",
+      "tags": []
+    }
+  ],
+  "2021": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "How to represent part-whole hierarchies in a neural network",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/glomfinal.pdf",
+      "venue": "pdf",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Agarwal, R., Melnick, L., Frosst, N., Zhang, X., Lengerich, B., Caruana, R., & Hinton, G. E.",
+      "title": "Neural additive models: Interpretable machine learning with neural nets",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/NAM.pdf",
+      "venue": "Advances in Neural Information Processing Systems, 34, 4699-4711",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Bengio, Y., Lecun, Y., & Hinton, G.",
+      "title": "Deep learning for AI",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/ACM21.pdf",
+      "venue": "Communications of the ACM, 64(7), 58-65",
+      "tags": [
+        "Review Papers"
+      ]
+    },
+    {
+      "authors": "Sun, W., Tagliasacchi, A., Deng, B., Sabour, S., Yazdani, S., Hinton, G. E., Yi, K. M.",
+      "title": "Canonical Capsules: Unsupervised Capsules in Canonical Pose",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/canonicalcapsules.pdf",
+      "venue": "arXiv preprint arXiv:2012.04718",
+      "tags": []
+    },
+    {
+      "authors": "Sabour, S., Tagliasacchi, A., Yazdani, S., Hinton, G. E., Fleet, D. J.",
+      "title": "Unsupervised part representation by Flow Capsules",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/flowcaps.pdf",
+      "venue": "arXiv preprint arXiv:2011.13920",
+      "tags": []
+    }
+  ],
+  "2020": [
+    {
+      "authors": "Deng, B., Lewis, J. P., Jeruzalski, T., Pons-Moll, G., Hinton, G. E., Norouzi, M., Tagliasacchi, A.",
+      "title": "NASA: Neural Articulated Shape Approximation",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/NASA.pdf",
+      "venue": "ECCV",
+      "tags": []
+    },
+    {
+      "authors": "M\u00fcller, R., Kornblith, S., Hinton, G. E.",
+      "title": "Subclass distillation",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/subclassdistillation.pdf",
+      "venue": "arXiv preprint arXiv:2002.03936",
+      "tags": []
+    },
+    {
+      "authors": "Chen, T., Kornblith, S., Swersky, K., Norouzi, M., and Hinton, G. E.",
+      "title": "Big Self-Supervised Models are Strong Semi-Supervised Learners",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/bigsimclr.pdf",
+      "venue": "34th Conference on Neural Information Processing Systems (NeurIPS 2020)",
+      "tags": []
+    },
+    {
+      "authors": "Chen, T., Kornblith, S., Norouzi, M., and Hinton, G. E.",
+      "title": "A Simple Framework for Contrastive Learning of Visual Representations",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/simclr.pdf",
+      "venue": "Proceedings of the 37th International Conference on Machine Learning",
+      "tags": []
+    },
+    {
+      "authors": "Lillicrap, T. P., Santoro, A., Marris, C. J,. Akerman, C., and Hinton, G. E.",
+      "title": "Backpropagation and the Brain",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/backpropandbrain.pdf",
+      "venue": "Nature Reviews Neuroscience volume 21, pp 335--346",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Qin, Y., Frosst, N., Sabour, S., Raffel, C., Cottrell, C. and Hinton, G.",
+      "title": "Detecting and Diagnosing Adversarial Images with Class-Conditional Capsule Reconstructions",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/adversarialrecons.pdf",
+      "venue": "ICLR-2020",
+      "tags": []
+    }
+  ],
+  "2019": [
+    {
+      "authors": "Kosiorek, A. R., Sabour, S., Teh, Y. W. and Hinton, G. E.",
+      "title": "Stacked Capsule Autoencoders",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/capsules2019.pdf",
+      "venue": "Advances in Neural Information Processing Systems 32",
+      "tags": []
+    },
+    {
+      "authors": "Zhang, M., Lucas, J., Ba, J., and Hinton, G. E.",
+      "title": "Lookahead Optimizer: k steps forward, 1 step back",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/lookahead.pdf",
+      "venue": "Advances in Neural Information Processing Systems 32",
+      "tags": []
+    },
+    {
+      "authors": "M\u00fcller, R., Kornblith, S. and Hinton G.",
+      "title": "When Does Label Smoothing Help?",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/smoothing.pdf",
+      "venue": "Advances in Neural Information Processing Systems 32",
+      "tags": []
+    },
+    {
+      "authors": "Deng, B., Kornblith, S. and Hinton, G.",
+      "title": "Cerberus: A multi-headed derenderer",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/cerberus.pdf",
+      "venue": "3D Scene Understanding Workshop, CVPR 2019",
+      "tags": []
+    },
+    {
+      "authors": "Deng, B., Genova, K., Yazdani, S., Bouaziz, S., Hinton, G. and Tagliasacchi, A.",
+      "title": "Cvxnet: Learnable convex decomposition",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/cvxnet.pdf",
+      "venue": "Perception as Generative Reasoning Workshop, NeurIPS 2019",
+      "tags": []
+    },
+    {
+      "authors": "Kornblith, S., Norouzi, M., Lee, H. and Hinton, G.",
+      "title": "Similarity of neural network representations revisited",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/similarity.pdf",
+      "venue": "ICML-2019",
+      "tags": [
+        "Neural Networks"
+      ]
+    }
+  ],
+  "2018": [
+    {
+      "authors": "Hinton, G. E., Sabour, S. and Frosst, N.",
+      "title": "Matrix Capsules with EM Routing",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/EMcapsules.pdf",
+      "venue": "ICLR-2018",
+      "tags": []
+    },
+    {
+      "authors": "Kiros, J. R., Chan, W. and Hinton, G. E.",
+      "title": "Illustrative Language Understanding: Large-Scale Visual Grounding with Image Search",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/picturebook.pdf",
+      "venue": "ACL-2018",
+      "tags": []
+    },
+    {
+      "authors": "Anil, R., Pereyra, G., Passos, A., Ormandi, R., Dahl, G. and Hinton, G. E.",
+      "title": "Large scale distributed neural network training through online distillation",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/OnlineDistillation.pdf",
+      "venue": "ICLR-2018",
+      "tags": []
+    },
+    {
+      "authors": "Guan, M. Y., Gulshan, V., Dai, A. M. and Hinton, G. E.",
+      "title": "Who Said What: Modeling Individual Labelers Improves Classification",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/WhoSaidWhat.pdf",
+      "venue": "AAAI-2018",
+      "tags": []
+    }
+  ],
+  "2017": [
+    {
+      "authors": "Sabour, S., Frosst, N. and Hinton, G. E.",
+      "title": "Dynamic Routing between Capsules",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf",
+      "venue": "NIPS-2017",
+      "tags": []
+    },
+    {
+      "authors": "Shazeer, N., Mirhoseini, A., Maziarz, K., Davis, A., Le, Q., Hinton, G., & Dean, J.",
+      "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/Outrageously.pdf",
+      "venue": "arXiv preprint arXiv:1701.06538",
+      "tags": [
+        "Mixture of Experts"
+      ]
+    },
+    {
+      "authors": "Frosst, N. and Hinton, G. E.",
+      "title": "Distilling a Neural Network Into a Soft Decision Tree",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/DistillTree.pdf",
+      "venue": "arXiv preprint arXiv:1711.09784",
+      "tags": []
+    },
+    {
+      "authors": "Pereyra, G., Tucker, T., Chorowski, J., Kaiser, L. and Hinton, G. E.",
+      "title": "Regularizing neural networks by penalizing confident output distributions",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/ConfidencePenalty.pdf",
+      "venue": "arXiv preprint arXiv:1701.06548",
+      "tags": []
+    }
+  ],
+  "2016": [
+    {
+      "authors": "Ba, J. L., Hinton, G. E., Mnih, V., Leibo, J. Z. and Ionescu, C.",
+      "title": "Using Fast Weights to Attend to the Recent Past",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/FastWeights.pdf",
+      "venue": "NIPS-2016 arXiv preprint arXiv:1610.06258v2",
+      "tags": []
+    },
+    {
+      "authors": "Ba, J. L., Kiros, J. R. and Hinton, G. E.",
+      "title": "Layer normalization",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/LayerNormalization.pdf",
+      "venue": "NIPS-2016 workshop. arXiv preprint arXiv:1607.06450",
+      "tags": []
+    },
+    {
+      "authors": "Ali Eslami, S. M., Nicolas Heess, N., Theophane Weber, T., Tassa, Y., Szepesvari, D., Kavukcuoglu, K. and Hinton, G. E.",
+      "title": "Attend, Infer, Repeat: Fast Scene Understanding with Generative Models",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/AttendInferRepeat.pdf",
+      "venue": "NIPS-2016 arXiv preprint arXiv:1603.08575v3",
+      "tags": []
+    }
+  ],
+  "2015": [
+    {
+      "authors": "LeCun, Y., Bengio, Y. and Hinton, G. E.",
+      "title": "Deep Learning",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf",
+      "venue": "Nature, Vol. 521, pp 436-444",
+      "tags": [
+        "Review Papers"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Vinyals, O., and Dean, J.",
+      "title": "Distilling the knowledge in a neural network",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/distillation.pdf",
+      "venue": "arXiv preprint arXiv:1503.02531",
+      "tags": []
+    }
+  ],
+  "2014": [
+    {
+      "authors": "Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R.",
+      "title": "Dropout: A simple way to prevent neural networks from overfitting",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf",
+      "venue": "The Journal of Machine Learning Research, 15(1), pp 1929-1958",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Vinyals, O., Kaiser, L., Koo, T., Petrov, S., Sutskever, I., & Hinton, G. E.",
+      "title": "Grammar as a foreign language",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/grammar.pdf",
+      "venue": "arXiv preprint arXiv:1412.7449",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Where do features come from?",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/cogsci14.pdf",
+      "venue": "Cognitive Science, Vol. 38(6), pp 1078-1101",
+      "tags": []
+    },
+    {
+      "authors": "Sarikaya, R., Hinton, G. E. and Deoras, A.",
+      "title": "Application of Deep Belief Networks for Natural Language Understanding",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/ruhijournal.pdf",
+      "venue": "IEEE Transactions on Audio, Speech and Language Processing",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Jaitly, N., Vanhoucke, V. and Hinton, G. E.",
+      "title": "Autoregressive product of multi-frame predictions can improve the accuracy of hybrid models",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/multiframe.pdf",
+      "venue": "Fifteenth Annual Conference of the International Speech Communication Association",
+      "tags": [
+        "Speech"
+      ]
+    }
+  ],
+  "2013": [
+    {
+      "authors": "Srivastava, N., Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "Modeling Documents with a Deep Boltzmann Machine",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/.pdf",
+      "venue": "Uncertainty in Artificial Intelligence (UAI 2013)",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Jaitly, N., and Hinton, G. E.",
+      "title": "Vocal Tract Length Perturbation (VTLP) improves speech recognition",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/perturb.pdf",
+      "venue": "Proc. ICML 2013 Workshop on Deep Learning for Audio, Speech and Language Processing",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Graves, A., Mohamed, A. and Hinton, G. E.",
+      "title": "Speech Recognition with Deep Recurrent Neural Networks",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/RNN13.pdf",
+      "venue": "IEEE International Conference on Acoustic Speech and Signal Processing (ICASSP 2013)",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Dahl, G. E., Sainath, T. N. and Hinton, G. E.",
+      "title": "Improving Deep Neural Networks for LVCSR Using Rectified Linear Units and Dropout",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/georgerectified.pdf",
+      "venue": "IEEE International Conference on Acoustic Speech and Signal Processing (ICASSP 2013)",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "M.D. Zeiler, M. Ranzato, R. Monga, M. Mao, K. Yang, Q.V. Le, P. Nguyen, A. Senior, V. Vanhoucke, J. Dean, G. Hinton",
+      "title": "On Rectified Linear Units for Speech Processing",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/googlerectified.pdf",
+      "venue": "IEEE International Conference on Acoustic Speech and Signal Processing (ICASSP 2013)",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Deng, L., Hinton, G. E. and Kingsbury, B.",
+      "title": "New types of deep neural network learning for speech recognition and related applications: An overview",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/overview13.pdf",
+      "venue": "IEEE International Conference on Acoustic Speech and Signal Processing (ICASSP 2013)",
+      "tags": [
+        "Speech",
+        "Review Papers"
+      ]
+    },
+    {
+      "authors": "Ranzato, M., Mnih, V., Susskind, J. and Hinton, G. E.",
+      "title": "Modeling Natural Images Using Gated MRFs",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/ranzato_pami13.pdf",
+      "venue": "IEEE Trans. Pattern Analysis and Machine Intelligence, Vol 35(9), pp 2206-2222",
+      "tags": []
+    },
+    {
+      "authors": "Sutskever, I., Martens, J., Dahl, G. and Hinton, G. E.",
+      "title": "On the importance of momentum and initialization in deep learning",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/momentum.pdf",
+      "venue": "30th International Conference on Machine Learning, Atlanta, USA",
+      "tags": []
+    },
+    {
+      "authors": "Tang, Y., Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "Tensor Analyzers",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/ta.pdf",
+      "venue": "30th International Conference on Machine Learning, Atlanta, USA",
+      "tags": []
+    }
+  ],
+  "2012": [
+    {
+      "authors": "Krizhevsky, A., Sutskever, I. and Hinton, G. E.",
+      "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf",
+      "venue": "Advances in Neural Information Processing 25, MIT Press, Cambridge, MA",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "A Better Way to Pretrain Deep Boltzmann Machines",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/DBM_pretrain.pdf",
+      "venue": "Advances in Neural Information Processing 25, MIT Press, Cambridge, MA",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. R.",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/dropout.pdf",
+      "venue": "arXiv:1207.0580",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Geoffrey Hinton, Li Deng, Dong Yu, George Dahl, Abdel-rahman Mohamed, Navdeep Jaitly, Andrew Senior, Vincent Vanhoucke, Patrick Nguyen, Tara Sainath, and Brian Kingsbury",
+      "title": "Deep Neural Networks for Acoustic Modeling in Speech Recognition",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/DNN-2012-proof.pdf",
+      "venue": "IEEE Signal Processing Magazine, November 2012",
+      "tags": [
+        "Speech",
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "An Efficient Learning Procedure for Deep Boltzmann Machines",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/efficientDBM.pdf",
+      "venue": "Neural Computation",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Tang, Y., Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "Deep Lambertian Networks",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/dln.pdf",
+      "venue": "International Conference on Machine Learning",
+      "tags": []
+    },
+    {
+      "authors": "Mnih, V. and Hinton, G. E.",
+      "title": "Learning to Label Aerial Images from Noisy Data",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/noisy_maps.pdf",
+      "venue": "International Conference on Machine Learning",
+      "tags": []
+    },
+    {
+      "authors": "Tang, Y., Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "Deep Mixtures of Factor Analysers",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/deep_mfa.pdf",
+      "venue": "International Conference on Machine Learning",
+      "tags": []
+    },
+    {
+      "authors": "Tang, Y., Salakhutdinov, R. R. and Hinton, G. E.",
+      "title": "Robust Boltzmann Machines for Recognition and Denoising",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/robm.pdf",
+      "venue": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Mohamed, A., Hinton, G. E. and Penn, G.",
+      "title": "Understanding how Deep Belief Networks perform acoustic modelling",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/icassp12_dbn.pdf",
+      "venue": "ICASSP 2012, Kyoto",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "van der Maaten, L., and Hinton, G. E.",
+      "title": "Visualizing non-metric similarities in multiple maps",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/multimaps.pdf",
+      "venue": "Machine Learning, Vol. 86",
+      "tags": []
+    },
+    {
+      "authors": "Mohamed, A., Dahl, G. E. and Hinton, G. E.",
+      "title": "Acoustic Modeling using Deep Belief Networks",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/speechDBN_jrnl.pdf",
+      "venue": "IEEE Trans. on Audio, Speech, and Language Processing",
+      "tags": [
+        "Speech"
+      ]
+    }
+  ],
+  "2011": [
+    {
+      "authors": "Suskever, I., Martens, J. and Hinton, G. E.",
+      "title": "Generating Text with Recurrent Neural Networks",
+      "href": "http://www.cs.toronto.edu/~ilya/pubs/2011/LANG-RNN.pdf",
+      "venue": "Proc. 28th International Conference on Machine Learning, Seattle",
+      "tags": []
+    },
+    {
+      "authors": "Jaitly, N. and Hinton, G.",
+      "title": "A new way to learn acoustic events",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/capsules_speech.pdf",
+      "venue": "Advances in Neural Information Processing Systems 24, Deep Learning workshop",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Mnih, V., Larochelle, H. and Hinton, G.",
+      "title": "Conditional Restricted Boltzmann Machines for Structured Output Prediction",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/uai_crbms.pdf",
+      "venue": "Proc. Uncertainty in Artificial Intelligence",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Ranzato, M., Susskind, J., Mnih, V. and Hinton, G.",
+      "title": "On deep generative models with applications to recognition",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/ranzato_cvpr2011.pdf",
+      "venue": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "tags": []
+    },
+    {
+      "authors": "Susskind, J., Memisevic, R., Hinton, G. and Pollefeys, M.",
+      "title": "Modeling the joint density of two images under a variety of transformations",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/morphBM.pdf",
+      "venue": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E., Krizhevsky, A. and Wang, S.",
+      "title": "Transforming Auto-encoders",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/transauto6.pdf",
+      "venue": "ICANN-11: International Conference on Artificial Neural Networks, Helsinki",
+      "tags": []
+    },
+    {
+      "authors": "Krizhevsky, A. and Hinton, G.E.",
+      "title": "Using Very Deep Autoencoders for Content-Based Image Retrieval",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/esann-deep-final.pdf",
+      "venue": "European Symposium on Artificial Neural Networks ESANN-2011",
+      "tags": []
+    },
+    {
+      "authors": "Jaitly, N. and Hinton, G. E.",
+      "title": "Learning a better Representation of Speech Sound Waves using Restricted Boltzmann Machines",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/jaitly_ICASSP2011.pdf",
+      "venue": "ICASSP-2011",
+      "tags": [
+        "Speech",
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Mohamed, A., Sainath, T., Dahl, G. E., Ramabhadran, B., Hinton, G. and Picheny, M.",
+      "title": "Deep Belief Networks using Discriminative Features for Phone Recognition",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/speechDBNdiscrim.pdf",
+      "venue": "ICASSP-2011",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Sarikaya, R. and Hinton, G.",
+      "title": "Deep Belief Nets for Natural Language Call-Routing",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/callrouting.pdf",
+      "venue": "ICASSP-2011",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and Salakhutdinov, R.",
+      "title": "Discovering Binary Codes for Fast Document Retrieval by Learning Deep Generative Models",
+      "href": "https://www.cs.toronto.edu/~hinton/absps/topicshashing.pdf",
+      "venue": "Topics in Cognitive Science, Vol 3, pp 74-91",
+      "tags": []
+    }
+  ],
+  "2010": [
+    {
+      "authors": "Memisevic, R., Zach, C., Pollefeys, M. and Hinton, G. E.",
+      "title": "Gated Softmax Classification",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing 23, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Ranzato, M., Mnih, V. and Hinton, G. E.",
+      "title": "Generating more realistic images using gated MRF's",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing 23, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Dahl, G. E., Ranzato, M., Mohamed, A. and Hinton, G. E.",
+      "title": "Phone Recognition with the Mean-Covariance Restricted Boltzmann Machine",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing 23, MIT Press",
+      "tags": [
+        "Speech",
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Larochelle, H. and Hinton, G. E.",
+      "title": "Learning to combine foveal glimpses with a third-order Boltzmann machine",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing 23, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Deng, L., Seltzer, M., Yu, D., Acero, A., Mohamed A. and Hinton, G.",
+      "title": "Binary Coding of Speech Spectrograms Using a Deep Auto-encoder",
+      "href": "[PDF_URL]",
+      "venue": "Interspeech 2010",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Memisevic, R. and Hinton, G. E.",
+      "title": "Learning to represent spatial transformations with factored higher-order Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, Vol 22, pp 1473-1492",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Nair, V. and Hinton, G. E.",
+      "title": "Rectified linear units improve restricted Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "Proc. 27th International Conference on Machine Learning",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Learning to represent visual input",
+      "href": "[PDF_URL]",
+      "venue": "Philosophical Transactions of the Royal Society, B. Vol 365, pp 177-184",
+      "tags": []
+    },
+    {
+      "authors": "Mnih, V. and Hinton, G. E.",
+      "title": "Learning to detect roads in high-resolution aerial images",
+      "href": "[PDF_URL]",
+      "venue": "European Conference on Computer Vision",
+      "tags": []
+    },
+    {
+      "authors": "Sutskever, I. and Hinton, G. E.",
+      "title": "Temporal Kernel Recurrent Neural Networks",
+      "href": "[PDF_URL]",
+      "venue": "Neural Networks, Vol 23, pp 239-243",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Ranzato, M. and Hinton, G. E.",
+      "title": "Modeling pixel means and covariances using factored third-order Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Taylor, G., Sigal, L., Fleet, D. and Hinton, G. E.",
+      "title": "Dynamic binary latent variable models for 3D human pose tracking",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "tags": []
+    },
+    {
+      "authors": "Ranzato, M., Krizhevsky, A. and Hinton, G. E.",
+      "title": "Factored 3-way restricted Boltzmann machines for modeling natural images",
+      "href": "[PDF_URL]",
+      "venue": "Proc. Thirteenth International Conference on Artificial Intelligence and Statistics",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Mohamed, A. and Hinton, G. E.",
+      "title": "Phone Recognition using Restricted Boltzmann Machines",
+      "href": "[PDF_URL]",
+      "venue": "ICASSP-10, Texas",
+      "tags": [
+        "Speech",
+        "Boltzmann Machines"
+      ]
+    }
+  ],
+  "2009": [
+    {
+      "authors": "Mohamed, A. R., Dahl, G. E. and Hinton, G. E.",
+      "title": "Deep belief networks for phone recognition",
+      "href": "[PDF_URL]",
+      "venue": "NIPS 22 workshop on deep learning for speech recognition",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Salakhutdinov, R. and Hinton, G. E.",
+      "title": "Replicated Softmax: An Undirected Topic Model",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 22",
+      "tags": []
+    },
+    {
+      "authors": "Nair, V. and Hinton, G. E.",
+      "title": "3-D Object recognition with deep belief nets",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 22",
+      "tags": []
+    },
+    {
+      "authors": "Palatucci, M, Pomerleau, D. A., Hinton, G. E. and Mitchell, T.",
+      "title": "Zero-Shot Learning with Semantic Output Codes",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 22",
+      "tags": []
+    },
+    {
+      "authors": "Heess, N., Williams, C. K. I. and Hinton, G. E.",
+      "title": "Learning generative texture models with extended Fields-of-Experts",
+      "href": "[PDF_URL]",
+      "venue": "Proc. British Machine Vision Conf.",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Taylor, G. W. and Hinton, G. E.",
+      "title": "Products of Hidden Markov Models: It Takes N>1 to Tango",
+      "href": "[PDF_URL]",
+      "venue": "Proc. of the 25th Conference on Uncertainty in Artificial Intelligence",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Taylor, G. W. and Hinton, G. E.",
+      "title": "Factored Conditional Restricted Boltzmann Machines for Modeling Motion Style",
+      "href": "[PDF_URL]",
+      "venue": "Proc. 26th International Conference on Machine Learning",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Tieleman, T. and Hinton, G. E.",
+      "title": "Using Fast Weights to Improve Persistent Contrastive Divergence",
+      "href": "[PDF_URL]",
+      "venue": "Proc. 26th International Conference on Machine Learning",
+      "tags": []
+    },
+    {
+      "authors": "Zeiler, M.D., Taylor, G.W., Troje, N.F. and Hinton, G. E.",
+      "title": "Modeling pigeon behaviour using a Conditional Restricted Boltzmann Machine",
+      "href": "[PDF_URL]",
+      "venue": "European Symposium on Artificial Neural Networks ESANN-2009",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Salakhutdinov, R. and Hinton, G. E.",
+      "title": "Deep Boltzmann Machines",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Intelligence and Statistics 2009",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Mnih, A. and Hinton, G. E.",
+      "title": "A Scalable Hierarchical Distributed Language Model",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 21, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Nair, V. and Hinton, G. E.",
+      "title": "Implicit Mixtures of Restricted Boltzmann Machines",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 21, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Sutskever, I. and Hinton, G. E.",
+      "title": "Using matrices to model symbolic relationships",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 21, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Sutskever, I., Hinton, G. E. and Taylor, G. W.",
+      "title": "The Recurrent Temporal Restricted Boltzmann Machine",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 21, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Schmah, T., Hinton, G. E., Zemel, R., Small, S. and Strother, S.",
+      "title": "Generative versus Discriminative Training of RBM's for classification of fMRI images",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 21, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    }
+  ],
+  "2008": [
+    {
+      "authors": "van der Maaten, L. J. P. and Hinton, G. E.",
+      "title": "Visualizing Data using t-SNE",
+      "href": "[PDF_URL]",
+      "venue": "Journal of Machine Learning Research, Vol 9, pp 2579-2605",
+      "tags": []
+    },
+    {
+      "authors": "Susskind, J.M., Hinton, G. E., Movellan, J.R., and Anderson, A.K.",
+      "title": "Generating Facial Expressions with Deep Belief Nets",
+      "href": "[PDF_URL]",
+      "venue": "Affective Computing, Emotion Modelling, Synthesis and Recognition. ARS Publishers",
+      "tags": []
+    },
+    {
+      "authors": "Nair, V., Susskind, J., and Hinton, G.E.",
+      "title": "Analysis-by-Synthesis by Learning to Invert Generative Black Boxes",
+      "href": "[PDF_URL]",
+      "venue": "ICANN-08: International conference on Artificial Neural Networks, Prague",
+      "tags": []
+    },
+    {
+      "authors": "Yuecheng, Z., Mnih, A., and Hinton, G. E.",
+      "title": "Improving a statistical language model by modulating the effects of context words",
+      "href": "[PDF_URL]",
+      "venue": "16th European Symposium on Artificial Neural Networks",
+      "tags": []
+    },
+    {
+      "authors": "Sutskever, I. and Hinton, G. E.",
+      "title": "Deep Narrow Sigmoid Belief Networks are Universal Approximators",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, Vol 20, pp 2629-2636",
+      "tags": [
+        "Neural Belief Nets"
+      ]
+    },
+    {
+      "authors": "Osindero, S. and Hinton, G. E.",
+      "title": "Modeling image patches with a directed hierarchy of Markov random fields",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 20",
+      "tags": []
+    },
+    {
+      "authors": "Salakhutdinov, R. and Hinton, G. E.",
+      "title": "Using Deep Belief Nets to Learn Covariance Kernels for Gaussian Processes",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 20",
+      "tags": []
+    }
+  ],
+  "2007": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Learning multiple layers of representation",
+      "href": "[PDF_URL]",
+      "venue": "Trends in Cognitive Sciences, Vol. 11, pp 428-434",
+      "tags": [
+        "Review Papers"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "To recognize shapes, first learn to generate images",
+      "href": "[PDF_URL]",
+      "venue": "Computational Neuroscience: Theoretical Insights into Brain Function. Elsevier",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Boltzmann machine",
+      "href": "[PDF_URL]",
+      "venue": "Scholarpedia, 2(5):1668",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Salakhutdinov R. R, Mnih, A. and Hinton, G. E.",
+      "title": "Restricted Boltzmann Machines for Collaborative Filtering",
+      "href": "[PDF_URL]",
+      "venue": "International Conference on Machine Learning, Corvallis, Oregon",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Mnih, A. and Hinton, G. E.",
+      "title": "Three New Graphical Models for Statistical Language Modelling",
+      "href": "[PDF_URL]",
+      "venue": "International Conference on Machine Learning, Corvallis, Oregon",
+      "tags": []
+    },
+    {
+      "authors": "Salakhutdinov R. R, and Hinton, G. E.",
+      "title": "Semantic Hashing",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the SIGIR Workshop on Information Retrieval and Applications of Graphical Models",
+      "tags": []
+    },
+    {
+      "authors": "Memisevic, R. and Hinton, G. E.",
+      "title": "Unsupervised learning of image transformations",
+      "href": "[PDF_URL]",
+      "venue": "Computer Vision and Pattern Recognition (CVPR-07)",
+      "tags": []
+    },
+    {
+      "authors": "Salakhutdinov R. R, and Hinton, G. E.",
+      "title": "Learning a non-linear embedding by preserving class neighbourhood structure",
+      "href": "[PDF_URL]",
+      "venue": "AI and Statistics, 2007, Puerto Rico",
+      "tags": []
+    },
+    {
+      "authors": "Sutskever, I. and Hinton, G. E.",
+      "title": "Learning Multilevel Distributed Representations for High-dimensional Sequences",
+      "href": "[PDF_URL]",
+      "venue": "AI and Statistics, 2007, Puerto Rico",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Cook, J. A., Sutskever, I., Mnih, A. and Hinton, G. E.",
+      "title": "Visualizing similarity data with a mixture of maps",
+      "href": "[PDF_URL]",
+      "venue": "AI and Statistics, 2007, Puerto Rico",
+      "tags": []
+    },
+    {
+      "authors": "Taylor, G. W., Hinton, G. E. and Roweis, S.",
+      "title": "Modeling human motion using binary latent variables",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 19, MIT Press",
+      "tags": []
+    }
+  ],
+  "2006": [
+    {
+      "authors": "Hinton, G. E. and Salakhutdinov, R. R",
+      "title": "Reducing the dimensionality of data with neural networks",
+      "href": "[PDF_URL]",
+      "venue": "Science, Vol. 313. no. 5786, pp. 504-507",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Osindero, S., Welling, M. and Teh, Y.",
+      "title": "Unsupervised Discovery of Non-linear Structure using Contrastive Backpropagation",
+      "href": "[PDF_URL]",
+      "venue": "Cognitive Science, 30:4, pp 725-731",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Osindero, S. and Teh, Y.",
+      "title": "A fast learning algorithm for deep belief nets",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation 18, pp 1527-1554",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Nair, V.",
+      "title": "Inferring motor programs from images of handwritten digits",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 18, MIT Press",
+      "tags": [
+        "Motor Control"
+      ]
+    },
+    {
+      "authors": "Osindero, S., Welling, M. and Hinton, G. E.",
+      "title": "Topographic Product Models Applied To Natural Scene Statistics",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 18, pp 381-344",
+      "tags": [
+        "Products of Experts"
+      ]
+    }
+  ],
+  "2005": [
+    {
+      "authors": "Hinton, G. E., Osindero, S. and Bao, K.",
+      "title": "Learning Causally Linked Markov Random Fields",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Intelligence and Statistics, 2005, Barbados",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "What kind of a graphical model is the brain?",
+      "href": "[PDF_URL]",
+      "venue": "International Joint Conference on Artificial Intelligence 2005, Edinburgh",
+      "tags": []
+    },
+    {
+      "authors": "Mnih, A. and Hinton, G. E.",
+      "title": "Learning Unreliable Constraints using Contrastive Divergence",
+      "href": "[PDF_URL]",
+      "venue": "IJCNN 2005, Montreal",
+      "tags": []
+    },
+    {
+      "authors": "Memisevic, R. and Hinton, G. E.",
+      "title": "Improving dimensionality reduction with spectral gradient descent",
+      "href": "[PDF_URL]",
+      "venue": "Neural Networks, 18, pp 702-710",
+      "tags": []
+    },
+    {
+      "authors": "Carreira-Perpignan, M. A. and Hinton, G. E.",
+      "title": "On Contrastive Divergence Learning",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Intelligence and Statistics, 2005, Barbados",
+      "tags": []
+    },
+    {
+      "authors": "Goldberger, J., Roweis, S., Salakhutdinov, R and Hinton, G. E.",
+      "title": "Neighborhood Components Analysis",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 17, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Memisevic, R. and Hinton, G. E.",
+      "title": "Multiple Relational Embedding",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 17, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Welling, M., Rosen-Zvi, M. and Hinton, G. E.",
+      "title": "Exponential Family Harmoniums with an Application to Information Retrieval",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 17, MIT Press",
+      "tags": []
+    }
+  ],
+  "2004": [
+    {
+      "authors": "Sallans, B and Hinton, G. E.",
+      "title": "Reinforcement Learning with Factored States and Actions",
+      "href": "[PDF_URL]",
+      "venue": "Journal of Machine Learning Research, Vol 5, pp 1063-1088",
+      "tags": []
+    },
+    {
+      "authors": "Bishop, C. M. Svensen, M. and Hinton, G. E.",
+      "title": "Distinguishing Text from Graphics in On-line Handwritten Ink",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings Ninth International Workshop on Frontiers in Handwriting Recognition",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E., Welling, M. and Mnih, A.",
+      "title": "Wormholes Improve Contrastive Divergence",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 16, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Welling, M., Zemel, R. and Hinton, G. E.",
+      "title": "Probabilistic sequential independent components analysis",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Neural Networks, Vol. 15, pp 838-849",
+      "tags": []
+    }
+  ],
+  "2003": [
+    {
+      "authors": "Teh, Y. W, Welling, M., Osindero, S. and Hinton G. E.",
+      "title": "Energy-Based Models for Sparse Overcomplete Representations",
+      "href": "[PDF_URL]",
+      "venue": "Journal of Machine Learning Research, 4, pp 1235-1260",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Roweis, S.",
+      "title": "Stochastic Neighbor Embedding",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 15, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Welling, M., Zemel, R. S., and Hinton, G. E.",
+      "title": "Efficient parametric projection pursuit density estimation",
+      "href": "[PDF_URL]",
+      "venue": "UAI-2003: 19th Conference on Uncertainty in Artificial Intelligence",
+      "tags": []
+    },
+    {
+      "authors": "Welling, M., Zemel, R. and Hinton, G. E.",
+      "title": "Self-Supervised Boosting",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 15, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Welling, M., Hinton, G. E. and Osindero, S.",
+      "title": "Learning Sparse Topographic Representations with Products of Student-t Distributions",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 15, MIT Press",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "The ups and downs of Hebb synapses",
+      "href": "[PDF_URL]",
+      "venue": "Canadian Psychology, Vol 44, pp 10-13",
+      "tags": []
+    }
+  ],
+  "2002": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Training Products of Experts by Minimizing Contrastive Divergence",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 14, pp 1771-1800",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Friston, K.J., Penny, W., Phillips, C., Kiebel, S., Hinton, G. E., and Ashburner, J.",
+      "title": "Classical and Bayesian Inference in Neuroimaging: Theory",
+      "href": "[PDF_URL]",
+      "venue": "NeuroImage, 16, pp 465-483",
+      "tags": []
+    },
+    {
+      "authors": "Brown, A. D. and Hinton, G. E.",
+      "title": "Relative Density Nets: A New Way to Combine Backpropagation with HMM's",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 14, MIT Press",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Paccanaro, A., and Hinton, G. E.",
+      "title": "Learning Hierarchical Structures with Linear Relational Embedding",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 14, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Roweis, S., Saul, L. and Hinton, G. E.",
+      "title": "Global Coordination of Local Linear Models",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems, 14, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Oore, S., Terzopoulos, D. and Hinton, G. E.",
+      "title": "A Desktop Input Device and Interface for Interactive 3D Character Animation",
+      "href": "[PDF_URL]",
+      "venue": "Graphics Interface",
+      "tags": []
+    },
+    {
+      "authors": "Oore, S., Terzopoulos, D. and Hinton, G. E.",
+      "title": "Local Physical Models for Interactive Character Animation",
+      "href": "[PDF_URL]",
+      "venue": "Eurographics 2002",
+      "tags": []
+    },
+    {
+      "authors": "Welling, M. and Hinton, G. E.",
+      "title": "A New Learning Algorithm for Mean Field Boltzmann Machines",
+      "href": "[PDF_URL]",
+      "venue": "ICANN, Madrid",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Guy Mayraz and Geoffrey Hinton",
+      "title": "Recognizing Handwritten Digits using Hierarchical Products of Experts",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 24, pp 189-197",
+      "tags": [
+        "Products of Experts"
+      ]
+    }
+  ],
+  "2001": [
+    {
+      "authors": "Hinton G. E., Welling, M., Teh, Y. W, and Osindero, S.",
+      "title": "A New View of ICA",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of ICA-2001, San Diego, CA",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Teh, Y. W.",
+      "title": "Discovering Multiple Constraints that are Frequently Approximately Satisfied",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of Uncertainty in Artificial Intelligence (UAI-2001)",
+      "tags": []
+    },
+    {
+      "authors": "Andrew Brown, Geoffrey Hinton",
+      "title": "Training Many Small Hidden Markov Models",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Workshop on Innovation in Speech Processing",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Andrew Brown, Geoffrey Hinton",
+      "title": "Products of Hidden Markov Models",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of Artificial Intelligence and Statistics 2001",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Yee-Whye Teh, Geoffrey Hinton",
+      "title": "Rate-coded Restricted Boltzmann Machines for Face Recognition",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 13, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Brian Sallans, Geoffrey Hinton",
+      "title": "Using Free Energies to Represent Q-values in a Multiagent Reinforcement learning Task",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 13, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Guy Mayraz, Geoffrey Hinton",
+      "title": "Recognizing Hand-Written Digits Using Hierarchical Products of Experts",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 13, MIT Press",
+      "tags": [
+        "Products of Experts"
+      ]
+    }
+  ],
+  "2000": [
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Training Products of Experts by Minimizing Contrastive Divergence",
+      "href": "[PDF_URL]",
+      "venue": "Technical Report: GCNU TR 2000-004",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Paccanaro, A. and Hinton, G.E",
+      "title": "Extracting Distributed Representations of Concepts and Relations from Positive and Negative Propositions",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the International Joint Conference on Neural Networks, IJCNN 2000",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Modelling High-Dimensional Data by Combining Simple Experts",
+      "href": "[PDF_URL]",
+      "venue": "AAAI-2000: Seventeenth National Conference on Artificial Intelligence",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Paccanaro, A., and Hinton, G.E.",
+      "title": "Learning Distributed Representations of Concepts from Relational Data Using Linear Relational Embedding",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Knowledge and Data Engineering, 13, pp 232-245",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E., and Brown, A",
+      "title": "Spiking Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 12, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E., Ghahramani, Z and Teh Y. W.",
+      "title": "Learning to parse images",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 12, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Ghahramani, Z. and Hinton, G.E.",
+      "title": "Variational learning for switching state-space models",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 12, pp 831-864",
+      "tags": []
+    },
+    {
+      "authors": "Ueda, N. Nakano, R., Ghahramani, Z and Hinton, G.E.",
+      "title": "SMEM algorithm for mixture models",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 12, pp 2109-2128",
+      "tags": []
+    },
+    {
+      "authors": "Paccanaro, A., and Hinton, G.E.",
+      "title": "Learning Distributed Representations by Mapping Concepts and Relations into a Linear Space",
+      "href": "[PDF_URL]",
+      "venue": "ICML-2000",
+      "tags": [
+        "Distributed Representations"
+      ]
+    }
+  ],
+  "1999": [
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Supervised learning in multilayer neural networks",
+      "href": "[PDF_URL]",
+      "venue": "The MIT Encyclopedia of the Cognitive Sciences",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Products of experts",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Ninth International Conference on Artificial Neural Networks (ICANN 99)",
+      "tags": [
+        "Products of Experts"
+      ]
+    },
+    {
+      "authors": "Ghahramani, Z., Korenberg, A.T. and Hinton, G.E.",
+      "title": "Scaling in a hierarchical unsupervised network",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Ninth International Conference on Artificial Neural Networks (ICANN 99)",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G.E., and T. Sejnowski (eds)",
+      "title": "Unsupervised Learning: Foundations of Neural Computation",
+      "href": "[PDF_URL]",
+      "venue": "MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Frey, B.J., Hinton, G.E.",
+      "title": "Variational learning in nonlinear gaussian belief networks",
+      "href": "[PDF_URL]",
+      "venue": "Neural computation 11:1, 193-214",
+      "tags": [
+        "Neural Belief Nets"
+      ]
+    }
+  ],
+  "1998": [
+    {
+      "authors": "Neal, R.M. and Hinton, G.E.",
+      "title": "A view of the EM algorithm that justifies incremental, sparse, and other variants",
+      "href": "[PDF_URL]",
+      "venue": "Learning in Graphical Models",
+      "tags": []
+    },
+    {
+      "authors": "de Sa, V.R. and Hinton, G.E.",
+      "title": "Cascaded redundancy reduction",
+      "href": "[PDF_URL]",
+      "venue": "Network: Computation in Neural Systems, 9, 73-84",
+      "tags": []
+    },
+    {
+      "authors": "Tibshirani, R. and Hinton, G.E.",
+      "title": "Coaching variables for regression and classification",
+      "href": "[PDF_URL]",
+      "venue": "Statistics and Computing, 8, 25-33",
+      "tags": []
+    },
+    {
+      "authors": "Ennis M, Hinton G, Naylor D, Revow M, Tibshirani R.",
+      "title": "A comparison of statistical learning methods on the GUSTO database",
+      "href": "[PDF_URL]",
+      "venue": "Statistics in Medicine, 17, pp 2501-2508",
+      "tags": []
+    },
+    {
+      "authors": "Ghahramani, Z. and Hinton, G.E.",
+      "title": "Hierarchical nonlinear factor analysis and topographic maps",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 10, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Grzeszczuk, R., Terzopoulos, D., and Hinton, G. E.",
+      "title": "NeuroAnimator: Fast Neural Network Emulation and Control of Physics-Based Models",
+      "href": "[PDF_URL]",
+      "venue": "Proc. ACM SIGGRAPH-98",
+      "tags": [
+        "Motor Control"
+      ]
+    },
+    {
+      "authors": "Fels, S. S. and Hinton, G. E.",
+      "title": "Glove-TalkII: A neural network interface which maps gestures to parallel formant speech synthesizer controls",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Neural Networks, Vol 9 No 1, 205-212",
+      "tags": [
+        "Speech"
+      ]
+    }
+  ],
+  "1997": [
+    {
+      "authors": "Hinton, G.E., Sallans, B., and Ghahramani, Z.",
+      "title": "A hierarchical community of experts",
+      "href": "[PDF_URL]",
+      "venue": "Learning in Graphical Models, Kluwer Academic Publishers",
+      "tags": [
+        "Mixture of Experts"
+      ]
+    },
+    {
+      "authors": "Williams, C. K. I., Revow, M. and Hinton, G. E.",
+      "title": "Instantiating deformable models with a neural net",
+      "href": "[PDF_URL]",
+      "venue": "Computer Vision and Image Understanding, Vol. 68, No. 1",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E., Dayan, P. and Revow, M.",
+      "title": "Modeling the manifolds of images of handwritten digits",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Neural Networks, 8 65-74",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G.E. and Revow, M.",
+      "title": "Using mixtures of factor analyzers for segmentation and pose estimation",
+      "href": "[PDF_URL]",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Ghahramani, Z.",
+      "title": "Generative models for discovering sparse distributed representations",
+      "href": "[PDF_URL]",
+      "venue": "Philosophical Transactions of the Royal Society of London, B, 352: 1177-1190",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E. and Zemel, R.S.",
+      "title": "Minimizing description length in an unsupervised neural network",
+      "href": "[PDF_URL]",
+      "tags": []
+    },
+    {
+      "authors": "Dayan, P. and Hinton, G. E.",
+      "title": "Using EM for reinforcement learning",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 9, 271-278",
+      "tags": []
+    },
+    {
+      "authors": "Oore, S, Hinton, G.E., and Dudek G.",
+      "title": "A mobile robot that learns its place",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation 9:3 683-699",
+      "tags": []
+    },
+    {
+      "authors": "Frey, B.J. Hinton, G.E.",
+      "title": "Efficient stochastic source coding and an application to a bayesian network source model",
+      "href": "[PDF_URL]",
+      "venue": "The Computer Journal, 40, No. 2/3, 157-165",
+      "tags": []
+    },
+    {
+      "authors": "Bishop, C. M., Hinton, G. E. and Strachan, I. D. G.",
+      "title": "GTM through time",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings IEE Fifth International Conference on Artificial Neural Networks",
+      "tags": []
+    }
+  ],
+  "1996": [
+    {
+      "authors": "Frey, B. J., Hinton, G. E. and Dayan, P.",
+      "title": "Does the wake-sleep algorithm learn good density estimators?",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 8, MIT Press",
+      "tags": [
+        "Helmholtz Machines"
+      ]
+    },
+    {
+      "authors": "Frey, B. J. and Hinton, G. E.",
+      "title": "A simple algorithm that discovers efficient perceptual codes",
+      "href": "[PDF_URL]",
+      "venue": "Computational and Biological Mechanisms of Visual Coding, Cambridge University press",
+      "tags": []
+    },
+    {
+      "authors": "Dayan, P. and Hinton, G. E.",
+      "title": "Varieties of Helmholtz machines",
+      "href": "[PDF_URL]",
+      "venue": "Neural Networks, 9 1385-1403",
+      "tags": [
+        "Helmholtz Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and Revow, M.",
+      "title": "Using pairs of data-points to define splits for decision trees",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 8",
+      "tags": []
+    },
+    {
+      "authors": "Ghahramani, Z. and Hinton, G. E.",
+      "title": "The EM algorithm for mixtures of factor analyzers",
+      "href": "[PDF_URL]",
+      "venue": "Technical Report CRG-TR-96-1, University of Toronto",
+      "tags": []
+    },
+    {
+      "authors": "Ghahramani, Z. and Hinton, G. E.",
+      "title": "Parameter estimation for linear dynamical systems",
+      "href": "[PDF_URL]",
+      "venue": "Technical Report CRG-TR-96-2, University of Toronto",
+      "tags": []
+    },
+    {
+      "authors": "Frey, B. J., and Hinton, G. E.",
+      "title": "Free energy coding",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Data Compression Conference 1996",
+      "tags": []
+    },
+    {
+      "authors": "Revow, M., Williams, C. K. I. and Hinton, G. E.",
+      "title": "Using Generative Models for Handwritten Digit Recognition",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 18, 592-606",
+      "tags": []
+    }
+  ],
+  "1995": [
+    {
+      "authors": "Hinton, G. E., Revow, M. and Dayan P.",
+      "title": "Recognizing handwritten digits using mixtures of linear models",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 7, MIT Press",
+      "tags": []
+    },
+    {
+      "authors": "Williams, C. K. I., Hinton, G. E. and Revow, M.",
+      "title": "Using a neural net to instantiate a deformable model",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 7, MIT Press",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Xu, L., Jordan, M. I. and Hinton, G. E.",
+      "title": "An alternative model for mixtures of experts",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 7, MIT Press",
+      "tags": [
+        "Mixture of Experts"
+      ]
+    },
+    {
+      "authors": "Fels, S. S. and Hinton, G. E.",
+      "title": "GloveTalkII: Mapping hand gestures to speech using neural networks",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 7, MIT Press",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Zemel, R. S. and Hinton, G. E.",
+      "title": "Learning population codes by minimizing description length",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 7, 549-564",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E., Dayan, P., Frey, B. J. and Neal, R.",
+      "title": "The wake-sleep algorithm for unsupervised Neural Networks",
+      "href": "[PDF_URL]",
+      "venue": "Science, 268, 1158-1161",
+      "tags": [
+        "Helmholtz Machines"
+      ]
+    },
+    {
+      "authors": "Dayan, P., Hinton, G. E., Neal, R., and Zemel, R. S.",
+      "title": "The Helmholtz machine",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 7, 1022-1037",
+      "tags": [
+        "Helmholtz Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Dayan, P., To, A. and Neal R. M.",
+      "title": "The Helmholtz machine through time",
+      "href": "[PDF_URL]",
+      "venue": "ICANN-95, 483-490",
+      "tags": [
+        "Helmholtz Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and Frey, B. J.",
+      "title": "Using neural networks to monitor for rare failures",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the 37th Mechanical Working and Steel Processing Conference",
+      "tags": []
+    }
+  ],
+  "1994": [
+    {
+      "authors": "Hinton, G. E. and Zemel, R. S.",
+      "title": "Autoencoders, minimum description length, and Helmholtz free energy",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 6, Morgan Kaufmann",
+      "tags": []
+    },
+    {
+      "authors": "Zemel, R.S. and Hinton, G. E.",
+      "title": "Developing population codes by minimizing description length",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 6, Morgan Kaufmann",
+      "tags": []
+    },
+    {
+      "authors": "Xu, L. Jordan, M. I. and Hinton, G. E.",
+      "title": "A modified gating network for the mixtures of experts architectures",
+      "href": "[PDF_URL]",
+      "venue": "Proc. WCNN-94, San Diego, CA",
+      "tags": [
+        "Mixture of Experts"
+      ]
+    }
+  ],
+  "1993": [
+    {
+      "authors": "Williams, C. K. I., Revow, M. and Hinton, G. E.",
+      "title": "Hand-printed digit recognition using deformable models",
+      "href": "[PDF_URL]",
+      "venue": "Spatial Vision in Humans and Robots, Cambridge University press",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Revow, M., Williams, C.K.I, and Hinton, G.E.",
+      "title": "Using mixtures of deformable models to capture variations in the shapes of hand-printed digits",
+      "href": "[PDF_URL]",
+      "venue": "Third International Workshop on Frontiers of Handwriting Recognition",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and van Camp, D.",
+      "title": "Keeping neural networks simple by minimizing the description length of the weights",
+      "href": "[PDF_URL]",
+      "venue": "Sixth ACM Conference on Computational Learning Theory",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Plaut, D. C. and Shallice, T.",
+      "title": "Simulating brain damage",
+      "href": "[PDF_URL]",
+      "venue": "Scientific American, October Issue",
+      "tags": [
+        "Brain Damage"
+      ]
+    },
+    {
+      "authors": "Becker, S. and Hinton, G. E.",
+      "title": "Learning mixture models of spatial coherence",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation 5, 267-277",
+      "tags": []
+    },
+    {
+      "authors": "Nowlan. S. J. and Hinton, G. E.",
+      "title": "A soft decision-directed LMS algorithm for blind equalization",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Communications, 41, 275-279",
+      "tags": []
+    },
+    {
+      "authors": "Dayan, P. and Hinton, G. E.",
+      "title": "Feudal reinforcement learning",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 5, Morgan Kaufmann",
+      "tags": []
+    }
+  ],
+  "1992": [
+    {
+      "authors": "Fels, S. S. and Hinton, G. E.",
+      "title": "Glove-Talk: A neural network interface between a data-glove and a speech synthesizer",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Transactions on Neural Networks, 3, No 6",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Williams, C. K. I., and Revow, M.",
+      "title": "Combining two methods of recognizing hand-printed digits",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Neural Networks II: Proceedings of ICANN-92",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E., Williams, C. K. I., and Revow, M.",
+      "title": "Adaptive elastic models for character recognition",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 4, Morgan Kaufmann",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Nowlan. S. J. and Hinton, G. E.",
+      "title": "Simplifying neural networks by soft weight sharing",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 4, 173-193",
+      "tags": [
+        "Neural Networks"
+      ]
+    },
+    {
+      "authors": "Becker, S. and Hinton, G. E.",
+      "title": "A self-organizing neural network that discovers surfaces in random-dot stereograms",
+      "href": "[PDF_URL]",
+      "venue": "Nature, 355:6356, 161-163",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "How neural networks learn from experience",
+      "href": "[PDF_URL]",
+      "venue": "Scientific American, September 1992",
+      "tags": [
+        "Review Papers"
+      ]
+    }
+  ],
+  "1991": [
+    {
+      "authors": "Jacobs, R., Jordan, M. I., Nowlan. S. J. and Hinton, G. E.",
+      "title": "Adaptive mixtures of local experts",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 3, 79-87",
+      "tags": [
+        "Mixture of Experts"
+      ]
+    },
+    {
+      "authors": "Nowlan, S. J. and Hinton, G. E.",
+      "title": "Evaluation of adaptive mixtures of competing experts",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 3, Morgan Kaufmann",
+      "tags": [
+        "Mixture of Experts"
+      ]
+    },
+    {
+      "authors": "Zemel, R.S. Hinton, G.E.",
+      "title": "Discovering viewpoint-invariant relationships that characterize objects",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 3, Morgan Kaufmann",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Shallice, T.",
+      "title": "Lesioning an attractor network: Investigations of acquired dyslexia",
+      "href": "[PDF_URL]",
+      "venue": "Psychological Review, 98, 74-95",
+      "tags": [
+        "Brain Damage"
+      ]
+    }
+  ],
+  "1990": [
+    {
+      "authors": "Williams, C. K. I. and Hinton, G. E.",
+      "title": "Mean field networks that learn to discriminate temporally distorted strings",
+      "href": "[PDF_URL]",
+      "venue": "Connectionist Models: Proceedings of the 1990 Connectionist Summer School",
+      "tags": []
+    },
+    {
+      "authors": "Zemel, R.S. Mozer, M.C., Hinton, G.E.",
+      "title": "Traffic: Recognizing objects using hierarchical reference frame transformations",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 2, Morgan Kaufmann",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Galland, C. G. and Hinton, G. E.",
+      "title": "Discovering higher-order features with mean field networks",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 2, Morgan Kaufmann",
+      "tags": []
+    },
+    {
+      "authors": "Lang, K. J. and Hinton, G. E.",
+      "title": "Dimensionality reduction and prior knowledge in E-set recognition",
+      "href": "[PDF_URL]",
+      "venue": "Advances in Neural Information Processing Systems 2, Morgan Kaufmann",
+      "tags": []
+    },
+    {
+      "authors": "Galland, C. G. and Hinton, G. E.",
+      "title": "Deterministic Boltzmann learning in networks with asymmetric connectivity",
+      "href": "[PDF_URL]",
+      "venue": "Connectionist Models: Proceedings of the 1990 Connectionist Summer School",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Preface to the special issue on connectionist symbol processing",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Intelligence 46, 1-4",
+      "tags": []
+    },
+    {
+      "authors": "Lang, K., Waibel, A. and Hinton, G. E.",
+      "title": "A time-delay neural network architecture for isolated word recognition",
+      "href": "[PDF_URL]",
+      "venue": "Neural Networks, 3, 23-43",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Mapping part-whole hierarchies into connectionist networks",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Intelligence, 46, 47-75",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E., Becker, S.",
+      "title": "An unsupervised learning procedure that discovers surfaces in random-dot stereograms",
+      "href": "[PDF_URL]",
+      "venue": "Proc. International Joint Conference on Neural Networks, Washington, DC",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Nowlan, S. J.",
+      "title": "The bootstrap Widrow-Hoff rule as a cluster-formation algorithm",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 2, 355-362",
+      "tags": []
+    }
+  ],
+  "1989": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Deterministic Boltzmann learning performs steepest descent in weight-space",
+      "href": "[PDF_URL]",
+      "venue": "Neural Computation, 1, 143-150",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Waibel, A. Hanazawa, T. Hinton, G. Shikano, K. and Lang, K.",
+      "title": "Phoneme recognition using time-delay neural networks",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Acoustics Speech and Signal Processing, 37, 328-339",
+      "tags": [
+        "Speech"
+      ]
+    },
+    {
+      "authors": "LeCun, Y., Galland, C. C., and Hinton, G. E.",
+      "title": "GEMINI: Gradient Estimation by Matrix Inversion after Noise Injection",
+      "href": "[PDF_URL]",
+      "venue": "Neural Information Processing Systems 1, Morgan Kaufmann",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Connectionist learning procedures",
+      "href": "[PDF_URL]",
+      "venue": "Artificial Intelligence 40, 185-234",
+      "tags": [
+        "Review Papers"
+      ]
+    }
+  ],
+  "1988": [
+    {
+      "authors": "Touretzky, D. S. and Hinton, G. E.",
+      "title": "A distributed connectionist production system",
+      "href": "[PDF_URL]",
+      "venue": "Cognitive Science, 12, 423-466",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and Parsons, L. A.",
+      "title": "Scene-based and viewer-centered representations for comparing shapes",
+      "href": "[PDF_URL]",
+      "venue": "Cognition, 30, 1-35",
+      "tags": [
+        "Shape Recognition",
+        "Mental Imagery"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and McClelland, J. L.",
+      "title": "Learning representations by recirculation",
+      "href": "[PDF_URL]",
+      "venue": "Neural Information Processing Systems, American Institute of Physics",
+      "tags": [
+        "Other NN learning algorithms"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Representing part-whole hierarchies in connectionist networks",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Tenth Annual Conference of the Cognitive Science Society",
+      "tags": [
+        "Distributed Representations"
+      ]
+    }
+  ],
+  "1987": [
+    {
+      "authors": "Fahlman, S. E. and Hinton, G. E.",
+      "title": "Connectionist architectures for Artificial Intelligence",
+      "href": "[PDF_URL]",
+      "venue": "IEEE Computer, 20, 100-109",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Learning translation invariant recognition in a massively parallel network",
+      "href": "[PDF_URL]",
+      "venue": "PARLE: Parallel Architectures and Languages Europe, Springer-Verlag",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "The horizontal-vertical delusion",
+      "href": "[PDF_URL]",
+      "venue": "Perception, 16, 5, 677-680",
+      "tags": [
+        "Other Oddities"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and Plaut, D. C.",
+      "title": "Using fast weights to deblur old memories",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Ninth Annual Conference of the Cognitive Science Society",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Nowlan, S. J.",
+      "title": "How learning can guide evolution",
+      "href": "[PDF_URL]",
+      "venue": "Complex Systems, 1, 495-502",
+      "tags": [
+        "Evolution"
+      ]
+    },
+    {
+      "authors": "Plaut, D.C. and Hinton, G.E.",
+      "title": "Learning sets of filters using back-propagation",
+      "href": "[PDF_URL]",
+      "venue": "Computer Speech and Language, 2, 35-61",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Sejnowski, T. J. and Hinton, G. E.",
+      "title": "Separating figure from ground using a Boltzmann machine",
+      "href": "[PDF_URL]",
+      "venue": "Vision, Brain and Cooperative Computation, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    }
+  ],
+  "1986": [
+    {
+      "authors": "Rumelhart, D. E., Hinton, G. E., and Williams, R. J.",
+      "title": "Learning representations by back-propagating errors",
+      "href": "[PDF_URL]",
+      "venue": "Nature, 323, 533-536",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Kienker, P. K., Sejnowski, T. J., Hinton, G. E., and Schumacher, L. E.",
+      "title": "Separating figure from ground with a parallel network",
+      "href": "[PDF_URL]",
+      "venue": "Perception, 15, 197-216",
+      "tags": []
+    },
+    {
+      "authors": "Sejnowski, T. J., Kienker, P. K., and Hinton, G. E.",
+      "title": "Learning symmetry groups with hidden units: Beyond the perception",
+      "href": "[PDF_URL]",
+      "venue": "Physica D, 22, 260-275",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Learning distributed representations of concepts",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Eighth Annual Conference of the Cognitive Science Society",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Plaut, D., Nowlan, S. and Hinton, G. E.",
+      "title": "Experiments on learning by back-propagation",
+      "href": "[PDF_URL]",
+      "venue": "Technical Report CMU-CS-86-126, Carnegie-Mellon University",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "McClelland, J. L., Rumelhart, D. E., and Hinton, G. E.",
+      "title": "The appeal of Parallel Distributed Processing",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Distributed Processing: Volume 1: Foundations, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Rumelhart, D. E., Hinton, G. E., and McClelland, J. L.",
+      "title": "A general framework for Parallel Distributed Processing",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Distributed Processing: Volume 1: Foundations, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., McClelland, J. L., and Rumelhart, D. E.",
+      "title": "Distributed representations",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Distributed Processing: Volume 1: Foundations, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E. and Sejnowski, T. J.",
+      "title": "Learning and relearning in Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Distributed Processing: Volume 1: Foundations, MIT Press",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Rumelhart, D. E., Hinton, G. E., and Williams, R. J.",
+      "title": "Learning internal representations by error propagation",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Distributed Processing: Volume 1: Foundations, MIT Press",
+      "tags": [
+        "Backpropagation"
+      ]
+    },
+    {
+      "authors": "Rumelhart, D. E., Smolensky, P., McClelland, J. L., and Hinton, G. E.",
+      "title": "Parallel distributed models of schemata and sequential thought processes",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Distributed Processing: Volume 2: Psychological and Biological Models, MIT Press",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Pearlmutter, B. A. and Hinton, G. E.",
+      "title": "G-maximization: An unsupervised learning procedure for discovering regularities",
+      "href": "[PDF_URL]",
+      "venue": "Neural Networks for Computing: American Institute of Physics Conference Proceedings",
+      "tags": []
+    }
+  ],
+  "1985": [
+    {
+      "authors": "Ackley, D. H., Hinton, G. E., and Sejnowski, T. J.",
+      "title": "A learning algorithm for Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "Cognitive Science, 9, 147-169",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Touretzky, D. S. and Hinton, G. E.",
+      "title": "Symbols among the neurons: Details of a connectionist inference architecture",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Ninth International Joint Conference on Artificial Intelligence",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E. and Lang, K.J.",
+      "title": "Shape recognition and illusory conjunctions",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Ninth International Joint Conference on Artificial Intelligence",
+      "tags": [
+        "Shape Recognition"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Learning in parallel networks",
+      "href": "[PDF_URL]",
+      "venue": "Byte, April issue",
+      "tags": []
+    },
+    {
+      "authors": "Szeliski, R. and Hinton, G. E.",
+      "title": "Solving random-dot stereograms using the heat equation",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the IEEE conference on Computer Vision and Pattern Recognition",
+      "tags": []
+    }
+  ],
+  "1984": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Parallel computations for controlling an arm",
+      "href": "[PDF_URL]",
+      "venue": "The Journal of Motor Behavior, 16, 171-194",
+      "tags": [
+        "Motor Control"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E., Sejnowski, T. J., and Ackley, D. H.",
+      "title": "Boltzmann Machines: Constraint satisfaction networks that learn",
+      "href": "[PDF_URL]",
+      "venue": "Technical Report CMU-CS-84-119, Carnegie-Mellon University",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Hutchins, E. L. and Hinton, G. E.",
+      "title": "Why the islands move",
+      "href": "[PDF_URL]",
+      "venue": "Perception, 13, 629-632",
+      "tags": [
+        "Other Oddities"
+      ]
+    },
+    {
+      "authors": "Hammond, N., Hinton, G.E., Barnard, P., Long, J. and Whitefield, A",
+      "title": "Evaluating the interface of a document processor: A comparison of expert judgement and user observation",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the First IFIP Conference on Human-Computer Interaction",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Some computational solutions to Bernstein's problems",
+      "href": "[PDF_URL]",
+      "venue": "Human Motor Actions: Bernstein Reassessed, North-Holland",
+      "tags": [
+        "Motor Control"
+      ]
+    }
+  ],
+  "1983": [
+    {
+      "authors": "Ballard, D. H., Hinton, G. E., and Sejnowski, T. J.",
+      "title": "Parallel visual computation",
+      "href": "[PDF_URL]",
+      "venue": "Nature, 306, 21-26",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Sejnowski, T. J.",
+      "title": "Optimal perceptual inference",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the IEEE conference on Computer Vision and Pattern Recognition",
+      "tags": []
+    },
+    {
+      "authors": "Fahlman, S.E., Hinton, G.E. and Sejnowski, T.J.",
+      "title": "Massively parallel architectures for A.I.: Netl, Thistle, and Boltzmann machines",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the National Conference on Artificial Intelligence",
+      "tags": [
+        "Boltzmann Machines"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E. and Sejnowski, T.J.",
+      "title": "Analyzing cooperative computation",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Fifth Annual Conference of the Cognitive Science Society",
+      "tags": []
+    }
+  ],
+  "1981": [
+    {
+      "authors": "Hinton, G.E.",
+      "title": "The role of spatial working memory in shape perception",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Third Annual Conference of the Cognitive Science Society",
+      "tags": [
+        "Shape Recognition",
+        "Mental Imagery"
+      ]
+    },
+    {
+      "authors": "Hinton, G. and Anderson, J.",
+      "title": "Parallel models of associative memory",
+      "href": "[PDF_URL]",
+      "venue": "Lawrence Erlbaum Assoc., Hillsdale, NJ",
+      "tags": []
+    },
+    {
+      "authors": "Anderson, J. A. and Hinton, G. E.",
+      "title": "Models of information processing in the brain",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Models of Associative Memory, Erlbaum",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Implementing semantic networks in parallel hardware",
+      "href": "[PDF_URL]",
+      "venue": "Parallel Models of Associative Memory, Erlbaum",
+      "tags": [
+        "Distributed Representations"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "A parallel computation that assigns canonical object-based frames of reference",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Seventh International Joint Conference on Artificial Intelligence",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G. E. and Parsons, L. A.",
+      "title": "Frames of reference and mental imagery",
+      "href": "[PDF_URL]",
+      "venue": "Attention and Performance IX, Erlbaum",
+      "tags": [
+        "Mental Imagery"
+      ]
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Shape representation in parallel systems",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the Seventh International Joint Conference on Artificial Intelligence",
+      "tags": [
+        "Shape Recognition"
+      ]
+    }
+  ],
+  "1979": [
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Some demonstrations of the effects of structural descriptions in mental imagery",
+      "href": "[PDF_URL]",
+      "venue": "Cognitive Science, 3, 231-250",
+      "tags": [
+        "Mental Imagery"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Imagery without Arrays",
+      "href": "[PDF_URL]",
+      "venue": "Behavioral and Brain Sciences, 2, 555-556",
+      "tags": [
+        "Mental Imagery"
+      ]
+    }
+  ],
+  "1978": [
+    {
+      "authors": "Sloman, A., Owen, D. Hinton., G., Birch, F. and O'Gorman, F.",
+      "title": "Representation and control in vision",
+      "href": "[PDF_URL]",
+      "venue": "Proceedings of the A.I.S.B. Summer Conference, Hamburg",
+      "tags": []
+    },
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Respectively reconsidered",
+      "href": "[PDF_URL]",
+      "venue": "Pragmatics Microfiche, May issue",
+      "tags": [
+        "Other Oddities"
+      ]
+    },
+    {
+      "authors": "Hinton, G. E.",
+      "title": "Relaxation and its role in vision",
+      "href": "[PDF_URL]",
+      "venue": "PhD Thesis, University of Edinburgh",
+      "tags": []
+    }
+  ],
+  "1976": [
+    {
+      "authors": "Hinton, G.E.",
+      "title": "Using relaxation to find a puppet",
+      "href": "[PDF_URL]",
+      "venue": "Proceeding of the A.I.S.B. Summer Conference, University of Edinburgh",
+      "tags": []
+    }
+  ]
+}
