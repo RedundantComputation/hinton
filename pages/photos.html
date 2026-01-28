@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Photos - Geoffrey Hinton</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #ffefca; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    .photo-grid .card { transition: transform .12s ease, box-shadow .12s ease; cursor: pointer; }
+    .photo-grid .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    /* Ensure all photo containers use the same aspect ratio */
+    .photo-wrap { position: relative; width: 100%; padding-top: 100%; /* 1:1 square */ overflow: hidden; border-radius: 0.25rem; background: #f0f0f0; }
+    .photo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .lightbox-close:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header class="py-3 bg-white border-bottom sticky-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0"><a href="/hinton/" class="text-decoration-none text-dark"><span class="me-2">←</span>Geoffrey E. Hinton</a></h1>
+        <span class="text-muted">Photos</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-4">
+    <div class="container">
+      <div class="row photo-grid g-3">
+        
+        <!-- Photo 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff1.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff1.jpg" alt="Geoffrey Hinton - Photo 1" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff2.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff2.jpg" alt="Geoffrey Hinton - Photo 2" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff3.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff3.jpg" alt="Geoffrey Hinton - Photo 3" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff4.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff4.jpg" alt="Geoffrey Hinton - Photo 4" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff5.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff5.jpg" alt="Geoffrey Hinton - Photo 5" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff6.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff6.jpg" alt="Geoffrey Hinton - Photo 6" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 7 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff7.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff7.jpg" alt="Geoffrey Hinton - Photo 7" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 8 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm" onclick="openLightbox('https://www.cs.toronto.edu/~hinton/geoff8.jpg')">
+            <div class="card-body p-2">
+              <div class="photo-wrap">
+                <img class="photo-img" src="https://www.cs.toronto.edu/~hinton/geoff8.jpg" alt="Geoffrey Hinton - Photo 8" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Full size photo">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
