@@ -260,25 +260,28 @@
             <p class="lead text-center mb-3">This is a full list of Geoffrey Hinton's scientific publications in reverse chronological order. The list can be filtered by one or more topics below.</p>
             <div class="tag-filter">
                 <span class="filter-label">Filter By:</span>
-                <button class="tag-btn" data-tag="neural networks">Neural Networks</button>
-                <button class="tag-btn" data-tag="products of experts">Products of Experts</button>
-                <button class="tag-btn" data-tag="boltzmann machines">Boltzmann Machines</button>
-                <button class="tag-btn" data-tag="shape recognition">Shape Recognition</button>
-                <button class="tag-btn" data-tag="review papers">Review Papers</button>
                 <button class="tag-btn" data-tag="backpropagation">Backpropagation</button>
-                <button class="tag-btn" data-tag="speech">Speech</button>
-                <button class="tag-btn" data-tag="evolution">Evolution</button>
-                <button class="tag-btn" data-tag="mixture of experts">Mixture of Experts</button>
-                <button class="tag-btn" data-tag="distributed representations">Distributed Representations</button>
-                <button class="tag-btn" data-tag="motor control">Motor Control</button>
-                <button class="tag-btn" data-tag="helmholtz machines">Helmholtz Machines</button>
+                <button class="tag-btn" data-tag="boltzmann machines">Boltzmann Machines</button>
                 <button class="tag-btn" data-tag="brain damage">Brain Damage</button>
+                <button class="tag-btn" data-tag="capsules">Capsules</button>
+                <button class="tag-btn" data-tag="distillation">Distillation</button>
+                <button class="tag-btn" data-tag="distributed representations">Distributed Representations</button>
+                <button class="tag-btn" data-tag="evolution">Evolution & Learning</button>
+                <button class="tag-btn" data-tag="helmholtz machines">Helmholtz Machines</button>
+                <button class="tag-btn" data-tag="image generation">Image Generation</button>
                 <button class="tag-btn" data-tag="mental imagery">Mental Imagery</button>
-                <button class="tag-btn" data-tag="neural belief nets">Neural Belief Nets</button>
+                <button class="tag-btn" data-tag="mixture of experts">Mixture of Experts</button>
+                <button class="tag-btn" data-tag="motor control">Motor Control</button>
+                <button class="tag-btn" data-tag="neural networks">Neural Networks</button>
                 <button class="tag-btn" data-tag="other nn learning algorithms">Other NN Learning Algorithms</button>
+                <button class="tag-btn" data-tag="products of experts">Products of Experts</button>
+                <button class="tag-btn" data-tag="review papers">Review Papers</button>
+                <button class="tag-btn" data-tag="shape recognition">Shape Recognition</button>
+                <button class="tag-btn" data-tag="speech recognition">Speech Recognition</button>
                 <button class="tag-btn" data-tag="tropical archaeoastronomy">Tropical Archaeoastronomy</button>
                 <button class="tag-btn" data-tag="oddities">Other Oddities</button>
             </div>
+            <p class="lead text-center mb-3">Labels are a work in progress. We have not finished labelling papers by topic.</p>
         </div>
 
 
@@ -356,6 +359,30 @@
                     return list;
                 }
 
+                // Mapping of tag IDs to their display names
+                const tagDisplayNames = {
+                    'Backpropagation': 'Backpropagation',
+                    'Boltzmann machines': 'Boltzmann Machines',
+                    'Brain damage': 'Brain Damage',
+                    'Capsules': 'Capsules',
+                    'Distillation': 'Distillation',
+                    'Distributed representations': 'Distributed Representations',
+                    'Evolution': 'Evolution & Learning',
+                    'Helmholtz machines': 'Helmholtz Machines',
+                    'Image generation': 'Image Generation',
+                    'Mental imagery': 'Mental Imagery',
+                    'Mixture of experts': 'Mixture of Experts',
+                    'Motor control': 'Motor Control',
+                    'Neural networks': 'Neural Networks',
+                    'Other NN learning algorithms': 'Other NN Learning Algorithms',
+                    'Other Oddities': 'Other Oddities',
+                    'Products of experts': 'Products of Experts',
+                    'Review papers': 'Review Papers',
+                    'Shape recognition': 'Shape Recognition',
+                    'Speech recognition': 'Speech Recognition',
+                    'Tropical archaeoastronomy': 'Tropical Archaeoastronomy'
+                };
+
                 function buildTagFilter(tagSet) {
                     const filterContainer = document.querySelector('.tag-filter');
                     if (!filterContainer) return;
@@ -371,11 +398,17 @@
                     allBtn.dataset.tag = '__all';
                     filterContainer.appendChild(allBtn);
 
-                    Array.from(tagSet).sort().forEach(tag => {
+                    Array.from(tagSet).sort((a, b) => {
+                        // Move "Other Oddities" to the end
+                        if (a === 'Other Oddities') return 1;
+                        if (b === 'Other Oddities') return -1;
+                        // Otherwise sort alphabetically
+                        return a.localeCompare(b);
+                    }).forEach(tag => {
                         const btn = document.createElement('button');
                         btn.className = 'tag-btn';
                         btn.dataset.tag = tag;
-                        btn.textContent = tag[0].toUpperCase() + tag.slice(1);
+                        btn.textContent = tagDisplayNames[tag] || (tag[0].toUpperCase() + tag.slice(1));
                         filterContainer.appendChild(btn);
                     });
                 }
@@ -388,6 +421,14 @@
                     const publications = getRenderedPublications();
                     if (activeTags.size === 0 || activeTags.has('__all')) {
                         publications.forEach(p => p.style.display = 'block');
+                        // Show all year sections
+                        document.querySelectorAll('.year-section').forEach(section => {
+                            section.style.display = 'block';
+                        });
+                        // Show all year markers
+                        document.querySelectorAll('.year-marker').forEach(marker => {
+                            marker.style.display = 'block';
+                        });
                         return;
                     }
 
@@ -395,6 +436,25 @@
                         const tags = (publication.getAttribute('data-tags') || '').split(',').map(t => t.trim()).filter(Boolean);
                         const matches = Array.from(activeTags).some(tag => tags.includes(tag));
                         publication.style.display = matches ? 'block' : 'none';
+                    });
+
+                    // Hide year sections with no visible publications
+                    document.querySelectorAll('.year-section').forEach(section => {
+                        const list = section.querySelector('[id^="year-"][id$="-list"]');
+                        if (list) {
+                            const visiblePubs = Array.from(list.querySelectorAll('.publication-item'))
+                                .filter(pub => pub.style.display !== 'none');
+                            section.style.display = visiblePubs.length > 0 ? 'block' : 'none';
+                        }
+                    });
+
+                    // Hide year markers with no visible publications
+                    const yearMarkerElements = document.querySelectorAll('.year-marker');
+                    yearMarkerElements.forEach((marker, index) => {
+                        if (years[index]) {
+                            const yearSection = document.getElementById(`year-${years[index]}`);
+                            marker.style.display = (yearSection && yearSection.style.display !== 'none') ? 'block' : 'none';
+                        }
                     });
                 }
 
