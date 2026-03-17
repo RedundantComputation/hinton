@@ -6,7 +6,7 @@
   <title>Media — Videos</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { background: #ffefca; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    body { background: #7997b9; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
     .media-grid .card { transition: transform .12s ease, box-shadow .12s ease; }
     .media-grid .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
     .media-meta { color: #6c757d; font-size: .9rem; }
@@ -24,7 +24,7 @@
   <header class="py-3 bg-white border-bottom sticky-top">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
-        <h1 class="h4 mb-0"><a href="/hinton/" class="text-decoration-none text-dark"><span class="me-2">←</span>Geoffrey E. Hinton</a></h1>
+        <h1 class="h4 mb-0"><a href="./../../" class="text-decoration-none text-dark"><span class="me-2">←</span>Geoffrey E. Hinton</a></h1>
         <span class="text-muted">Media</span>
       </div>
     </div>
@@ -132,11 +132,14 @@
       }
 
       function loadAndRender() {
-        fetch('videos.json')
-          .then(r => { if (!r.ok) throw new Error('Failed to load videos.json'); return r.json(); })
+        fetch('media.json')
+          .then(r => { if (!r.ok) throw new Error('Failed to load media.json'); return r.json(); })
           .then(data => {
             // Expect an array of items
             let items = Array.isArray(data) ? data.slice() : (Array.isArray(data.items) ? data.items.slice() : []);
+
+            // Filter for video type only
+            items = items.filter(it => it.type === 'video');
 
             // Attach parsedDate for sorting
             items.forEach(it => {
@@ -154,7 +157,7 @@
             render(items);
           })
           .catch(err => {
-            root.innerHTML = '<div class="col-12"><div class="alert alert-warning">Unable to load videos.json — check console for details.</div></div>';
+            root.innerHTML = '<div class="col-12"><div class="alert alert-warning">Unable to load media.json — check console for details.</div></div>';
             console.error(err);
           });
       }
