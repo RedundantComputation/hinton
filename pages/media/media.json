@@ -61,13 +61,310 @@
     "date": "February 2022",
     "title": "Genius Makers: The Mavericks Who Brought AI to Google, Facebook, and the World",
     "link": "https://www.penguinrandomhouse.com/books/565698/genius-makers-by-cade-metz/",
-    "linkText": "Watch"
+    "linkText": "Watch",
+    "thumbnail": "./assets/genius_makers_thumbnail.png"
   },
-{
+  {
     "type": "video",
     "date": "May 2024",
     "title": "Keynote interview with Geoffrey Hinton and Nicholas Thompson | AI for Good",
     "link": "https://www.youtube.com/watch?v=dNjClDI6zT4",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "February 2026",
+    "title": "'Godfather of AI' predicts ALL jobs will be in 'wiped out' by AI | LBC World News",
+    "link": "https://www.youtube.com/watch?v=eddSGoSYnSU",
+    "linkText": "Watch"
+  },
+  {
+    "type": "print",
+    "date": "February 2026",
+    "title": "Is AI the Next Climate Change? | The Wall Street Journal",
+    "link": "https://www.wsj.com/opinion/is-ai-the-next-climate-change-e7a11637?st=hbGnti&reflink=desktopwebshare_permalink",
+    "linkText": "Read",
+    "thumbnail": "./assets/wsj_thumbnail.png"
+  },
+  {
+    "type": "video",
+    "date": "January 2026",
+    "title": "Professor Geoffrey Hinton - AI and Our Future | City of Hobart",
+    "link": "https://www.youtube.com/watch?v=UccvsYEp9yc",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "January 2026",
+    "title": "'Godfather of AI' Geoffrey Hinton warns AI has 'progressed even faster than I thought' | CNN",
+    "link": "https://www.youtube.com/watch?v=5qBDQgfeB6s",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "December 2025",
+    "title": "The Collaboration that Built Modern AI: Geoff Hinton & Jeff Dean in Conversation with Jordan Jacobs | Radical Ventures",
+    "link": "https://www.youtube.com/watch?v=ue9MWfvMylE",
+    "linkText": "Watch"
+  },
+  {
+    "type": "print",
+    "date": "November 2025",
+    "title": "The Case That A.I. Is Thinking | New Yorker",
+    "link": "https://www.newyorker.com/magazine/2025/11/10/the-case-that-ai-is-thinking",
+    "linkText": "Read",
+    "thumbnail": "./assets/new_yorker_thumbnail.png"
+  },
+  {
+    "type": "podcast",
+    "date": "December 2025",
+    "title": "The human cost of AI, with Geoffrey Hinton | GZERO Media",
+    "link": "https://www.youtube.com/watch?v=UpikeSpkeaY",
+    "linkText": "Listen"
+  },
+  {
+    "type": "podcast",
+    "date": "December 2025",
+    "title": "Godfather of AI: I Asked Him The Dumb Questions WE ALL HAVE | Smart Girl Dumb Questions with Nayeema Raza",
+    "link": "https://www.youtube.com/watch?v=Px3HfB2UkyU",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "November 2025",
+    "title": "AI: The Promise and Peril, with Bernie Sanders | Georgetown University Institute of Politics and Public Service",
+    "link": "https://www.youtube.com/watch?v=oz3gvM7Oj3g",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "October 2025",
+    "title": "AI: What Could Go Wrong? | The Weekly Show with Jon Stewart",
+    "link": "https://www.youtube.com/watch?v=jrK3PsD3APk",
+    "linkText": "Listen"
+  },
+  {
+    "type": "podcast",
+    "date": "June 2025",
+    "title": "Godfather of AI: They Keep Silencing Me But I’m Trying to Warn Them! | The Diary of a CEO with Steven Bartlett",
+    "link": "https://www.youtube.com/watch?v=giT0ytynSqg",
+    "linkText": "Listen"
+  },
+  {
+    "type": "video",
+    "date": "November 2025",
+    "title": "'Musk Will Get Richer, People Will Get Unemployed': Nobel Laureate Hinton on AI | Bloomberg Television",
+    "link": "https://www.youtube.com/watch?v=e1Hf-o1SzL4",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "November 2025",
+    "title": "AI pioneer explains why it poses an existential risk for humanity | On with Kara Swisher",
+    "link": "https://www.youtube.com/watch?v=w_agSeXwxhU",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "November 2025",
+    "title": "'Could AI have a goal to destroy us?' 'Yes' | RTE Radio 1 with Brendan O'Connor",
+    "link": "https://www.rte.ie/radio/radio1/clips/22559818/",
+    "linkText": "Listen",
+    "thumbnail": "https://www.cs.toronto.edu/~hinton/geoff6.jpg"
+  },
+  {
+    "type": "podcast",
+    "date": "May 2025",
+    "title": "Geoffrey Hinton: Nobel Prize Conversations | Nobel Prize",
+    "link": "https://www.youtube.com/watch?v=wImezVZ-tck",
+    "linkText": "Listen"
+  },
+  {
+    "type": "video",
+    "date": "January 2026",
+    "title": "Could the AI race lead to superintelligence taking over from humans? | The Business | ABC News",
+    "link": "https://www.youtube.com/watch?v=HE5qnKGFIvg",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "January 2026",
+    "title": "'Godfather of AI' Geoffrey Hinton warns about the 'dangerous' future of AI' | BBC Politics",
+    "link": "https://www.youtube.com/watch?v=eHSn50wnBRQ",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "October 2025",
+    "title": "The 'godfather of AI' Geoffrey Hinton on AI sentience and the threat of it taking over the world | The Globe and Mail",
+    "link": "https://www.youtube.com/watch?v=eHSn50wnBRQ",
+    "linkText": "Listen"
+  },
+  {
+    "type": "video",
+    "date": "December 2025",
+    "title": " The Godfather of AI: “We Don’t Fully Understand What We’ve Built”  | Gustavo Entrala",
+    "link": "https://www.youtube.com/watch?v=oroCGlPeXgs",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "May 2024",
+    "title": "Geoffrey Hinton reveals the surprising truth about AI’s limits and potential | Stange Loop Podcast with Joel Hellermark",
+    "link": "https://www.youtube.com/watch?v=n4IQOBka8bc",
+    "linkText": "Listen"
+  },
+  {
+    "type": "video",
+    "date": "February 2024",
+    "title": "Will digital intelligence replace biological intelligence? | Schwartz Reisman Institute",
+    "link": "https://www.youtube.com/watch?v=iHCeAotHZa4",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "June 2024",
+    "title": "AI will become smarter than humans: Geoffrey Hinton | BNN Bloomberg",
+    "link": "https://www.youtube.com/watch?v=mqjX8AzfJ_A",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "November 2024",
+    "title": "Will Digital Intelligence Replace Biological Intelligence? | Vector Institute",
+    "link": "https://www.youtube.com/watch?v=Es6yuMlyfPw",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "October 2024",
+    "title": "‘Godfather of AI’ on AI “exceeding human intelligence” and it “trying to take over” | BBC Politics",
+    "link": "https://www.youtube.com/watch?v=MGJpR591oaM",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "August 2025",
+    "title": "The “Godfather of AI,” Dr. Geoffrey Hinton, on AI’s Existential Risk | Katie Couric",
+    "link": "https://www.youtube.com/watch?v=NnA2OoH_NFY",
+    "linkText": "Listen"
+  },
+  {
+    "type": "podcast",
+    "date": "August 2025",
+    "title": "An interview with nobel-winning godfather of AI, Geoffrey Hinton | CBC Metro Morning",
+    "link": "https://www.cbc.ca/listen/live-radio/1-39-metro-morning/clip/16164290-an-interview-nobel-winning-godfather-ai-geoffrey-hinton",
+    "linkText": "Listen",
+    "thumbnail": "https://www.cs.toronto.edu/~hinton/geoff5.jpg"
+  },
+  {
+    "type": "video",
+    "date": "November 2024",
+    "title": "AI Pioneer Geoffrey Hinton on the Future of AI in 10 Years | KBS The Great Transition",
+    "link": "https://www.youtube.com/watch?v=SN-BISKo2lE",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "August 2025",
+    "title": "AI will be smarter than humans in 20 years, 'Godfather of AI' warns | CUOMO NewsNation",
+    "link": "https://www.youtube.com/watch?v=hnvbcgu25y0",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "July 2025",
+    "title": "AI Replacing Human Intelligence? - Geoffrey Hinton (Godfather of AI) speaks at WAIC | ShanghaiEye",
+    "link": "https://www.youtube.com/watch?v=Dt1XGkh1vY8",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "July 2025",
+    "title": "Will AI outsmart human intelligence? - with 'Godfather of AI' Geoffrey Hinton  | The Royal Institution",
+    "link": "https://www.youtube.com/watch?v=IkdziSLYzHw",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "July 2025",
+    "title": "Toronto Tech Week - Frontiers of AI: Insights from a Nobel Laureate | Desjardins Speaker Series",
+    "link": "https://www.youtube.com/watch?v=S4Tz7d0QOeE",
+    "linkText": "Watch"
+  },
+  {
+    "type": "print",
+    "date": "July 2025",
+    "title": "If AI attempts to take over world, don’t count on a ‘kill switch’ to save humanity | CNBC",
+    "link": "https://www.cnbc.com/2025/07/24/in-ai-attempt-to-take-over-world-theres-no-kill-switch-to-save-us.html",
+    "linkText": "Read",
+    "thumbnail": "./assets/cnbc_thumbnail.png"
+  },
+  {
+    "type": "video",
+    "date": "June 2025",
+    "title": "Richard Gregory Memorial Lecture 2025 - Will Digital Intelligence Replace Biological Intelligence? | University of Bristol",
+    "link": "https://www.youtube.com/watch?v=utlQ8UBVPBI",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "April 2025",
+    "title": "Professor Geoffrey Hinton Distinguished Lecture on Boltzmann Machines | University of Edinburgh",
+    "link": "https://informatics.ed.ac.uk/news-events/events/informatics-distinguished-lectures/professor-geoffrey-hinton-distinguished",
+    "linkText": "Watch",
+    "thumbnail": "https://www.cs.toronto.edu/~hinton/geoff6.jpg"
+  },
+  {
+    "type": "video",
+    "date": "April 2025",
+    "title": "'Godfather of AI' on hopes, fears and predictions for future of AI | CBS News",
+    "link": "https://www.cbsnews.com/video/long-hed-full-interview-godfather-of-ai-on-hopes-fears-and-predictions-for-future-of-ai/",
+    "linkText": "Watch",
+    "thumbnail": "./assets/cbs_sat_morning.png"
+  },
+  {
+    "type": "video",
+    "date": "March 2025",
+    "title": "The 2025 Martin Lecture featuring Geoffrey Hinton — Boltzmann Machines | University of Toronto",
+    "link": "https://www.youtube.com/watch?v=juif0T8NOsY",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "January 2025",
+    "title": "‘Godfather of AI’ predicts it will take over the world | LBC ",
+    "link": "https://www.youtube.com/watch?v=vxkBE23zDmQ",
+    "linkText": "Watch"
+  },
+  {
+    "type": "podcast",
+    "date": "January 2025",
+    "title": "Why The 'Godfather of AI' Now Fears His Own Creation | Theories of Everything with Curt Jaimungal",
+    "link": "https://www.youtube.com/watch?v=b_DUft-BdIE",
+    "linkText": "Listen"
+  },
+  {
+    "type": "print",
+    "date": "March 2025",
+    "title": "Nobel… et lanceur d’alerte | La Presse",
+    "link": "https://www.lapresse.ca/dialogue/chroniques/2025-03-19/grande-entrevue-avec-geoffrey-hinton/nobel-et-lanceur-d-alerte.php",
+    "linkText": "Read",
+    "thumbnail": "./assets/la_presse_thumbnail.png"
+  },
+  {
+    "type": "podcast",
+    "date": "February 2025",
+    "title": "The Story: Denial Isn’t the Answer w/ Geoffrey Hinton | TechStuff with Oz Woloshyn and Karah Preiss",
+    "link": "https://podcasts.apple.com/us/podcast/the-story-denial-isnt-the-answer-w-geoffrey-hinton/id282795787?i=1000691363635",
+    "linkText": "Listen",
+    "thumbnail": "https://www.cs.toronto.edu/~hinton/geoff6.jpg"
+  },
+  {
+    "type": "podcast",
+    "date": "February 2026",
+    "title": "Is AI Hiding Its Full Power? | StarTalk with Neil deGrasse Tyson",
+    "link": "https://www.youtube.com/watch?v=l6ZcFa8pybE",
     "linkText": "Watch"
   }
 ]

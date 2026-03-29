@@ -26,7 +26,7 @@
         /* Mobile-specific styles */
         .icon-large {
             font-size: 2rem;
-            color: var(--bs-primary);
+            color: #2E446E;
             margin-bottom: 0.5rem;
         }
 
@@ -85,7 +85,7 @@
 
         .popup-icon {
             font-size: 1.5rem;
-            color: var(--bs-primary);
+            color: #2E446E;
             margin-right: 0.5rem;
         }
 
@@ -136,7 +136,7 @@
         }
 
         .popup-links a:hover {
-            color: var(--bs-primary);
+            color: #2E446E;
             background-color: #f8f9fa;
         }
 
@@ -273,10 +273,9 @@
                                 <h2 class="card-title h5"><i class="bi bi-robot me-2"></i>Amusing Odds & Ends</h2>
                                 <ul class="card-links">
                                     <li><a href="https://www.cs.toronto.edu/~hinton/python.jpg">Intro to Python</a></li>
-                                    <li><a href="https://www.penguinrandomhouse.com/books/565698/genius-makers-by-cade-metz/">Cade Metz Book</a></li>
                                     <li><a href="https://computerhistory.org/blog/chm-releases-alexnet-source-code/">AlexNet Source at the Computer History Museum</a></li>
                                     <li><a href="https://www.cs.toronto.edu/~hinton/minefield.pdf">A new concept of healing from the people who design unimprovised explosive devices</a></li>
-                                    <li><a href="#">Miscellaneous</a></li>
+                                    <li><a href="#" onclick="openPopup('miscellaneous'); return false;">Miscellaneous</a></li>
                                 </ul>
                             </div>
                             <!-- Mobile View -->
@@ -297,7 +296,7 @@
                                 <h2 class="card-title h5"><i class="bi bi-megaphone me-2"></i>Speaking Requests</h2>
                                 <ul class="card-links">
                                     <li><a href="https://www.chartwellspeakers.com/speaker/geoffrey-hinton/">Corporate Requests</a></li>
-                                    <li><a href="#">Talks for Universities & Public Institutions</a></li>
+                                    <li><a href="./pages/talks.html">Talks for Universities & Public Institutions</a></li>
                                 </ul>
                             </div>
                             <!-- Mobile View -->
@@ -317,7 +316,7 @@
                             <div class="desktop-view">
                                 <h2 class="card-title h5"><i class="bi bi-camera me-2"></i>Media Requests</h2>
                                 <ul class="card-links">
-                                    <li><a href="#">Speaker Request Form</a></li>
+                                    <li><a href="./pages/speaking.html">Speaker Request Form</a></li>
                                 </ul>
                             </div>
                             <!-- Mobile View -->
@@ -363,7 +362,7 @@
                                     <li><a href="./pages/students/postdocs.html">Former Postdocs</a></li>
                                     <li><a href="./pages/students/phds.html">Former PhD Students</a></li>
                                     <li><a href="./pages/students/masters.html">Former MSc Students</a></li>
-                                    <li><a href="#">Former Google Interns</a></li>
+                                    <li><a href="./pages/students/interns.html">Former Google Interns</a></li>
                                 </ul>
                             </div>
                             <!-- Mobile View -->
@@ -445,9 +444,9 @@
                 <button class="popup-close" onclick="closePopup('media')"><i class="bi bi-x"></i></button>
                 <ul class="popup-links">
                     <li><a href="./pages/media/video.html">Video</a></li>
-                    <li><a href="#">Print</a></li>
-                    <li><a href="#">Podcasts</a></li>
-                    <li><a href="#">Popular Books</a></li>
+                    <li><a href="./pages/media/print.html">Print</a></li>
+                    <li><a href="./pages/media/podcasts.html">Podcasts</a></li>
+                    <li><a href="./pages/media/books.html">Popular Books</a></li>
                 </ul>
             </div>
         </div>
@@ -464,7 +463,7 @@
                     <li><a href="./pages/students/postdocs.html">Former Postdocs</a></li>
                     <li><a href="./pages/students/phds.html">Former PhD Students</a></li>
                     <li><a href="./pages/students/masters.html">Former MSc Students</a></li>
-                    <li><a href="#">Former Google Interns</a></li>
+                    <li><a href="./pages/students/interns.html">Former Google Interns</a></li>
                 </ul>
             </div>
         </div>
@@ -499,8 +498,29 @@
                     <li><a href="https://www.cs.toronto.edu/~hinton/python.jpg">Intro to Python</a></li>
                     <li><a href="https://computerhistory.org/blog/chm-releases-alexnet-source-code/">AlexNet Source at the Computer History Museum</a></li>
                     <li><a href="https://www.cs.toronto.edu/~hinton/minefield.pdf">A new concept of healing from the people who design unimprovised explosive devices</a></li>
-                    <li><a href="">Miscellaneous</a></li>
+                    <li><a href="#" onclick="openPopup('miscellaneous'); return false;">Miscellaneous</a></li>
                 </ul>
+            </div>
+        </div>
+        
+        <!-- 6b. Miscellaneous Popup -->
+        <div id="miscellaneous-popup" class="popup-modal">
+            <div class="popup-content wide">
+                <div class="popup-header">
+                    <i class="bi bi-robot popup-icon"></i>
+                    <h3 class="popup-title">Miscellaneous</h3>
+                </div>
+                <button class="popup-close" onclick="closePopup('miscellaneous')"><i class="bi bi-x"></i></button>
+                <div class="popup-text">
+                    <ul class="popup-links">
+                        <li><a href="https://www.cs.toronto.edu/~hinton/HintonMumbai.pdf">2021 commencement address at IIT Mumbai</a></li>
+                        <li><a href="https://www.cs.toronto.edu/~hinton/turian.png">Joseph Turian's map of 2500 English words produced by using t-SNE on the word feature vectors learned by Collobert & Weston, ICML 2008</a></li>
+                        <li><a href="https://www.cs.toronto.edu/~hinton/charniak.txt">Doing analogies by using vector algebra on word embeddings (in 2008)</a></li>
+                        <li><a href="https://www.cs.toronto.edu/~hinton/marcusquote.html">My old favorite Gary Marcus quote</a></li>
+                        <li><a href="https://www.cs.toronto.edu/~hinton/GPT4correctsMarcus.txt">GPT-4 corrects Gary Marcus</a></li>
+                        <li>My new favorite Gary Marcus quote: "It gloms on to different clusters of text. That is all."</li>
+                    </ul>
+                </div>
             </div>
         </div>
         
@@ -514,7 +534,7 @@
                 <button class="popup-close" onclick="closePopup('speaking')"><i class="bi bi-x"></i></button>
                 <ul class="popup-links">
                     <li><a href="https://www.chartwellspeakers.com/speaker/geoffrey-hinton/">Corporate Requests</a></li>
-                    <li><a href="#">Talks for Universities & Public Institutions</a></li>
+                    <li><a href="./pages/talks.html">Talks for Universities & Public Institutions</a></li>
                 </ul>
             </div>
         </div>
@@ -545,7 +565,7 @@
                 </div>
                 <button class="popup-close" onclick="closePopup('media-requests')"><i class="bi bi-x"></i></button>
                 <ul class="popup-links">
-                    <li><a href="#">Speaker Request Form</a></li>
+                    <li><a href="./pages/speaking.html">Speaker Request Form</a></li>
                 </ul>
             </div>
         </div>

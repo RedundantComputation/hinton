@@ -1,5 +1,5 @@
 :root {
-    --bs-primary: #3A5FCF;
+    --bs-primary: #2E446E;
     --bg-color: #7997b9;
 }
 
@@ -48,11 +48,11 @@ body {
     left: 0;
     width: 2rem;
     height: 2px;
-    background-color: var(--bs-primary);
+    background-color: #2E446E;
 }
 
 .card-title i {
-    color: var(--bs-primary);
+    color: #2E446E;
 }
 
 .card-body {
@@ -77,7 +77,7 @@ body {
 }
 
 .card-links a:hover {
-    color: var(--bs-primary);
+    color: #2E446E;
 }
 
 /* Desktop vs Mobile Views */
