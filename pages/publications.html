@@ -59,6 +59,15 @@
             color: white;
         }
 
+        .tag-select {
+            display: none;
+            min-width: 240px;
+            max-width: 360px;
+            border: 1px solid #2E446E;
+            color: #2E446E;
+            font-weight: 500;
+        }
+
         .publications-container {
             position: relative;
             padding-right: 60px; /* Space for scrubber */
@@ -211,6 +220,19 @@
             .publications-container {
                 padding-right: 50px;
             }
+
+            .tag-filter {
+                padding-right: 50px;
+            }
+
+            .tag-filter .tag-btn {
+                display: none;
+            }
+
+            .tag-select {
+                display: block;
+                width: min(100%, 320px);
+            }
             
             .year-scrubber {
                 right: 5px;
@@ -257,7 +279,7 @@
     <!-- Main Content -->
     <main class="py-4">
         <div class="container">
-            <p class="lead text-center mb-3">This is a full list of Geoffrey Hinton's scientific publications in reverse chronological order. The list can be filtered by one or more topics below.</p>
+            <p class="lead text-center mb-3">This is a full list of Geoffrey Hinton's scientific publications in reverse chronological order. The list can be filtered by topic below.</p>
             <div class="tag-filter">
                 <span class="filter-label">Filter By:</span>
                 <button class="tag-btn" data-tag="backpropagation">Backpropagation</button>
@@ -267,8 +289,12 @@
                 <button class="tag-btn" data-tag="distillation">Distillation</button>
                 <button class="tag-btn" data-tag="distributed representations">Distributed Representations</button>
                 <button class="tag-btn" data-tag="evolution">Evolution & Learning</button>
+                <button class="tag-btn" data-tag="fast weights">Fast weights</button>
+                <button class="tag-btn" data-tag="foveal glimpses">Foveal glimpses</button>
+                <button class="tag-btn" data-tag="frames of reference">Frames of reference</button>
                 <button class="tag-btn" data-tag="helmholtz machines">Helmholtz Machines</button>
                 <button class="tag-btn" data-tag="image generation">Image Generation</button>
+                <button class="tag-btn" data-tag="language modeling">Language modeling</button>
                 <button class="tag-btn" data-tag="mental imagery">Mental Imagery</button>
                 <button class="tag-btn" data-tag="mixture of experts">Mixture of Experts</button>
                 <button class="tag-btn" data-tag="motor control">Motor Control</button>
@@ -278,7 +304,10 @@
                 <button class="tag-btn" data-tag="review papers">Review Papers</button>
                 <button class="tag-btn" data-tag="shape recognition">Shape Recognition</button>
                 <button class="tag-btn" data-tag="speech recognition">Speech Recognition</button>
+                <button class="tag-btn" data-tag="topographic maps">Topographic maps</button>
                 <button class="tag-btn" data-tag="tropical archaeoastronomy">Tropical Archaeoastronomy</button>
+                <button class="tag-btn" data-tag="variational learning">Variational learning</button>
+                <button class="tag-btn" data-tag="3-way interactions">3-way interactions</button>
                 <button class="tag-btn" data-tag="oddities">Other Oddities</button>
             </div>
             <p class="lead text-center mb-3">Labels are a work in progress. We have not finished labelling papers by topic.</p>
@@ -368,8 +397,12 @@
                     'Distillation': 'Distillation',
                     'Distributed representations': 'Distributed Representations',
                     'Evolution': 'Evolution & Learning',
+                    'Fast weights': 'Fast weights',
+                    'Foveal glimpses': 'Foveal glimpses',
+                    'Frames of reference': 'Frames of reference',
                     'Helmholtz machines': 'Helmholtz Machines',
                     'Image generation': 'Image Generation',
+                    'Language modeling': 'Language modeling',
                     'Mental imagery': 'Mental Imagery',
                     'Mixture of experts': 'Mixture of Experts',
                     'Motor control': 'Motor Control',
@@ -380,7 +413,10 @@
                     'Review papers': 'Review Papers',
                     'Shape recognition': 'Shape Recognition',
                     'Speech recognition': 'Speech Recognition',
+                    'Topographic maps': 'Topographic maps',
                     'Tropical archaeoastronomy': 'Tropical Archaeoastronomy'
+                    ,'Variational learning': 'Variational learning'
+                    ,'3-way interactions': '3-way interactions'
                 };
 
                 function buildTagFilter(tagSet) {
@@ -411,6 +447,28 @@
                         btn.textContent = tagDisplayNames[tag] || (tag[0].toUpperCase() + tag.slice(1));
                         filterContainer.appendChild(btn);
                     });
+
+                    const select = document.createElement('select');
+                    select.className = 'tag-select form-select';
+                    select.setAttribute('aria-label', 'Filter publications by topic');
+
+                    const allOption = document.createElement('option');
+                    allOption.value = '__all';
+                    allOption.textContent = 'All';
+                    select.appendChild(allOption);
+
+                    Array.from(tagSet).sort((a, b) => {
+                        if (a === 'Other Oddities') return 1;
+                        if (b === 'Other Oddities') return -1;
+                        return a.localeCompare(b);
+                    }).forEach(tag => {
+                        const option = document.createElement('option');
+                        option.value = tag;
+                        option.textContent = tagDisplayNames[tag] || (tag[0].toUpperCase() + tag.slice(1));
+                        select.appendChild(option);
+                    });
+
+                    filterContainer.appendChild(select);
                 }
 
                 function getRenderedPublications() {
@@ -461,43 +519,37 @@
                 function attachFilterListeners() {
                     const filterContainer = document.querySelector('.tag-filter');
                     if (!filterContainer) return;
+                    const filterSelect = filterContainer.querySelector('.tag-select');
                     let activeTags = new Set(['__all']);
+
+                    function setActiveTag(tag) {
+                        const activeTag = tag && tag !== '__all' ? tag : '__all';
+                        activeTags = new Set([activeTag]);
+
+                        filterContainer.querySelectorAll('.tag-btn').forEach(b => {
+                            b.classList.toggle('active', b.dataset.tag === activeTag);
+                        });
+
+                        if (filterSelect) filterSelect.value = activeTag;
+                        applyFilter(activeTags);
+                    }
 
                     filterContainer.addEventListener('click', function(e) {
                         const btn = e.target.closest('.tag-btn');
                         if (!btn) return;
                         const tag = btn.dataset.tag;
-
-                        // Toggle behavior
-                        if (tag === '__all') {
-                            // Clear other selections
-                            activeTags = new Set(['__all']);
-                            // Update UI
-                            filterContainer.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-                            btn.classList.add('active');
-                        } else {
-                            // deselect 'All'
-                            activeTags.delete('__all');
-                            const allBtn = filterContainer.querySelector('[data-tag="__all"]');
-                            if (allBtn) allBtn.classList.remove('active');
-
-                            if (activeTags.has(tag)) {
-                                activeTags.delete(tag);
-                                btn.classList.remove('active');
-                            } else {
-                                activeTags.add(tag);
-                                btn.classList.add('active');
-                            }
-
-                            // if none selected, revert to All
-                            if (activeTags.size === 0) {
-                                activeTags.add('__all');
-                                if (allBtn) allBtn.classList.add('active');
-                            }
-                        }
-
-                        applyFilter(activeTags);
+                        const wasActive = btn.classList.contains('active');
+                        if (tag === '__all' || wasActive) setActiveTag('__all');
+                        else setActiveTag(tag);
                     });
+
+                    if (filterSelect) {
+                        filterSelect.addEventListener('change', function() {
+                            setActiveTag(filterSelect.value);
+                        });
+                    }
+
+                    setActiveTag('__all');
                 }
 
                 // --- Scrubber logic (uses generated year sections) ---

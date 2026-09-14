@@ -366,5 +366,13 @@
     "title": "Is AI Hiding Its Full Power? | StarTalk with Neil deGrasse Tyson",
     "link": "https://www.youtube.com/watch?v=l6ZcFa8pybE",
     "linkText": "Watch"
+  },
+  {
+    "type": "print",
+    "date": "May 2026",
+    "title": "Five recognized with honorary degrees | The Harvard Gazette",
+    "link": "https://news.harvard.edu/gazette/story/2026/05/five-recognized-with-honorary-degrees/",
+    "linkText": "Read",
+    "thumbnail": "./assets/gazette_thumbnail.png"
   }
 ]
