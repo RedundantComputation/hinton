@@ -73,7 +73,8 @@
             margin-bottom: 0.25rem;
         }
 
-        .card-links a {
+        .card-links a,
+        .card-links span {
             color: #6c757d;
             text-decoration: none;
             display: block;
@@ -139,17 +140,6 @@
             }
         }
 
-        /* Ensure proper desktop/mobile view switching */
-        @media (max-width: 767px) {
-            .desktop-view {
-                display: none !important;
-            }
-            
-            .mobile-view {
-                display: flex !important;
-            }
-        }
-
         /* Mobile-specific styles */
         .icon-large {
             font-size: 2rem;
@@ -157,23 +147,31 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Mobile popup styles */
+        /* Popups (<dialog>): the dialog itself is the full-screen dark overlay */
         .popup-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            border: 0;
+            color: inherit;
             background-color: rgba(0, 0, 0, 0.5);
             display: none;
-            z-index: 1050;
             align-items: center;
             justify-content: center;
             padding: 1rem;
         }
 
-        .popup-modal.active {
+        .popup-modal[open] {
             display: flex;
+        }
+
+        .popup-modal::backdrop {
+            background: transparent;
         }
 
         .popup-content {
@@ -253,7 +251,8 @@
             margin-bottom: 0.75rem;
         }
 
-        .popup-links a {
+        .popup-links a,
+        .popup-links span {
             color: #6c757d;
             text-decoration: none;
             display: block;
@@ -279,11 +278,6 @@
                 margin-right: -8px;
             }
             
-            .mobile-view .card-body {
-                padding: 1rem 0.25rem !important;
-                min-height: 90px;
-            }
-            
             .icon-large {
                 font-size: 1.75rem;
             }
@@ -301,11 +295,6 @@
             
             .mobile-view .card-title {
                 font-size: 0.7rem !important;
-            }
-            
-            .mobile-view .card-body {
-                min-height: 80px;
-                padding: 0.75rem 0.25rem !important;
             }
         }
     </style>
@@ -485,8 +474,8 @@
                             <!-- Desktop View -->
                             <div class="desktop-view">
                                 <h2 class="card-title h5"><i class="bi bi-people me-2"></i>Students</h2>
+                                <p><strong>Information for prospective students, postdocs and visitors:</strong> I will not be taking any more students, postdocs or visitors. </p>
                                 <ul class="card-links">
-                                    <p><strong>Information for prospective students, postdocs and visitors:</strong> I will not be taking any more students, postdocs or visitors. </p>
                                     <li><a href="./pages/students/postdocs.html">Former Postdocs</a></li>
                                     <li><a href="./pages/students/phds.html">Former PhD Students</a></li>
                                     <li><a href="./pages/students/masters.html">Former MSc Students</a></li>
@@ -510,10 +499,10 @@
                             <div class="desktop-view">
                                 <h2 class="card-title h5"><i class="bi bi-envelope me-2"></i>Contact</h2>
                                 <ul class="card-links">
-                                    <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
-                                    <li><a href="#">Voice: send email</a></li>
-                                    <li><a href="#">Fax: scan and send email</a></li>
-                                    <li><a href="#">Executive Assistant: jennifer [dot] cressman [at] utoronto [dot] ca</a></li>
+                                    <li><span>Email: geoffrey [dot] hinton [at] gmail [dot] com</span></li>
+                                    <li><span>Voice: send email</span></li>
+                                    <li><span>Fax: scan and send email</span></li>
+                                    <li><span>Executive Assistant: jennifer [dot] cressman [at] utoronto [dot] ca</span></li>
                                 </ul>
                             </div>
                             <!-- Mobile View -->
@@ -528,195 +517,54 @@
         </div>
     </main>
 
-    <!-- Mobile Popups Container -->
-    <div class="mobile-popups">
-        <!-- 1. Publications Popup -->
-        <div id="publications-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-file-earmark-text popup-icon"></i>
-                    <h3 class="popup-title">Scientific Publications</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('publications')"><i class="bi bi-x"></i></button>
+    <!-- Popup: on phones, a tapped card's links are copied in here -->
+    <dialog id="card-popup" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="popup-icon"></i>
+                <h3 class="popup-title"></h3>
+            </div>
+            <form method="dialog"><button class="popup-close" aria-label="Close"><i class="bi bi-x"></i></button></form>
+            <div class="popup-body"></div>
+        </div>
+    </dialog>
+
+    <dialog id="miscellaneous-popup" class="popup-modal">
+        <div class="popup-content wide">
+            <div class="popup-header">
+                <i class="bi bi-robot popup-icon"></i>
+                <h3 class="popup-title">Miscellaneous</h3>
+            </div>
+            <form method="dialog"><button class="popup-close" aria-label="Close"><i class="bi bi-x"></i></button></form>
+            <div class="popup-text">
                 <ul class="popup-links">
-                    <li><a href="./pages/publications.html">Full List in Reverse Chronological Order</a></li>
-                    <li>The list can be filtered by one or more topics, which can be seen at the start of the list.</li>
+                    <li><a href="https://www.cs.toronto.edu/~hinton/HintonMumbai.pdf">2021 commencement address at IIT Mumbai</a></li>
+                    <li><a href="https://www.cs.toronto.edu/~hinton/turian.png">Joseph Turian's map of 2500 English words produced by using t-SNE on the word feature vectors learned by Collobert & Weston, ICML 2008</a></li>
+                    <li><a href="https://www.cs.toronto.edu/~hinton/charniak.txt">Doing analogies by using vector algebra on word embeddings (in 2008)</a></li>
+                    <li><a href="https://www.cs.toronto.edu/~hinton/marcusquote.html">My old favorite Gary Marcus quote</a></li>
+                    <li><a href="https://www.cs.toronto.edu/~hinton/GPT4correctsMarcus.txt">GPT-4 corrects Gary Marcus</a></li>
+                    <li>My new favorite Gary Marcus quote: "It gloms on to different clusters of text. That is all."</li>
                 </ul>
             </div>
         </div>
-        
-        <!-- 2. Teaching Popup -->
-        <div id="teaching-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-mortarboard popup-icon"></i>
-                    <h3 class="popup-title">Teaching</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('teaching')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="https://www.cs.toronto.edu/~hinton/coursera_lectures.html">Coursera Machine Learning Course</a></li>
-                    <li><a href="https://www.cs.toronto.edu/~tijmen/csc321/">2013 University Undergraduate Course</a></li>
-                    <li><a href="https://www.cs.toronto.edu/~hinton/csc2535/index.html">2013 University Graduate Course</a></li>
-                    <li><a href="https://www.cs.toronto.edu/~hinton/nntut.html">Very Old Tutorials</a></li>
-                </ul>
+    </dialog>
+
+    <dialog id="brief-biography-popup" class="popup-modal">
+        <div class="popup-content wide">
+            <div class="popup-header">
+                <i class="bi bi-file-earmark-text popup-icon"></i>
+                <h3 class="popup-title">Brief Biography</h3>
+            </div>
+            <form method="dialog"><button class="popup-close" aria-label="Close"><i class="bi bi-x"></i></button></form>
+            <div class="popup-text">
+                <p>Geoffrey Hinton received his BA in Experimental Psychology from Cambridge in 1970 and his PhD in Artificial Intelligence from Edinburgh in 1978.  He did postdoctoral work at Sussex University and the University of California San Diego and spent five years as a faculty member in the Computer Science department at Carnegie-Mellon University. He then became a fellow of the <a href="https://cifar.ca/" target="_blank">Canadian Institute for Advanced Research</a> and moved to the <a href="https://web.cs.toronto.edu/" target="_blank">Department of Computer Science</a> at the University of Toronto. He spent three years from 1998 until 2001 setting up the <a href="https://www.ucl.ac.uk/life-sciences/gatsby" target="_blank">Gatsby Computational Neuroscience Unit</a> at University College London and then returned to the University of Toronto where he is now an emeritus distinguished professor. From 2004 until 2013 he was the director of the program on "Neural Computation and Adaptive Perception" which is funded by the <a href="https://cifar.ca/" target="_blank">Canadian Institute for Advanced Research</a>. From 2013 to 2023 he worked half-time at Google where he became a Vice President and Engineering Fellow.</p>
+                
+                <p>Geoffrey Hinton is a fellow of <a href="https://royalsociety.org/" target="_blank">the UK Royal Society</a>, <a href="https://rsc-src.ca/" target="_blank">the Royal Society of Canada</a>, <a href="https://aaai.org/" target="_blank">the Association for the Advancement of Artificial Intelligence</a> and a former president of <a href="https://cognitivesciencesociety.org/" target="_blank">the Cognitive Science Society</a>. He is an honorary foreign member of <a href="https://www.amacad.org/" target="_blank">the American Academy of Arts and Sciences</a>, the US National Academy of Engineering and the US National Academy of Science. He has received honorary doctorates from the University of Edinburgh, the University of Sussex, the University of Sherbrooke and the University of Toronto. His awards include the <a href="https://www.cnbc.cmu.edu/derprize/announce2001.html" target="_blank">David E. Rumelhart prize</a>, the <a href="http://ijcai.org/awards/" target="_blank">IJCAI award for research excellence</a>, the <a href="https://canadacouncil.ca/prizes/killam" target="_blank">Killam prize for Engineering</a>, The <a href="https://nserc-crsng.canada.ca/en/prizes" target="_blank">NSERC Herzberg Gold Medal</a>, the IEEE Frank Rosenblatt medal, the IEEE James Clerk Maxwell Gold medal, the NEC C&C award, the BBVA award, the Honda Prize, the Princess of Asturias Award, the ACM Turing Award and the Queen Elizabeth Prize for Engineering.</p>
+                
+                <p>Geoffrey Hinton designs machine learning algorithms. His aim is to discover a learning procedure that is efficient at finding complex structure in large, high-dimensional datasets and to show that this is how the brain learns to see. He was one of the researchers who introduced the <a href="https://www.cs.toronto.edu/~hinton/backprop.html" target="_blank">back-propagation</a> algorithm and the first to use backpropagation for learning word embeddings. His other contributions to neural network research include <a href="https://www.cs.toronto.edu/~hinton/boltzmann.html" target="_blank">Boltzmann machines</a>, <a href="https://www.cs.toronto.edu/~hinton/distrep.html" target="_blank">distributed representations</a>, time-delay neural nets, <a href="https://www.cs.toronto.edu/~hinton/mixex.html" target="_blank">mixtures of experts</a>, <a href="https://www.cs.toronto.edu/~hinton/helmholtz.html" target="_blank">variational learning</a>, <a href="https://www.cs.toronto.edu/~hinton/poe.html" target="_blank">products of experts</a> and deep belief nets (deep learning).    His research group in Toronto made major breakthroughs in deep learning that have revolutionized speech recognition and object classification.</p>
             </div>
         </div>
-        
-        <!-- 3. Media Appearances Popup -->
-        <div id="media-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-camera-video popup-icon"></i>
-                    <h3 class="popup-title">Media Appearances</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('media')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="./pages/media/video.html">Video</a></li>
-                    <li><a href="./pages/media/print.html">Print</a></li>
-                    <li><a href="./pages/media/podcasts.html">Podcasts</a></li>
-                    <li><a href="./pages/media/books.html">Popular Books</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 4. Students Popup -->
-        <div id="team-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-people popup-icon"></i>
-                    <h3 class="popup-title">Students</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('team')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <p><strong>Information for prospective students, postdocs and visitors:</strong>I will not be taking any more students, postdocs or visitors. </p>
-                    <li><a href="./pages/students/postdocs.html">Former Postdocs</a></li>
-                    <li><a href="./pages/students/phds.html">Former PhD Students</a></li>
-                    <li><a href="./pages/students/masters.html">Former MSc Students</a></li>
-                    <li><a href="./pages/students/interns.html">Former Google Interns</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 5. About Me Popup -->
-        <div id="about-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-person popup-icon"></i>
-                    <h3 class="popup-title">About Me</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('about')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="#" onclick="openPopup('brief-biography'); return false;">Brief Biography</a></li>
-                    <li><a href="https://www.cs.toronto.edu/~hinton/shortcv.pdf">Curriculum Vitae</a></li>
-                    <li><a href="./pages/awards.html">Awards & Fellowships</a></li>
-                    <li><a href="https://www.newyorker.com/magazine/2023/11/20/geoffrey-hinton-profile-ai">New Yorker Profile</a></li>
-                    <li><a href="./pages/photos.html">Photos</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 6. Odds & Ends Popup -->
-        <div id="odds-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-robot popup-icon"></i>
-                    <h3 class="popup-title">Amusing Odds & Ends</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('odds')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="https://www.cs.toronto.edu/~hinton/python.jpg">Intro to Python</a></li>
-                    <li><a href="https://computerhistory.org/blog/chm-releases-alexnet-source-code/">AlexNet Source at the Computer History Museum</a></li>
-                    <li><a href="https://www.cs.toronto.edu/~hinton/minefield.pdf">A new concept of healing from the people who design unimprovised explosive devices</a></li>
-                    <li><a href="#" onclick="openPopup('miscellaneous'); return false;">Miscellaneous</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 6b. Miscellaneous Popup -->
-        <div id="miscellaneous-popup" class="popup-modal">
-            <div class="popup-content wide">
-                <div class="popup-header">
-                    <i class="bi bi-robot popup-icon"></i>
-                    <h3 class="popup-title">Miscellaneous</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('miscellaneous')"><i class="bi bi-x"></i></button>
-                <div class="popup-text">
-                    <ul class="popup-links">
-                        <li><a href="https://www.cs.toronto.edu/~hinton/HintonMumbai.pdf">2021 commencement address at IIT Mumbai</a></li>
-                        <li><a href="https://www.cs.toronto.edu/~hinton/turian.png">Joseph Turian's map of 2500 English words produced by using t-SNE on the word feature vectors learned by Collobert & Weston, ICML 2008</a></li>
-                        <li><a href="https://www.cs.toronto.edu/~hinton/charniak.txt">Doing analogies by using vector algebra on word embeddings (in 2008)</a></li>
-                        <li><a href="https://www.cs.toronto.edu/~hinton/marcusquote.html">My old favorite Gary Marcus quote</a></li>
-                        <li><a href="https://www.cs.toronto.edu/~hinton/GPT4correctsMarcus.txt">GPT-4 corrects Gary Marcus</a></li>
-                        <li>My new favorite Gary Marcus quote: "It gloms on to different clusters of text. That is all."</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 7. Speaking Requests Popup -->
-        <div id="speaking-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-megaphone popup-icon"></i>
-                    <h3 class="popup-title">Speaking Requests</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('speaking')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="https://www.chartwellspeakers.com/speaker/geoffrey-hinton/">Corporate Requests</a></li>
-                    <li><a href="./pages/talks.html">Talks for Universities & Public Institutions</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 8. Contact Popup -->
-        <div id="contact-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-envelope popup-icon"></i>
-                    <h3 class="popup-title">Contact</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('contact')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="#">Email: geoffrey [dot] hinton [at] gmail [dot] com</a></li>
-                    <li><a href="#">Voice: send email</a></li>
-                    <li><a href="#">Fax: scan and send email</a></li>
-                    <li><a href="#">Executive Assistant: jennifer [dot] cressman [at] utoronto [dot] ca</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 9. Media Requests Popup -->
-        <div id="media-requests-popup" class="popup-modal">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <i class="bi bi-camera popup-icon"></i>
-                    <h3 class="popup-title">Media Requests</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('media-requests')"><i class="bi bi-x"></i></button>
-                <ul class="popup-links">
-                    <li><a href="./pages/speaking.html">Speaker Request Form</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 11. Brief Biography Popup -->
-        <div id="brief-biography-popup" class="popup-modal">
-            <div class="popup-content wide">
-                <div class="popup-header">
-                    <i class="bi bi-file-earmark-text popup-icon"></i>
-                    <h3 class="popup-title">Brief Biography</h3>
-                </div>
-                <button class="popup-close" onclick="closePopup('brief-biography')"><i class="bi bi-x"></i></button>
-                <div class="popup-text">
-                    <p>Geoffrey Hinton received his BA in Experimental Psychology from Cambridge in 1970 and his PhD in Artificial Intelligence from Edinburgh in 1978.  He did postdoctoral work at Sussex University and the University of California San Diego and spent five years as a faculty member in the Computer Science department at Carnegie-Mellon University. He then became a fellow of the <a href="https://cifar.ca/" target="_blank">Canadian Institute for Advanced Research</a> and moved to the <a href="https://web.cs.toronto.edu/" target="_blank">Department of Computer Science</a> at the University of Toronto. He spent three years from 1998 until 2001 setting up the <a href="https://www.ucl.ac.uk/life-sciences/gatsby" target="_blank">Gatsby Computational Neuroscience Unit</a> at University College London and then returned to the University of Toronto where he is now an emeritus distinguished professor. From 2004 until 2013 he was the director of the program on "Neural Computation and Adaptive Perception" which is funded by the <a href="https://cifar.ca/" target="_blank">Canadian Institute for Advanced Research</a>. From 2013 to 2023 he worked half-time at Google where he became a Vice President and Engineering Fellow.</p>
-                    
-                    <p>Geoffrey Hinton is a fellow of <a href="https://royalsociety.org/" target="_blank">the UK Royal Society</a>, <a href="https://rsc-src.ca/" target="_blank">the Royal Society of Canada</a>, <a href="https://aaai.org/" target="_blank">the Association for the Advancement of Artificial Intelligence</a> and a former president of <a href="https://cognitivesciencesociety.org/" target="_blank">the Cognitive Science Society</a>. He is an honorary foreign member of <a href="https://www.amacad.org/" target="_blank">the American Academy of Arts and Sciences</a>, the US National Academy of Engineering and the US National Academy of Science. He has received honorary doctorates from the University of Edinburgh, the University of Sussex, the University of Sherbrooke and the University of Toronto. His awards include the <a href="https://www.cnbc.cmu.edu/derprize/announce2001.html" target="_blank">David E. Rumelhart prize</a>, the <a href="http://ijcai.org/awards/" target="_blank">IJCAI award for research excellence</a>, the <a href="https://canadacouncil.ca/prizes/killam" target="_blank">Killam prize for Engineering</a>, The <a href="https://nserc-crsng.canada.ca/en/prizes" target="_blank">NSERC Herzberg Gold Medal</a>, the IEEE Frank Rosenblatt medal, the IEEE James Clerk Maxwell Gold medal, the NEC C&C award, the BBVA award, the Honda Prize, the Princess of Asturias Award, the ACM Turing Award and the Queen Elizabeth Prize for Engineering.</p>
-                    
-                    <p>Geoffrey Hinton designs machine learning algorithms. His aim is to discover a learning procedure that is efficient at finding complex structure in large, high-dimensional datasets and to show that this is how the brain learns to see. He was one of the researchers who introduced the <a href="https://www.cs.toronto.edu/~hinton/backprop.html" target="_blank">back-propagation</a> algorithm and the first to use backpropagation for learning word embeddings. His other contributions to neural network research include <a href="https://www.cs.toronto.edu/~hinton/boltzmann.html" target="_blank">Boltzmann machines</a>, <a href="https://www.cs.toronto.edu/~hinton/distrep.html" target="_blank">distributed representations</a>, time-delay neural nets, <a href="https://www.cs.toronto.edu/~hinton/mixex.html" target="_blank">mixtures of experts</a>, <a href="https://www.cs.toronto.edu/~hinton/helmholtz.html" target="_blank">variational learning</a>, <a href="https://www.cs.toronto.edu/~hinton/poe.html" target="_blank">products of experts</a> and deep belief nets (deep learning).    His research group in Toronto made major breakthroughs in deep learning that have revolutionized speech recognition and object classification.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    </dialog>
 
     <!-- Footer -->
     <footer class="py-4 bg-light border-top">
@@ -731,98 +579,57 @@
     </footer>
     
     
-    <!-- Mobile JavaScript -->
     <script>
-        // Mobile popup functionality
         (function() {
             'use strict';
-            
-            // Function to check if we're on mobile
-            function isMobile() {
-                return window.innerWidth <= 767;
-            }
-            
-            // Add click handlers for mobile cards
-            document.addEventListener('DOMContentLoaded', function() {
-                const cards = document.querySelectorAll('.grid-card[data-section]');
-                
-                cards.forEach(card => {
-                    card.addEventListener('click', function(e) {
-                        // Only handle popup on mobile
-                        if (isMobile()) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            const section = this.getAttribute('data-section');
-                            openPopup(section);
-                        }
-                    });
-                });
-                
-                // Close popup when clicking outside the content
-                document.addEventListener('click', function(event) {
-                    const popups = document.querySelectorAll('.popup-modal.active');
-                    popups.forEach(popup => {
-                        if (event.target === popup) {
-                            const id = popup.id.replace('-popup', '');
-                            closePopup(id);
-                        }
-                    });
-                });
-                
-                // Prevent clicks inside popup content from closing the popup
-                document.querySelectorAll('.popup-content').forEach(content => {
-                    content.addEventListener('click', function(event) {
-                        event.stopPropagation();
-                    });
-                });
-                
-                // Handle escape key to close popups
-                document.addEventListener('keydown', function(event) {
-                    if (event.key === 'Escape') {
-                        const activePopup = document.querySelector('.popup-modal.active');
-                        if (activePopup) {
-                            const id = activePopup.id.replace('-popup', '');
-                            closePopup(id);
-                        }
-                    }
-                });
-            });
-            
-            // Popup functions (available globally)
+
+            const cardPopup = document.getElementById('card-popup');
+
+            // Used by the Brief Biography and Miscellaneous links
             window.openPopup = function(id) {
-                const popup = document.getElementById(`${id}-popup`);
-                if (popup) {
-                    popup.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
-                }
+                document.getElementById(`${id}-popup`).showModal();
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
             };
-            
-            window.closePopup = function(id) {
-                const popup = document.getElementById(`${id}-popup`);
-                if (popup) {
-                    popup.classList.remove('active');
-                    document.body.style.overflow = ''; // Restore scrolling
-                }
-            };
-            
-            // Handle window resize to switch between desktop/mobile modes
-            window.addEventListener('resize', function() {
-                const currentlyMobile = isMobile();
-                
-                // If switching from mobile to desktop, close any open popups
-                if (!currentlyMobile) {
-                    const activePopups = document.querySelectorAll('.popup-modal.active');
-                    activePopups.forEach(popup => {
-                        popup.classList.remove('active');
+
+            // On phones, tapping a card shows its desktop list in the shared popup
+            document.querySelectorAll('.grid-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (window.innerWidth > 767) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const title = card.querySelector('.desktop-view .card-title');
+                    cardPopup.querySelector('.popup-icon').className = title.querySelector('i').className.replace('me-2', 'popup-icon');
+                    cardPopup.querySelector('.popup-title').textContent = title.textContent.trim();
+
+                    const body = cardPopup.querySelector('.popup-body');
+                    body.innerHTML = '';
+                    card.querySelectorAll('.desktop-view > :not(.card-title)').forEach(el => {
+                        const copy = el.cloneNode(true);
+                        if (copy.classList.contains('card-links')) copy.className = 'popup-links';
+                        body.appendChild(copy);
                     });
-                    document.body.style.overflow = '';
-                }
+
+                    openPopup('card');
+                });
             });
-            
+
+            document.querySelectorAll('dialog.popup-modal').forEach(dialog => {
+                // Tapping the dark area outside the content closes the popup
+                dialog.addEventListener('click', function(e) {
+                    if (e.target === dialog) dialog.close();
+                });
+                // Escape, the close button and outside taps all end here
+                dialog.addEventListener('close', function() {
+                    if (!document.querySelector('dialog[open]')) document.body.style.overflow = '';
+                });
+            });
+
+            // Widening past phone size closes the card popup
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 767 && cardPopup.open) cardPopup.close();
+            });
         })();
     </script>
-    
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
