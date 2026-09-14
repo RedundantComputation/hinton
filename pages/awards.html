@@ -8,83 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
-    <style>
-        :root {
-            --bs-primary: #2E446E;
-            --bg-color: #7997b9;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-color);
-        }
-
-        .header {
-            border-bottom: 1px solid #dee2e6;
-            background: white !important;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2E446E;
-            margin-bottom: 1rem;
-        }
-
-        .awards-list,
-        .fellowships-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .awards-list li,
-        .fellowships-list li {
-            background: white;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            transition: all 0.2s ease;
-        }
-
-        .awards-list li:hover,
-        .fellowships-list li:hover {
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .award-title,
-        .publication-title {
-            font-weight: 600;
-            color: #212529;
-            margin-bottom: 0.5rem;
-        }
-
-        .award-year,
-        .publication-year {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .award-description {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-
-        .publication-venue {
-            color: #2E446E;
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .publication-venue:hover {
-            color: #0a58ca;
-            text-decoration: underline;
-        }
-    </style>
+    <link href="../css/styles.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -107,102 +31,102 @@
             <!-- Awards Section -->
             <section id="awards">
                 <h2 class="section-title">Awards</h2>
-                <ul class="awards-list">
+                <ul class="item-list">
                     <li>
-                        <a href="https://news.harvard.edu/gazette/story/2026/05/five-recognized-with-honorary-degrees/"><div class="award-title">Honorary Doctor of Science, Harvard University</div></a>
-                        <div class="award-year">2026</div>
+                        <a href="https://news.harvard.edu/gazette/story/2026/05/five-recognized-with-honorary-degrees/"><div class="item-name">Honorary Doctor of Science, Harvard University</div></a>
+                        <div class="item-year">2026</div>
                     </li>
                     <li>
-                        <a href="https://www.rciscience.ca/news/professor-geoffrey-hinton-latest-fleming-medal-recipient"><div class="award-title">Sandford Fleming Medal</div></a>
-                        <div class="award-year">2025</div>
+                        <a href="https://www.rciscience.ca/news/professor-geoffrey-hinton-latest-fleming-medal-recipient"><div class="item-name">Sandford Fleming Medal</div></a>
+                        <div class="item-year">2025</div>
                     </li>
                     <li>
-                        <a href="https://qeprize.org/winners/modern-machine-learning"><div class="award-title">Queen Elizabeth Prize for Engineering (jointly with Bill Dally, Fei-Fei Li, John Hopfield, Jensen Huang, Yann LeCun, and Yoshua Bengio)</div></a>
-                        <div class="award-year">2025</div>
+                        <a href="https://qeprize.org/winners/modern-machine-learning"><div class="item-name">Queen Elizabeth Prize for Engineering (jointly with Bill Dally, Fei-Fei Li, John Hopfield, Jensen Huang, Yann LeCun, and Yoshua Bengio)</div></a>
+                        <div class="item-year">2025</div>
                     </li>
                     <li>
-                        <a href="https://www.nobelprize.org/prizes/physics/2024/hinton/facts/"><div class="award-title">The Nobel Prize in Physics (jointly with John Hopfield)</div></a>
-                        <div class="award-year">2024</div>
+                        <a href="https://www.nobelprize.org/prizes/physics/2024/hinton/facts/"><div class="item-name">The Nobel Prize in Physics (jointly with John Hopfield)</div></a>
+                        <div class="item-year">2024</div>
                     </li>
                     <li>
-                        <a href="https://vinfutureprize.org/laureates/professor-geoffrey-everest-hinton/"><div class="award-title">The Vinfuture Grand Prize (jointly with Jensen Huang, Fei-Fei Li, Yoshua Bengio and Yann LeCun)</div></a>
-                        <div class="award-year">2024</div>
+                        <a href="https://vinfutureprize.org/laureates/professor-geoffrey-everest-hinton/"><div class="item-name">The Vinfuture Grand Prize (jointly with Jensen Huang, Fei-Fei Li, Yoshua Bengio and Yann LeCun)</div></a>
+                        <div class="item-year">2024</div>
                     </li>
                     <li>
-                        <a href="https://www.ucd.ie/cs/news/ulyssesmedalawardedtoprofessorgeoffreyhintonthegodfatherofai/"><div class="award-title">The Ulysses Medal, University College Dublin</div></a>
-                        <div class="award-year">2024</div>
+                        <a href="https://www.ucd.ie/cs/news/ulyssesmedalawardedtoprofessorgeoffreyhintonthegodfatherofai/"><div class="item-name">The Ulysses Medal, University College Dublin</div></a>
+                        <div class="item-year">2024</div>
                     </li>
                     <li>
-                        <a href="https://www.goldengooseaward.org/01awardees/pdp"><div class="award-title">The Golden Goose Award</div></a>
-                        <div class="award-year">2024</div>
+                        <a href="https://www.goldengooseaward.org/01awardees/pdp"><div class="item-name">The Golden Goose Award</div></a>
+                        <div class="item-year">2024</div>
                     </li>
                     <li>
-                        <a href="https://royalsociety.org/people/geoffrey-hinton-11624/"><div class="award-title">The Royal Medal of the Royal Society</div></a>
-                        <div class="award-year">2022</div>
+                        <a href="https://royalsociety.org/people/geoffrey-hinton-11624/"><div class="item-name">The Royal Medal of the Royal Society</div></a>
+                        <div class="item-year">2022</div>
                     </li>
                     <li>
-                        <a href="https://www.fpa.es/en/princess-of-asturias-awards/laureates/2022-geoffrey-hinton-yann-lecun-yoshua-bengio-and-demis-hassabis/"><div class="award-title">The Princess of Asturias Award (jointly with Yoshua Bengio, Demis Hassabis and Yann LeCun)</div></a>
-                        <div class="award-year">2022</div>
+                        <a href="https://www.fpa.es/en/princess-of-asturias-awards/laureates/2022-geoffrey-hinton-yann-lecun-yoshua-bengio-and-demis-hassabis/"><div class="item-name">The Princess of Asturias Award (jointly with Yoshua Bengio, Demis Hassabis and Yann LeCun)</div></a>
+                        <div class="item-year">2022</div>
                     </li>
                     <li>
-                        <a href="https://global.honda/en/newsroom/news/2019/c190920eng.html"><div class="award-title">The Honda Prize</div></a>
-                        <div class="award-year">2019</div>
+                        <a href="https://global.honda/en/newsroom/news/2019/c190920eng.html"><div class="item-name">The Honda Prize</div></a>
+                        <div class="item-year">2019</div>
                     </li>
                     <li>
-                        <a href="https://www.artsci.utoronto.ca/news/toronto-region-board-trade-honours-visionary-geoffrey-hinton"><div class="award-title">Toronto Region Builder Award</div></a>
-                        <div class="award-year">2019</div>
+                        <a href="https://www.artsci.utoronto.ca/news/toronto-region-board-trade-honours-visionary-geoffrey-hinton"><div class="item-name">Toronto Region Builder Award</div></a>
+                        <div class="item-year">2019</div>
                     </li>
                     <li>
-                        <a href="https://awards.acm.org/about/2018-turing"><div class="award-title">The ACM A. M. Turing Award (jointly with Yoshua Bengio and Yann LeCun)</div></a>
-                        <div class="award-year">2018</div>
+                        <a href="https://awards.acm.org/about/2018-turing"><div class="item-name">The ACM A. M. Turing Award (jointly with Yoshua Bengio and Yann LeCun)</div></a>
+                        <div class="item-year">2018</div>
                     </li>
                     <li>
-                        <a href="https://www.gg.ca/en/honours/recipients/146-3303"><div class="award-title">Companion of the Order of Canada (Canada’s highest honour)</div></a>
-                        <div class="award-year">2018</div>
+                        <a href="https://www.gg.ca/en/honours/recipients/146-3303"><div class="item-name">Companion of the Order of Canada (Canada’s highest honour)</div></a>
+                        <div class="item-year">2018</div>
                     </li>
                     <li>
-                        <a href="https://www.frontiersofknowledgeawards-fbbva.es/galardonados/geoffrey-hinton-2/"><div class="award-title">BBVA Foundation Frontiers of Knowledge Award</div></a>
-                        <div class="award-year">2017</div>
+                        <a href="https://www.frontiersofknowledgeawards-fbbva.es/galardonados/geoffrey-hinton-2/"><div class="item-name">BBVA Foundation Frontiers of Knowledge Award</div></a>
+                        <div class="item-year">2017</div>
                     </li>
                     <li>
-                        <a href="https://www.candc.or.jp/en/2016/group_b.html"><div class="award-title">The NEC C&C Award</div></a>
-                        <div class="award-year">2016</div>
+                        <a href="https://www.candc.or.jp/en/2016/group_b.html"><div class="item-name">The NEC C&C Award</div></a>
+                        <div class="item-year">2016</div>
                     </li>
                     <li>
-                        <a href="https://rse.org.uk/award/ieee-rse-james-clerk-maxwell-medal/"><div class="award-title">IEEE/RSE James Clerk Maxwell Gold Medal</div></a>
-                        <div class="award-year">2016</div>
+                        <a href="https://rse.org.uk/award/ieee-rse-james-clerk-maxwell-medal/"><div class="item-name">IEEE/RSE James Clerk Maxwell Gold Medal</div></a>
+                        <div class="item-year">2016</div>
                     </li>
                     <li>
-                        <a href="https://corporate-awards.ieee.org/wp-content/uploads/rosenblatt-rl.pdf"><div class="award-title">IEEE Frank Rosenblatt Medal</div></a>
-                        <div class="award-year">2014</div>
+                        <a href="https://corporate-awards.ieee.org/wp-content/uploads/rosenblatt-rl.pdf"><div class="item-name">IEEE Frank Rosenblatt Medal</div></a>
+                        <div class="item-year">2014</div>
                     </li>
                     <li>
-                        <a href="https://killamlaureates.ca/2012-killam-prize-winner-receives-a-nobel-prize/"><div class="award-title">Killam Prize in Engineering</div></a>
-                        <div class="award-year">2012</div>
+                        <a href="https://killamlaureates.ca/2012-killam-prize-winner-receives-a-nobel-prize/"><div class="item-name">Killam Prize in Engineering</div></a>
+                        <div class="item-year">2012</div>
                     </li>
                     <li>
-                        <a href="https://www.nserc-crsng.gc.ca/Prizes-Prix/Herzberg-Herzberg/Profiles-Profils/Hinton-Hinton_eng.asp"><div class="award-title">Gerhard Herzberg Canada Gold Medal</div></a>
-                        <div class="award-year">2010</div>
+                        <a href="https://www.nserc-crsng.gc.ca/Prizes-Prix/Herzberg-Herzberg/Profiles-Profils/Hinton-Hinton_eng.asp"><div class="item-name">Gerhard Herzberg Canada Gold Medal</div></a>
+                        <div class="item-year">2010</div>
                     </li>
                     <li>
-                        <a href="https://www.ijcai.org/past/ijcai-05/resources/ijcai05itr.pdf"><div class="award-title">IJCAI Research Excellence Award</div></a>
-                        <div class="award-year">2005</div>
+                        <a href="https://www.ijcai.org/past/ijcai-05/resources/ijcai05itr.pdf"><div class="item-name">IJCAI Research Excellence Award</div></a>
+                        <div class="item-year">2005</div>
                     </li>
                     <li>
-                        <a href="https://cognitivesciencesociety.org/rumelhart-prize/"><div class="award-title">The David E. Rumelhart Prize</div></a>
-                        <div class="award-year">2001</div>
+                        <a href="https://cognitivesciencesociety.org/rumelhart-prize/"><div class="item-name">The David E. Rumelhart Prize</div></a>
+                        <div class="item-year">2001</div>
                     </li>
                     <li>
-                        <a href="https://cis.ieee.org/awards/past-recipients"><div class="award-title">IEEE Neural Networks Pioneer Award</div></a>
-                        <div class="award-year">1998</div>
+                        <a href="https://cis.ieee.org/awards/past-recipients"><div class="item-name">IEEE Neural Networks Pioneer Award</div></a>
+                        <div class="item-year">1998</div>
                     </li>
                     <li>
-                        <div class="award-title">ITAC/NSERC Award for Academic Excellence</div>
-                        <div class="award-year">1992</div>
+                        <div class="item-name">ITAC/NSERC Award for Academic Excellence</div>
+                        <div class="item-year">1992</div>
                     </li>
                     <li>
-                        <div class="award-title">IEEE Signal Processing Society Senior Award</div>
-                        <div class="award-year">1990</div>
+                        <div class="item-name">IEEE Signal Processing Society Senior Award</div>
+                        <div class="item-year">1990</div>
                     </li>
                 </ul>
             </section>
@@ -210,50 +134,50 @@
             <!-- Fellowships Section -->
             <section id="fellowships">
                 <h2 class="section-title">Fellowships</h2>
-                <ul class="fellowships-list">
+                <ul class="item-list">
                     <li>
-                        <div class="award-title">Honorary Member of the Canadian Academy of Engineering</div>
-                        <div class="award-year">2026</div>
+                        <div class="item-name">Honorary Member of the Canadian Academy of Engineering</div>
+                        <div class="item-year">2026</div>
                     </li>
                     <li>
-                        <div class="award-title">Honorary Foreign Member of the US National Academy of Sciences</div>
-                        <div class="award-year">2023</div>
+                        <div class="item-name">Honorary Foreign Member of the US National Academy of Sciences</div>
+                        <div class="item-year">2023</div>
                     </li>
                     <li>
-                        <div class="award-title">Honorary Foreign Member of the US National Academy of Engineering</div>
-                        <div class="award-year">2016</div>
+                        <div class="item-name">Honorary Foreign Member of the US National Academy of Engineering</div>
+                        <div class="item-year">2016</div>
                     </li>
                     <li>
-                        <div class="award-title">Honorary Foreign Member of the Spanish Real Academia de Ingenieria</div>
-                        <div class="award-year">2015</div>
+                        <div class="item-name">Honorary Foreign Member of the Spanish Real Academia de Ingenieria</div>
+                        <div class="item-year">2015</div>
                     </li>
                     <li>
-                        <div class="award-title">Distinguished Fellow, Canadian Institute for Advanced Research</div>
-                        <div class="award-year">2014</div>
+                        <div class="item-name">Distinguished Fellow, Canadian Institute for Advanced Research</div>
+                        <div class="item-year">2014</div>
                     </li>
                     <li>
-                        <div class="award-title">Honorary Foreign Member of the American Academy of Arts and Sciences</div>
-                        <div class="award-year">2003</div>
+                        <div class="item-name">Honorary Foreign Member of the American Academy of Arts and Sciences</div>
+                        <div class="item-year">2003</div>
                     </li>
                     <li>
-                        <div class="award-title">Fellow of the Cognitive Science Society</div>
-                        <div class="award-year">2003</div>
+                        <div class="item-name">Fellow of the Cognitive Science Society</div>
+                        <div class="item-year">2003</div>
                     </li>
                     <li>
-                        <div class="award-title">Fellow of the Royal Society</div>
-                        <div class="award-year">1998</div>
+                        <div class="item-name">Fellow of the Royal Society</div>
+                        <div class="item-year">1998</div>
                     </li>
                     <li>
-                        <div class="award-title">Fellow of the Royal Society of Canada</div>
-                        <div class="award-year">1996</div>
+                        <div class="item-name">Fellow of the Royal Society of Canada</div>
+                        <div class="item-year">1996</div>
                     </li>
                     <li>
-                        <div class="award-title">Fellow, Association for the Advancement of Artificial Intelligence</div>
-                        <div class="award-year">1991</div>
+                        <div class="item-name">Fellow, Association for the Advancement of Artificial Intelligence</div>
+                        <div class="item-year">1991</div>
                     </li>
                     <li>
-                        <div class="award-title">Fellow, Canadian Institute for Advanced Research (1987-1998; 2004-2014)</div>
-                        <div class="award-year">1987</div>
+                        <div class="item-name">Fellow, Canadian Institute for Advanced Research (1987-1998; 2004-2014)</div>
+                        <div class="item-year">1987</div>
                     </li>
                 </ul>
             </section>

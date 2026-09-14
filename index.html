@@ -10,8 +10,135 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
-    <!-- Mobile-specific CSS -->
     <style>
+        /* Index only: page background stays white, just <main> is blue */
+        body {
+            background-color: #fff;
+        }
+
+        main {
+            background-color: var(--bg-color);
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .grid-card {
+            height: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        }
+
+        .card-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 2rem;
+            height: 2px;
+            background-color: #2E446E;
+        }
+
+        .card-title i {
+            color: #2E446E;
+        }
+
+        .card-body {
+            padding-block: 0.75rem;
+        }
+
+        .card-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-links li {
+            margin-bottom: 0.25rem;
+        }
+
+        .card-links a {
+            color: #6c757d;
+            text-decoration: none;
+            display: block;
+            padding: 0.15rem 0;
+            transition: color 0.2s ease;
+        }
+
+        .card-links a:hover {
+            color: #2E446E;
+        }
+
+        /* Desktop vs Mobile Views */
+        .mobile-view {
+            display: none;
+        }
+
+        .desktop-view {
+            display: block;
+        }
+
+        /* Default alignment for .webmaster-text */
+        .webmaster-text {
+            text-align: right;
+        }
+
+        /* Mobile breakpoint - hide desktop, show mobile */
+        @media (max-width: 767px) {
+            .desktop-view {
+                display: none !important;
+            }
+
+            .mobile-view {
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 100%;
+                min-height: 100px;
+                padding: 1rem 0.5rem;
+            }
+
+            .webmaster-text {
+                text-align: center;
+            }
+
+            .card-body {
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .mobile-view .card-title {
+                font-size: 0.9rem;
+                padding: 0;
+                margin: 0;
+                justify-content: center;
+            }
+
+            .mobile-view .card-title::after {
+                display: none;
+            }
+        }
+
         /* Ensure proper desktop/mobile view switching */
         @media (max-width: 767px) {
             .desktop-view {

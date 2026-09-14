@@ -1,135 +1,72 @@
+/* Shared by index, publications, awards, speaker forms and student pages.
+   Photos and media pages set their own font and background. */
 :root {
     --bs-primary: #2E446E;
     --bg-color: #7997b9;
 }
 
-main {
-    background-color: var(--bg-color);
-}
-
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-}
-
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
 }
 
 .header {
     border-bottom: 1px solid #dee2e6;
+    background: white !important;
 }
 
-.grid-card {
-    height: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-}
-
-.grid-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-}
-
-.card-title {
-    position: relative;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.5rem;
+.section-title {
+    font-size: 1.5rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
+    color: var(--bs-primary);
+    margin-bottom: 1rem;
 }
 
-.card-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 2rem;
-    height: 2px;
-    background-color: #2E446E;
-}
-
-.card-title i {
-    color: #2E446E;
-}
-
-.card-body {
-    padding-block: 0.75rem;
-}
-
-.card-links {
+/* White card lists: awards, fellowships, students */
+.item-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
-.card-links li {
-    margin-bottom: 0.25rem;
+.item-list li {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: all 0.2s ease;
 }
 
-.card-links a {
-    color: #6c757d;
+.item-list li:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.item-name {
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.item-name a {
+    color: var(--bs-primary);
     text-decoration: none;
-    display: block;
-    padding: 0.15rem 0;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-.card-links a:hover {
-    color: #2E446E;
+.item-name a:hover {
+    color: #0a58ca;
+    text-decoration: underline;
 }
 
-/* Desktop vs Mobile Views */
-.mobile-view {
-    display: none;
+.item-year {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
-.desktop-view {
-    display: block;
-}
-
-/* Default alignment for .webmaster-text */
-.webmaster-text {
-    text-align: right;
-}
-
-/* Mobile breakpoint - hide desktop, show mobile */
-@media (max-width: 767px) {
-    .desktop-view {
-        display: none !important;
-    }
-    
-    .mobile-view {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 100%;
-        min-height: 100px;
-        padding: 1rem 0.5rem;
-    }
-
-    .webmaster-text {
-        text-align: center;
-    }
-    
-    .card-body {
-        padding: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .mobile-view .card-title {
-        font-size: 0.9rem;
-        padding: 0;
-        margin: 0;
-        justify-content: center;
-    }
-    
-    .mobile-view .card-title::after {
-        display: none;
-    }
+.item-thesis {
+    color: #495057;
+    font-size: 0.9rem;
+    font-style: italic;
 }
