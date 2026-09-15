@@ -268,33 +268,6 @@
             <p class="lead text-center mb-3">This is a full list of Geoffrey Hinton's scientific publications in reverse chronological order. The list can be filtered by topic below.</p>
             <div class="tag-filter">
                 <span class="filter-label">Filter By:</span>
-                <button class="tag-btn" data-tag="backpropagation">Backpropagation</button>
-                <button class="tag-btn" data-tag="boltzmann machines">Boltzmann Machines</button>
-                <button class="tag-btn" data-tag="brain damage">Brain Damage</button>
-                <button class="tag-btn" data-tag="capsules">Capsules</button>
-                <button class="tag-btn" data-tag="distillation">Distillation</button>
-                <button class="tag-btn" data-tag="distributed representations">Distributed Representations</button>
-                <button class="tag-btn" data-tag="evolution">Evolution & Learning</button>
-                <button class="tag-btn" data-tag="fast weights">Fast weights</button>
-                <button class="tag-btn" data-tag="foveal glimpses">Foveal glimpses</button>
-                <button class="tag-btn" data-tag="frames of reference">Frames of reference</button>
-                <button class="tag-btn" data-tag="helmholtz machines">Helmholtz Machines</button>
-                <button class="tag-btn" data-tag="image generation">Image Generation</button>
-                <button class="tag-btn" data-tag="language modeling">Language modeling</button>
-                <button class="tag-btn" data-tag="mental imagery">Mental Imagery</button>
-                <button class="tag-btn" data-tag="mixture of experts">Mixture of Experts</button>
-                <button class="tag-btn" data-tag="motor control">Motor Control</button>
-                <button class="tag-btn" data-tag="neural networks">Neural Networks</button>
-                <button class="tag-btn" data-tag="other nn learning algorithms">Other NN Learning Algorithms</button>
-                <button class="tag-btn" data-tag="products of experts">Products of Experts</button>
-                <button class="tag-btn" data-tag="review papers">Review Papers</button>
-                <button class="tag-btn" data-tag="shape recognition">Shape Recognition</button>
-                <button class="tag-btn" data-tag="speech recognition">Speech Recognition</button>
-                <button class="tag-btn" data-tag="topographic maps">Topographic maps</button>
-                <button class="tag-btn" data-tag="tropical archaeoastronomy">Tropical Archaeoastronomy</button>
-                <button class="tag-btn" data-tag="variational learning">Variational learning</button>
-                <button class="tag-btn" data-tag="3-way interactions">3-way interactions</button>
-                <button class="tag-btn" data-tag="oddities">Other Oddities</button>
             </div>
             <p class="lead text-center mb-3">Labels are a work in progress. We have not finished labelling papers by topic.</p>
         </div>
@@ -345,7 +318,7 @@
                 function renderPublication(container, pub) {
                     if (!tpl) return null;
                     const clone = tpl.content.firstElementChild.cloneNode(true);
-                    const tagsAttr = Array.isArray(pub.tags) ? pub.tags.join(', ') : (pub.tags || '');
+                    const tagsAttr = (pub.tags || []).join(', ');
                     if (tagsAttr) clone.setAttribute('data-tags', tagsAttr);
                     clone.querySelector('.publication-authors').textContent = pub.authors || '';
                     clone.querySelector('.publication-title').textContent = pub.title || '';
@@ -374,40 +347,17 @@
                     return list;
                 }
 
-                // Mapping of tag IDs to their display names
-                const tagDisplayNames = {
-                    'Backpropagation': 'Backpropagation',
-                    'Boltzmann machines': 'Boltzmann Machines',
-                    'Brain damage': 'Brain Damage',
-                    'Capsules': 'Capsules',
-                    'Distillation': 'Distillation',
-                    'Distributed representations': 'Distributed Representations',
-                    'Evolution': 'Evolution & Learning',
-                    'Fast weights': 'Fast weights',
-                    'Foveal glimpses': 'Foveal glimpses',
-                    'Frames of reference': 'Frames of reference',
-                    'Helmholtz machines': 'Helmholtz Machines',
-                    'Image generation': 'Image Generation',
-                    'Language modeling': 'Language modeling',
-                    'Mental imagery': 'Mental Imagery',
-                    'Mixture of experts': 'Mixture of Experts',
-                    'Motor control': 'Motor Control',
-                    'Neural networks': 'Neural Networks',
-                    'Other NN learning algorithms': 'Other NN Learning Algorithms',
-                    'Other Oddities': 'Other Oddities',
-                    'Products of experts': 'Products of Experts',
-                    'Review papers': 'Review Papers',
-                    'Shape recognition': 'Shape Recognition',
-                    'Speech recognition': 'Speech Recognition',
-                    'Topographic maps': 'Topographic maps',
-                    'Tropical archaeoastronomy': 'Tropical Archaeoastronomy'
-                    ,'Variational learning': 'Variational learning'
-                    ,'3-way interactions': '3-way interactions'
-                };
 
                 function buildTagFilter(tagSet) {
                     const filterContainer = document.querySelector('.tag-filter');
                     if (!filterContainer) return;
+                    // Alphabetical, with "Other Oddities" last
+                    const sortedTags = Array.from(tagSet).sort((a, b) => {
+                        if (a === 'Other Oddities') return 1;
+                        if (b === 'Other Oddities') return -1;
+                        return a.localeCompare(b);
+                    });
+
                     // keep the label span if exists
                     const label = filterContainer.querySelector('.filter-label');
                     filterContainer.innerHTML = '';
@@ -420,17 +370,11 @@
                     allBtn.dataset.tag = '__all';
                     filterContainer.appendChild(allBtn);
 
-                    Array.from(tagSet).sort((a, b) => {
-                        // Move "Other Oddities" to the end
-                        if (a === 'Other Oddities') return 1;
-                        if (b === 'Other Oddities') return -1;
-                        // Otherwise sort alphabetically
-                        return a.localeCompare(b);
-                    }).forEach(tag => {
+                    sortedTags.forEach(tag => {
                         const btn = document.createElement('button');
                         btn.className = 'tag-btn';
                         btn.dataset.tag = tag;
-                        btn.textContent = tagDisplayNames[tag] || (tag[0].toUpperCase() + tag.slice(1));
+                        btn.textContent = tag;
                         filterContainer.appendChild(btn);
                     });
 
@@ -443,14 +387,10 @@
                     allOption.textContent = 'All';
                     select.appendChild(allOption);
 
-                    Array.from(tagSet).sort((a, b) => {
-                        if (a === 'Other Oddities') return 1;
-                        if (b === 'Other Oddities') return -1;
-                        return a.localeCompare(b);
-                    }).forEach(tag => {
+                    sortedTags.forEach(tag => {
                         const option = document.createElement('option');
                         option.value = tag;
-                        option.textContent = tagDisplayNames[tag] || (tag[0].toUpperCase() + tag.slice(1));
+                        option.textContent = tag;
                         select.appendChild(option);
                     });
 
@@ -461,9 +401,9 @@
                     return Array.from(document.querySelectorAll('.publication-item'));
                 }
 
-                function applyFilter(activeTags) {
+                function applyFilter(activeTag) {
                     const publications = getRenderedPublications();
-                    if (activeTags.size === 0 || activeTags.has('__all')) {
+                    if (activeTag === '__all') {
                         publications.forEach(p => p.style.display = 'block');
                         // Show all year sections
                         document.querySelectorAll('.year-section').forEach(section => {
@@ -478,7 +418,7 @@
 
                     publications.forEach(publication => {
                         const tags = (publication.getAttribute('data-tags') || '').split(',').map(t => t.trim()).filter(Boolean);
-                        const matches = Array.from(activeTags).some(tag => tags.includes(tag));
+                        const matches = tags.includes(activeTag);
                         publication.style.display = matches ? 'block' : 'none';
                     });
 
@@ -506,18 +446,16 @@
                     const filterContainer = document.querySelector('.tag-filter');
                     if (!filterContainer) return;
                     const filterSelect = filterContainer.querySelector('.tag-select');
-                    let activeTags = new Set(['__all']);
 
                     function setActiveTag(tag) {
                         const activeTag = tag && tag !== '__all' ? tag : '__all';
-                        activeTags = new Set([activeTag]);
 
                         filterContainer.querySelectorAll('.tag-btn').forEach(b => {
                             b.classList.toggle('active', b.dataset.tag === activeTag);
                         });
 
                         if (filterSelect) filterSelect.value = activeTag;
-                        applyFilter(activeTags);
+                        applyFilter(activeTag);
                     }
 
                     filterContainer.addEventListener('click', function(e) {
@@ -650,8 +588,7 @@
                         const list = createYearSection(root, year);
                         pubs.forEach(pub => {
                             renderPublication(list, pub);
-                            const tags = Array.isArray(pub.tags) ? pub.tags : (pub.tags ? pub.tags.split(',').map(t=>t.trim()) : []);
-                            tags.forEach(t => { if (t) tagSet.add(t); });
+                            (pub.tags || []).forEach(t => tagSet.add(t));
                         });
                     });
 
