@@ -1,0 +1,13 @@
+/* Shared by the four media pages: video, podcasts, print, books */
+body { background: #7997b9; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+.media-grid .card { transition: transform .12s ease, box-shadow .12s ease; }
+.media-grid .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.media-meta { color: #6c757d; font-size: .9rem; }
+/* Same 16:9 box for every thumbnail so titles line up */
+.thumb-wrap { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; border-radius: 0.25rem; background: #f0f0f0; }
+.thumb-link { position: absolute; inset: 0; display: block; }
+.thumb-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* ▶ or ↗ drawn over the thumbnail */
+.thumb-overlay { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 2rem; color: rgba(255,255,255,0.95); text-shadow: 0 3px 8px rgba(0,0,0,0.6); pointer-events: none; }
+.card-body { display: flex; flex-direction: column; }
+.card-title { margin-top: 0.75rem; }
