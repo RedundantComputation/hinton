@@ -9,33 +9,7 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
   <link href="../css/styles.css" rel="stylesheet">
-  <style>
-    .sr-container{max-width:900px;margin:0 auto;padding:1rem}
-    .sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .sr-full{grid-column:1/-1}
-    .sr-container section{margin-bottom:2rem}
-    label{display:block;margin-bottom:.25rem;font-weight:600}
-    textarea,input,select{width:100%;padding:.4rem;margin-bottom:.6rem}
-    .buttons{display:flex;gap:.5rem;flex-wrap:wrap}
-    /* Rounded, contemporary buttons scoped to this page */
-    .sr-container .buttons button{
-      border-radius:999px;
-      padding:.5rem 1rem;
-      background:var(--bs-primary);
-      color:white;
-      border:0;
-      box-shadow:0 6px 18px rgba(46,68,110,0.12);
-      font-weight:600;
-      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-      cursor:pointer;
-    }
-    .sr-container .buttons button:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(46,68,110,0.14); }
-    .sr-container .buttons button:active{ transform:translateY(0); box-shadow:0 6px 18px rgba(46,68,110,0.10); }
-    .sr-container .buttons button:focus{ outline:3px solid rgba(46,68,110,0.12); outline-offset:3px }
-    .sr-container .buttons button[type="reset"]{ background:var(--bs-primary); color:white; border:0; box-shadow:0 6px 18px rgba(46,68,110,0.12); font-weight:600 }
-    pre{white-space:pre-wrap;background:#f8f8f8;padding:1rem;border:1px solid #eee}
-    .section-title{font-size:1.25rem;font-weight:600;color:var(--bs-primary);margin-bottom:0.75rem}
-  </style>
+  <link href="speaker-form.css" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
@@ -59,7 +33,7 @@
         <h1 class="section-title">Speaker Request Form</h1>
         <p>For inquiries about speaking engagements for universities and public institutions with Geoffrey Hinton, please fill out the fields below and click <strong>Generate Template</strong>. Please email this template to jennifer [dot] cressman [at] utoronto [dot] ca.</p>
 
-    <form id="sr-form">
+    <form id="sr-form" data-table-heading="Speaking Request for University/Public Institution">
       <section>
         <h2>Contact Information</h2>
         <div class="sr-grid">
@@ -72,7 +46,7 @@
             <input id="yourEmail" name="yourEmail" type="email" required>
           </div>
           <div>
-            <label>Are you the point of contact?</label>
+            <label for="areContact">Are you the point of contact?</label>
             <select id="areContact" name="areContact">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -129,15 +103,15 @@
             <input id="timeZone" name="timeZone" placeholder="e.g., EDT, UTC-4">
           </div>
           <div>
-            <label>Will the presentation be recorded?</label>
+            <label for="recorded">Will the presentation be recorded?</label>
             <select id="recorded" name="recorded"><option>Yes</option><option>No</option></select>
           </div>
           <div>
-            <label>Do you expect press to attend?</label>
+            <label for="press">Do you expect press to attend?</label>
             <select id="press" name="press"><option>Yes</option><option>No</option></select>
           </div>
           <div>
-            <label>Is there any fee for attendance?</label>
+            <label for="fee">Is there any fee for attendance?</label>
             <select id="fee" name="fee"><option>Yes</option><option>No</option></select>
           </div>
         </div>
@@ -198,125 +172,6 @@
     </div>
   </main>
 
-  <script>
-    function getVal(id){return document.getElementById(id).value || ''}
-
-    function humanizeKey(k){
-      const s = String(k).replace(/([A-Z])/g,' $1').replace(/[_-]/g,' ').trim();
-      return s.charAt(0).toUpperCase() + s.slice(1);
-    }
-
-    // Exact labels used in the form — used for the generated table headers
-    const labelsMap = {
-      yourName: 'Your Name',
-      yourEmail: 'Email Address',
-      areContact: 'Are you the point of contact?',
-      pocName: 'Point of Contact Name (if different)',
-      hostOrg: 'University/Public Institution',
-      orgLocation: 'Organization Location',
-      eventName: 'Event Name',
-      eventPurpose: 'Event Purpose',
-      eventWebsite: 'Event website address (if available)',
-      eventType: 'In-person, Virtual, or TBD?',
-      eventDate: 'Event Date',
-      eventTime: 'Event Time',
-      timeZone: 'Time Zone',
-      recorded: 'Will the presentation be recorded?',
-      press: 'Do you expect press to attend?',
-      fee: 'Is there any fee for attendance?',
-      estimatedAttendees: 'Estimated number of attendees',
-      access: 'Open to public or invitation-only?',
-      participationType: 'Type of Participation',
-      requestedTopic: 'Requested Topic',
-      otherNotes: 'Other notes (flexible times, deadlines, etc.)'
-    };
-
-    function makePlain(data){
-      let lines = [];
-      lines.push('Speaker Request');
-      lines.push('----------------------------------------');
-      lines.push('\nContact Information');
-      for (const k of ['yourName','yourEmail','areContact','pocName','hostOrg','orgLocation']){
-        lines.push((labelsMap[k] || humanizeKey(k)) + ': ' + (data[k]||''));
-      }
-      lines.push('\nEvent Details');
-      for (const k of ['eventName','eventPurpose','eventWebsite','eventType','eventDate','eventTime','timeZone','recorded','press','fee']){
-        lines.push((labelsMap[k] || humanizeKey(k)) + ': ' + (data[k]||''));
-      }
-      lines.push('\nAudience Details');
-      for (const k of ['estimatedAttendees','access']){
-        lines.push((labelsMap[k] || humanizeKey(k)) + ': ' + (data[k]||''));
-      }
-      lines.push('\nPresentation / Speech Details');
-      for (const k of ['participationType','requestedTopic','otherNotes']){
-        lines.push((labelsMap[k] || humanizeKey(k)) + ': ' + (data[k]||''));
-      }
-      lines.push('\nSubmitted via: hinton site');
-      return lines.join('\n');
-    }
-
-    function makeHtmlTable(data){
-      const tableHeader = '<tr><th colspan="2" style="text-align:left;padding:8px;border:1px solid #ddd;background:#f5f5f5">' + escapeHtml('Speaking Request for University/Public Institution') + '</th></tr>';
-      const rows = Object.entries(data).map(([k,v])=>`<tr><th style="text-align:left;padding:6px;border:1px solid #ddd">${escapeHtml(labelsMap[k] || humanizeKey(k))}</th><td style="padding:6px;border:1px solid #ddd">${escapeHtml(v||'')}</td></tr>`).join('');
-      return `<table style="border-collapse:collapse;max-width:100%">${tableHeader}${rows}</table>`;
-    }
-
-    function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-
-    function collectData(){
-      const ids = ['yourName','yourEmail','areContact','pocName','hostOrg','orgLocation','eventName','eventPurpose','eventWebsite','eventType','eventDate','eventTime','timeZone','recorded','press','fee','estimatedAttendees','access','participationType','requestedTopic','otherNotes'];
-      const data = {};
-      ids.forEach(id=>data[id]=getVal(id));
-      return data;
-    }
-
-    async function copyGeneratedTable(){
-      const container = document.getElementById('templateHtml');
-      const table = container.querySelector('table');
-      if (!table) return;
-
-      const html = table.outerHTML;
-      const text = table.innerText || table.textContent || '';
-
-      if (navigator.clipboard && window.ClipboardItem){
-        const item = new ClipboardItem({
-          'text/html': new Blob([html], { type: 'text/html' }),
-          'text/plain': new Blob([text], { type: 'text/plain' })
-        });
-        await navigator.clipboard.write([item]);
-        return;
-      }
-
-      if (navigator.clipboard && navigator.clipboard.writeText){
-        await navigator.clipboard.writeText(text);
-        return;
-      }
-
-      const temp = document.createElement('textarea');
-      temp.value = text;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      temp.remove();
-    }
-
-    document.getElementById('generate').addEventListener('click', ()=>{
-      const data = collectData();
-      document.getElementById('templateHtml').innerHTML = makeHtmlTable(data);
-      document.getElementById('copyTemplate').style.display = 'inline-block';
-    });
-
-    document.getElementById('copyTemplate').addEventListener('click', async (e)=>{
-      const btn = e.currentTarget;
-      const originalText = btn.textContent;
-      try {
-        await copyGeneratedTable();
-        btn.textContent = 'Copied';
-      } catch (err) {
-        btn.textContent = 'Copy failed';
-      }
-      setTimeout(()=>{ btn.textContent = originalText; }, 1500);
-    });
-  </script>
+  <script src="speaker-form.js"></script>
 </body>
 </html>

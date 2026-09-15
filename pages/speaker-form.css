@@ -1,0 +1,25 @@
+/* Shared by talks.html and speaking.html (speaker request forms) */
+.sr-container{max-width:900px;margin:0 auto;padding:1rem}
+.sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sr-full{grid-column:1/-1}
+.sr-container section{margin-bottom:2rem}
+label{display:block;margin-bottom:.25rem;font-weight:600}
+textarea,input,select{width:100%;padding:.4rem;margin-bottom:.6rem}
+.buttons{display:flex;gap:.5rem;flex-wrap:wrap}
+/* Rounded, contemporary buttons */
+.sr-container .buttons button{
+  border-radius:999px;
+  padding:.5rem 1rem;
+  background:var(--bs-primary);
+  color:white;
+  border:0;
+  box-shadow:0 6px 18px rgba(46,68,110,0.12);
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  cursor:pointer;
+}
+.sr-container .buttons button:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(46,68,110,0.14); }
+.sr-container .buttons button:active{ transform:translateY(0); box-shadow:0 6px 18px rgba(46,68,110,0.10); }
+.sr-container .buttons button:focus{ outline:3px solid rgba(46,68,110,0.12); outline-offset:3px }
+.sr-container .buttons button[type="reset"]{ background:var(--bs-primary); color:white; border:0; box-shadow:0 6px 18px rgba(46,68,110,0.12); font-weight:600 }
+.section-title{font-size:1.25rem;font-weight:600;color:var(--bs-primary);margin-bottom:0.75rem}
