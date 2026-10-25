@@ -382,5 +382,54 @@
     "link": "https://www.newyorker.com/magazine/2023/11/20/geoffrey-hinton-profile-ai",
     "linkText": "Read",
     "thumbnail": "./assets/new_yorker_2023_thumbnail.png"
+  },
+  {
+    "type": "video",
+    "date": "September 2026",
+    "title": "Can DANGEROUS AI Models Release Themselves? I Asked The Godfather of AI",
+    "link": "https://www.youtube.com/watch?v=Vm-E1kgHXig&list=PLZ_OvJyBz8qlqFSrFoyt3ndvZ-xlS3QQM&index=1",
+    "linkText": "Watch"
+  },
+  {
+    "type": "print",
+    "date": "October 2026",
+    "title": "On Teaching Machines to Care, Hinton Gives Roadmap for Reining in AI",
+    "link": "https://jespublications.substack.com/p/on-teaching-machines-to-care-hinton",
+    "linkText": "Read"
+  },
+  {
+    "type": "print",
+    "date": "September 2026",
+    "title": "The New Math of AI: Are Those Trillion-Dollar Numbers for Real?",
+    "link": "https://www.barrons.com/articles/anthropic-ipo-new-math-ai-trillion-dollar-numbers-a906bbb0?st=wLZtK9&reflink=desktopwebshare_permalink",
+    "linkText": "Read"
+  },
+  {
+    "type": "print",
+    "date": "October 2026",
+    "title": "Top AI Researchers Call for Urgent Oversight of Self-Improving Systems",
+    "link": "https://www.wsj.com/tech/ai/top-ai-researchers-call-for-urgent-oversight-of-self-improving-systems-49bae9b4?st=xFusAo&reflink=desktopwebshare_permalink",
+    "linkText": "Read"
+  },
+  {
+    "type": "print",
+    "date": "October 2026",
+    "title": "What if automating AI R&D triggers an intelligence explosion?",
+    "link": "https://casp.ac/reports/intelligence-explosion",
+    "linkText": "Read"
+  },
+  {
+    "type": "video",
+    "date": "October 2026",
+    "title": "Does AI Have Emotion?",
+    "link": "https://www.cnn.com/2026/10/14/us/video/cnn-sitroom-pamela-brown-ai-emotion-technology",
+    "linkText": "Watch"
+  },
+  {
+    "type": "video",
+    "date": "October 2026",
+    "title": "‘We’re toast’: Nobel-winning ‘Godfather of AI’ warns that humans must befriend bots — or face extermination",
+    "link": "https://nypost.com/2026/10/20/tech/nobel-winning-ai-pioneer-warns-befriend-bots-or-were-toast/",
+    "linkText": "Watch"
   }
 ]
