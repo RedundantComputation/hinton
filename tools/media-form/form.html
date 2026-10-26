@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Add to the media list</title>
+<style>
+  body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #7997b9; margin: 0; padding: 2rem 1rem; }
+  form { max-width: 560px; margin: 0 auto; background: #fff; border-radius: .5rem; padding: 1.5rem; }
+  h1 { margin-top: 0; font-size: 1.4rem; color: #2E446E; }
+  label { display: block; font-weight: 600; margin: 1rem 0 .25rem; }
+  input, select { width: 100%; padding: .5rem; font: inherit; box-sizing: border-box; }
+  .row { display: flex; gap: .75rem; }
+  .row > div { flex: 1; }
+  .hint { color: #6c757d; font-size: .9rem; margin: .25rem 0 0; }
+  button { margin-top: 1.5rem; padding: .6rem 1.4rem; border: 0; border-radius: 999px; background: #2E446E; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: wait; }
+  #message { margin: 1rem 0 0; padding: .75rem; border-radius: .25rem; }
+  #message.ok { background: #d1e7dd; color: #0f5132; }
+  #message.error { background: #f8d7da; color: #842029; }
+</style>
+</head>
+<body>
+<form id="media-form">
+  <h1>Add to the media list</h1>
+
+  <label for="type">Type</label>
+  <select id="type" required>
+    <option value="video">Video</option>
+    <option value="podcast">Podcast</option>
+    <option value="print">Print article</option>
+    <option value="book">Book</option>
+  </select>
+
+  <label for="title">Title</label>
+  <input id="title" required>
+  <p class="hint">Put the outlet after a bar, like the other entries: <em>Why the Godfather of A.I. Fears What He’s Built | New Yorker</em></p>
+
+  <div class="row">
+    <div><label for="month">Month</label><select id="month" required></select></div>
+    <div><label for="year">Year</label><input id="year" type="number" min="1900" max="2099" required></div>
+  </div>
+
+  <label for="link">Link</label>
+  <input id="link" type="url" placeholder="https://..." required>
+
+  <label for="thumbnail">Thumbnail (optional)</label>
+  <input id="thumbnail" type="file" accept="image/png,image/jpeg">
+  <p class="hint">A screenshot works. YouTube links don't need one.</p>
+
+  <button type="submit" id="submit">Add to website</button>
+  <p id="message" hidden></p>
+</form>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const form = $('media-form');
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                  'August', 'September', 'October', 'November', 'December'];
+  months.forEach(m => $('month').add(new Option(m, m)));
+
+  function setToday() {
+    const now = new Date();
+    $('month').value = months[now.getMonth()];
+    $('year').value = now.getFullYear();
+  }
+  setToday();
+
+  function show(text, ok, pageUrl) {
+    const message = $('message');
+    message.hidden = false;
+    message.className = ok ? 'ok' : 'error';
+    message.textContent = text;
+    if (pageUrl) {
+      const link = document.createElement('a');
+      link.href = pageUrl;
+      link.target = '_blank';
+      link.textContent = 'Open the page';
+      message.append(' ', link, ' (refresh it if the new entry is missing).');
+    }
+  }
+
+  function readImage(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    $('submit').disabled = true;
+    show('Uploading…', true);
+    try {
+      const file = $('thumbnail').files[0];
+      const response = await fetch('/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: $('type').value,
+          title: $('title').value,
+          month: $('month').value,
+          year: $('year').value,
+          link: $('link').value,
+          thumbnail: file ? await readImage(file) : null
+        })
+      });
+      const result = await response.json();
+      if (result.ok) { form.reset(); setToday(); }
+      show(result.message, result.ok, result.page);
+    } catch (err) {
+      show('Could not reach the media form program. Is its black window still open?', false);
+    } finally {
+      $('submit').disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
